@@ -45,7 +45,7 @@ Allow your site visitors to format any valid RSS feed to display as they wish. T
 1. Unzip the download
 2. Upload the entire folder: `seo-automatic-seo-tools` to the `/wp-content/plugins/` directory
 3. Activate the plugin through your 'Plugins' menu
-4. View the short codes listed in the SEO Tools menu to add the tools to pages or posts.
+4. View the short codes listed in the SEO Automatic > SEO Tools menu to add the tools to pages or posts.
 
 == Frequently Asked Questions ==
 
