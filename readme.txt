@@ -69,5 +69,5 @@ Please visit the <a href="http://www.seoautomatic.com/plugins/unique-seo-tools/#
 == Other Notes ==
 The tools in this plug-in are available for your own use, and for the use of your site visitors without alteration of the code. Please note that any editing of the tools or the plug-in may prevent future upgrades from working properly, so do so at your own risk.
 
-[SEO Automatic Plugins](http://www.seoautomatic.com/plugins/ "Other plugins from SEO Automatic") | 
+[SEO Automatic Plugins](http://www.seoautomatic.com/plugins/ "Other plugins from SEO Automatic")
 [SEO Tools](http://www.seoautomatic.com/plugins/unique-seo-tools/ "SEO Tools Homepage") 
