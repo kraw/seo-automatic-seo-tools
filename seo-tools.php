@@ -3,7 +3,7 @@
 Plugin Name: SEO Automatic SEO Tools 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="?page=seo-automatic-options">SEO Automatic</a> > <a href="?page=seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 1.0
+Version: 1.1
 Author: Heather Barger
 Author URI: http://www.plugin-central.org
 */

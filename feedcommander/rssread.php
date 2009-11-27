@@ -121,7 +121,11 @@
     $content_style .= "text-align: " . $c_align . ";";
    
     $rss = @fetch_rss( $src );
-
+	if ($bt == "y") {
+		$blank_target = " ";
+	} else {
+		$blank_target = " target=\"_blank\"";
+	} 
     // begin javascript output string for channel info
     $str = "document.write('<div style=\"" . $box_style . "\">');\n";
     if ($mq=='y') $str .= "document.write('<marquee style=\"" . "\" DIRECTION=\"" . $mq_di . "\" BEHAVIOR=SCROLL SCROLLAMOUNT=\"" . $mq_n . "\" SCROLLDELAY=\"" . $mq_dy . "\">');\n";
@@ -135,12 +139,7 @@
                 $t_btag_marquee = "<marquee>";
                 $t_etag_marquee = "</marquee>";
             }
-
-	if ($bt == "y") {
-		$blank_target = " ";
-	} else {
-		$blank_target = " target=\"_blank\"";
-	}      
+     
             $str .= "document.write('<h3 class=\"rss-title\" style=\"" . $div_title_style . "\">" . $t_btag_marquee . "<a".$blank_target."  class=\"rss-title\" style=\"" . $title_style . "\" href=\"" . trim($rss->channel['link']) . "\">" . addslashes(strip_returns($rss->channel['title'])) . "</a>" . $t_etag_marquee . "</h3>');\n";            
         }
         // begin item listing
