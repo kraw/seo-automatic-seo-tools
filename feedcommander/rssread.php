@@ -294,9 +294,29 @@
 
     }
     // javascript for linkback
-    if ($lb == "2") {
+    //if ($lb == "2") {
+		require_once('../../../../wp-config.php');
+		mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die(mysql_error('Database is unable to connect.'));
+		mysql_select_db(DB_NAME) or die(mysql_error('Database is unable to connect.'));
+		$table = $table_prefix.'options';
+		$linkon = mysql_query("SELECT * FROM $table WHERE option_name = 'seo_tools_linkback_on'") 
+		or die(mysql_error());  
+		while($row = mysql_fetch_array($linkon)) {
+			$linkon = $row['option_value'];
+		} 
+		$linkurl = mysql_query("SELECT * FROM $table WHERE option_name = 'seo_tools_linkback_url'") 
+		or die(mysql_error());  
+		while($row = mysql_fetch_array($linkurl)) {
+			$linkurl = $row['option_value'];
+		} 
+		$linktxt = mysql_query("SELECT * FROM $table WHERE option_name = 'seo_tools_linkback_text'") 
+		or die(mysql_error());  
+		while($row = mysql_fetch_array($linktxt)) {
+			$linktxt = $row['option_value'];
+		} 
+	if ($linkon == 'on') {
         $str .= "document.write('<div class=\"rss-link-back\" style=\"font: 10px Arial; text-align:right;\">');\n";
-            $str .= "document.write('<a".$blank_target."  href=\"" . $linkback[0] . "\">" . $linkback[1] . "</a>&nbsp;');\n";
+            $str .= "document.write('<a".$blank_target."  href=\"" . $linkurl . "\">" . $linktxt . "</a>&nbsp;');\n";
         $str .= "document.write('</div>');\n";
     }
     

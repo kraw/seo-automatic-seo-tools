@@ -3,7 +3,7 @@
 Plugin Name: SEO Automatic SEO Tools 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="?page=seo-automatic-options">SEO Automatic</a> > <a href="?page=seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 1.1
+Version: 1.2
 Author: Heather Barger
 Author URI: http://www.plugin-central.org
 */
@@ -38,7 +38,7 @@ function cleanData(&$str) {
 
 function sc_404_header_scripts() {
 	$sc_plugin_dir =  get_option('siteurl').'/wp-content/plugins/seo-automatic-seo-tools/sc-bulk-url-checker/';
-	echo '<link rel="stylesheet" href="'.$sc_plugin_dir.'tablesorter/themes/blue/style.css" type="text/css" id="" media="print, projection, screen" />';
+	echo '<link rel="stylesheet" href="'.$sc_plugin_dir.'tablesorter/themes/blue/style.css" type="text/css" id="bulkurl" media="print, projection, screen" />';
 }
 
 add_action('wp_head', 'sc_404_header_scripts');
@@ -335,15 +335,24 @@ function seo_tools_admin() { // Add the menu
 }
 function seo_tools_home_page(){
 	include('home.php');
-//	$url="http://www.seoautomatic.com/plugin-home/index.php"; 
-//        $ch = curl_init($url); 
-//        curl_setopt($ch, CURLOPT_HEADER, 0); 
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-//        $results=curl_exec($ch); 
-//        curl_close($ch); 
-//        print("$results"); 
 }
 function seo_tools_settings_page(){
 	include('settings.php');
 }
+
+function seo_tools_set_linkback() {
+	if (!get_option('seo_tools_linkback_url')) {
+		$url = get_option('siteurl');
+		update_option('seo_tools_linkback_url', $url);
+	}
+	if (!get_option('seo_tools_linkback_on')) {
+		update_option('seo_tools_linkback_on', 'on');
+	}
+	if (!get_option('seo_tools_linkback_text')) {
+		update_option('seo_tools_linkback_text', 'add RSS feeds to any website');
+	}
+}
+
+add_action('admin_menu', 'seo_tools_set_linkback');
+//register_activation_hook('seo-tools.php', 'seo_tools_set_linkback');
 ?>

@@ -84,12 +84,9 @@ if (function_exists('seo_tools_admin')) {
 <div id="about-plugins" class="postbox " >
 <h3><span>About</span></h3>
 <div class="inside">
-<a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="http://www.seoautomatic.com/plugin-home/images/logo-powered-by.jpg" alt="SEO Automatic" width="262" height="166" /></a>
+<a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="http://www.seoautomatic.com/plugin-home/images/logo-2010.jpg" alt="SEO Automatic" width="262" height="166" /></a>
 <br />
 <ul>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/home/" target="_blank"> SEO Automatic</a></li>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.searchcommander.com/" target="_blank"> Search Commander, Inc</a></li>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/plugins/" target="_blank"> Entire Suite of Plugins</a></li>
 	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/white-label/" target="_blank"> White Label Options</a></li>
 </ul>
 
@@ -99,8 +96,6 @@ if (function_exists('seo_tools_admin')) {
 <h3><span>Resources</span></h3>
 <div class="inside">
 <ul>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="" /> <a href="http://www.pdxtc.com/wpblog/" target="_blank">Scott's Blog</a></li>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="" /> <a href="http://www.twitter.com/shendison/" target="_blank">Scott's Twitter</a></li>
 	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
 	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.searchcommander.com/seo-tools/" target="_blank"> SEO Automatic Tools</a></li>
 	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="" /> <a href="http://www.getwordpressed.com/about/" target="_blank">Site Matched WP Themes</a></li>
