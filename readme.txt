@@ -3,7 +3,7 @@ Contributors: Scott Hendison & Heather Barger
 Donate link: 
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier
 Requires at least: 2.8.4
-Tested up to: 2.9.1
+Tested up to: 2.9.2
 Stable tag: 1.2
 
 Combines four useful SEO tools in one.
