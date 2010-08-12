@@ -3,7 +3,7 @@
 Plugin Name: SEO Automatic SEO Tools 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="?page=seo-automatic-options">SEO Automatic</a> > <a href="?page=seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 1.2
+Version: 2.0
 Author: Heather Barger
 Author URI: http://www.plugin-central.org
 */
@@ -97,12 +97,20 @@ class linkvariance {
 			$list1 = explode( ",", $list1 );
 			$list2 = explode( ",", $list2 );
 		 
-		 
-		   foreach( $list1 as $word1 ) {		 
-			  foreach( $list2 as $word2 ) {		 		 
-					$keywords = $keywords ."\n". '<a href="' . trim($word1) . '"' . $rel . $newwin . '>' . trim($word2) . '</a>';
-				 }			 
-			}			
+			if ($novary == "ON") { 
+				$nvx = 0;
+				$nv = count($list2);
+				while ($nvx < $nv):
+					$keywords = $keywords ."\n". '<a href="' . trim($list1[$nvx]) . '"' . $rel . $newwin . '>' . trim($list2[$nvx]) . '</a>';
+					$nvx++;
+				endwhile;	
+			} else {		 
+			   foreach( $list1 as $word1 ) {		 
+				  foreach( $list2 as $word2 ) {		 		 
+						$keywords = $keywords ."\n". '<a href="' . trim($word1) . '"' . $rel . $newwin . '>' . trim($word2) . '</a>';
+					 }			 
+				}	
+			}
 		}
 ?>
 
@@ -124,8 +132,8 @@ class linkvariance {
 			<textarea rows="23" id="input2" name="input2" cols="24"><?php echo $input2;?></textarea></td>
 		  </tr>
 		  <tr>
-			<td colspan="7" align="center" valign="top"><br />
-			<input type="checkbox" name="nofollow" value="ON" checked> Add nofollow  &nbsp;<input type="checkbox" name="newtab" value="ON" checked> Open Links in New Window  
+			<td colspan="3" align="center" valign="top"><br />
+			<input type="checkbox" name="nofollow" value="ON" checked> Add nofollow  &nbsp;<input type="checkbox" name="newtab" value="ON" checked> Open Links in New Window<br /><input type="checkbox" name="novary" value="ON"> Do not vary phrases <font size="1">(This will create just one .html link per phrase, retaining the order in which they're entered.)</font>
 			<br /><input type="submit" value="Process" name="submit"> <input type="reset" value="Reset" name="B2"></td>
 		  </tr>
 		</table>
@@ -316,6 +324,26 @@ function sc_add_keywordmarriage(){
 
 add_shortcode('keyword-marriage', 'sc_add_keywordmarriage');
 
+
+//Landing Page Determinator
+function sc_get_lpd(){
+ob_start();
+    require_once(ABSPATH.'wp-content/plugins/seo-automatic-seo-tools/lpd/'.'index.php');
+	$bulkpage = new lpd;
+	$bulkpage->sc_lpd();
+$return = ob_get_contents();
+ob_end_clean();
+return $return;
+}
+
+
+function sc_add_lpd(){
+	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><a href="http://www.seoautomatic.com/unique-tools/best-page-determinator/" target="_blank">Landing Page Determinator by SEO Automatic</a>';
+	return sc_get_lpd().$seotools;
+}
+
+add_shortcode('lpd-tool', 'sc_add_lpd');
+
 add_action('admin_menu', 'seo_tools_admin', 1);
 
 function seo_tools_admin() { // Add the menu
@@ -355,4 +383,6 @@ function seo_tools_set_linkback() {
 
 add_action('admin_menu', 'seo_tools_set_linkback');
 //register_activation_hook('seo-tools.php', 'seo_tools_set_linkback');
+
+
 ?>

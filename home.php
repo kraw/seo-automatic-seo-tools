@@ -86,7 +86,7 @@ if (function_exists('seo_tools_admin')) {
 <h3><span>About</span></h3>
 <div class="inside">
 <a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="http://www.seoautomatic.com/plugin-home/images/logo-2010.jpg" alt="SEO Automatic" width="262" height="166" /></a>
-<br />
+<br style="clear: both;" />
 <ul>
 	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/white-label/" target="_blank"> White Label Options</a></li>
 </ul>

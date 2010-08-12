@@ -82,8 +82,13 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 	<p>Url: <input type="text" name="linkbackurl" size="40" value="<?php echo get_option('seo_tools_linkback_url');?>"<?php echo $c;?>></p>
 	<p>Anchor Text: <input type="text" name="linkbacktxt" size="40" value="<?php echo get_option('seo_tools_linkback_text');?>"<?php echo $c;?>> <input type="submit" value="Set" name="setlinkback"></p>
 </form>
-<p>Current display: <a href="<?php echo get_option('seo_tools_linkback_url');?>" target="_blank"><?php echo get_option('seo_tools_linkback_text');?></a></p>
-</div>
+<p>Current display: <a href="<?php echo get_option('seo_tools_linkback_url');?>" target="_blank"><?php echo get_option('seo_tools_linkback_text');?></a></p></div>
+
+<p><hr /></p>
+<p><b>Landing Page Determinator</b> <a href="http://www.seoautomatic.com/unique-tools/best-page-determinator/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
+<p>This tool uses Google's API to tell you which page on your site ranks highest organically, and therefore, is also the most likely to be given a higher Quality Score by the AdWords team.</p>
+<p><b>To use, add the shortcode: [lpd-tool]</b></p>
+
 
 </div></div>
 
@@ -96,7 +101,7 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <h3><span>About</span></h3>
 <div class="inside">
 <a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="http://www.seoautomatic.com/plugin-home/images/logo-2010.jpg" alt="SEO Automatic" width="262" height="166" /></a>
-<br />
+<br style="clear: both;" />
 <ul>
 	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/white-label/" target="_blank"> White Label Options</a></li>
 </ul>

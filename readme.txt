@@ -3,8 +3,8 @@ Contributors: Scott Hendison & Heather Barger
 Donate link: 
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier
 Requires at least: 2.8.4
-Tested up to: 2.9.2
-Stable tag: 1.2
+Tested up to: 3.0.1
+Stable tag: 2.0
 
 Combines four useful SEO tools in one.
 
@@ -38,6 +38,12 @@ Allow your site visitors to put a list of URLs on one side, then a list of varie
 Allow your site visitors to format any valid RSS feed to display as they wish. They may then use the generated code on any website they like. 
 
 = To use, add the shortcode: [feedcommander] =
+
+
+= Landing Page Determinator =
+Allow your site visitors to search for which page on their site ranks highest organically.
+
+= To use, add the shortcode: [lpd-tool] =
 
 
 == Installation ==

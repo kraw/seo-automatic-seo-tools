@@ -1,5 +1,8 @@
 CHANGE LOG FOR SEO AUTOMATIC SEO TOOLS
 
+06/24/10:
+Added Landing Page Determinator
+
 02/10/2010:
 Added linkback settings.
 Updated main menu page.
