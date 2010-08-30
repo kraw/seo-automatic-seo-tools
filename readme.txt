@@ -6,7 +6,7 @@ Requires at least: 2.8.4
 Tested up to: 3.0.1
 Stable tag: 2.0
 
-Combines four useful SEO tools in one.
+These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
 == Description ==
 
@@ -14,7 +14,7 @@ This plug-in combines several unique SEO tools developed for Search Commander, I
 
 Tools included are:
 
-= Keyword List Multiplier =
+= 1. Keyword List Multiplier =
 Allow your site visitors to easily and instantly create a combination of keyword lists to "cover all their bases" for all the different variations of cities, states, categories etc. when setting up a PPC campaign, including google match types. 
 
 There is an additional option (not to be used with Adwords) that will keep any spaces or other characters you may add, such as the pipe | or spaces. When checked, the tool will not add its own spaces. This option makes this tool suitable for nearly any other need, such as insterting options into content spinning software.
@@ -22,28 +22,38 @@ There is an additional option (not to be used with Adwords) that will keep any s
 = To use, add the shortcode: [keyword-marriage] =
 
 
-= Bulk URL checker =
+
+
+= 2. Bulk URL checker =
 Allow your site visitors to check the server response of just one or a large batch of URL's to see which ones might be redirected or which ones might come up 404 not found, and then make that list available for download. The longer the list of URL's, the longer the tool will take to run.
 
 = To use, add the shortcode: [urlchecker] =
 
 
-= Link Variance =
+
+
+= 3. Link Variance =
 Allow your site visitors to put a list of URLs on one side, then a list of varied anchor text on the other side, press a button, and get a complete list of every possible variation of text link and landing page. This list can then be given to bloggers, authors, programmers, etc. to use throughout your content.
 
 = To use, add the shortcode: [link-variance] =
 
 
-= RSS Feed Commander =
+
+
+= 4. RSS Feed Commander =
 Allow your site visitors to format any valid RSS feed to display as they wish. They may then use the generated code on any website they like. 
 
 = To use, add the shortcode: [feedcommander] =
 
 
-= Landing Page Determinator =
+
+
+= 5. Landing Page Determinator =
 Allow your site visitors to search for which page on their site ranks highest organically.
 
 = To use, add the shortcode: [lpd-tool] =
+
+
 
 
 == Installation ==
