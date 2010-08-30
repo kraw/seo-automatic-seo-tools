@@ -22,6 +22,8 @@ There is an additional option (not to be used with Adwords) that will keep any s
 = To use, add the shortcode: [keyword-marriage] =
 
 = &nbsp; =
+= &nbsp; =
+
 
 
 = 2. Bulk URL checker =
@@ -30,6 +32,8 @@ Allow your site visitors to check the server response of just one or a large bat
 = To use, add the shortcode: [urlchecker] =
 
 = &nbsp; =
+= &nbsp; =
+
 
 
 = 3. Link Variance =
@@ -38,6 +42,7 @@ Allow your site visitors to put a list of URLs on one side, then a list of varie
 = To use, add the shortcode: [link-variance] =
 
 = &nbsp; =
+= &nbsp; =
 
 
 = 4. RSS Feed Commander =
@@ -45,6 +50,7 @@ Allow your site visitors to format any valid RSS feed to display as they wish. T
 
 = To use, add the shortcode: [feedcommander] =
 
+= &nbsp; =
 = &nbsp; =
 
 
