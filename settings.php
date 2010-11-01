@@ -19,7 +19,10 @@ if (get_bloginfo('version') < 2.8) {
 .postbox .inside { padding: 8px !important; }
 #about-plugins a, #resources a {text-decoration: none;}
 #about-plugins img, #resources img {float: left; padding-right: 3px;}
-hr { color: #E2E2E2; border: 1px solid #E4E4E4; background-color: #E6E6E6; margin: 25px 0; }
+#success li, #success h3 {color: #006600; }
+#fail li, #fail h3 {color: #ff0000; }
+#resources li { clear: both; }
+#about-plugins li { clear: both; }
 </style>
 
 <div class="wrap">
@@ -38,6 +41,14 @@ hr { color: #E2E2E2; border: 1px solid #E4E4E4; background-color: #E6E6E6; margi
 would like the tool to display.&nbsp; </p>
 <p>Please note that Use of these tools does require your theme to have a minimum body width of 500 pixels to 
 display the results. </p>
+<p><hr /></p>
+<p><b>URL Review Lite</b> <a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
+<p>Your visitors can get a quick look at some on-page organic search ranking factors, with a "Lite" review, showing YOUR definitions and advice.</p>
+<p>This tool covers 5 on-page search ranking factors instantly, then summarizes with a definition, commentary and specific solutions that you are free to edit from the "<a href="admin.php?page=seo-automatic-plugin">settings screen</a>"</p>
+<p>For the full version, allowing you to review 18+ ranking factors, see the <a href="http://www.seoautomatic.com/products-page/pricing/seo-review-plugin/" target="_blank">full URL review tool</a> or take a look at all of the "<a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank">white label options</a>."</p>
+<p><b>To use, first go to your <a href="plugins.php">plugins page</a> and activate the plugin named: SEO Tool Add-on - URL Review Lite.</b></p>
+<p><b>Then, edit your <a href="admin.php?page=seo-automatic-plugin">settings page</a> with your own ranking factor definitions and explanations.</b></p>
+<p><b>To make the tool appear, use the shortcode<code>[seotool]</code>from the .html tab while editing any post or page.</b></p>
 <p><hr /></p>
 <p><b>Keyword List Multiplier</b> <a href="http://www.seoautomatic.com/unique-tools/keyword-multiplier/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
 <p>Allow your site visitors to easily and instantly create a combination of keyword lists to &quot;cover all their 
@@ -60,8 +71,7 @@ to use throughout your content.</p>
 <p><b>To use, add the shortcode: [link-variance]</b></p>
 <p><hr /></p>
 <p><b>RSS Feed Commander</b> <a href="http://www.seoautomatic.com/unique-tools/feedcommander/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
-<p>Allow your site visitors to format any valid RSS feed to display as they wish. They may then use the 
-generated code on any website they like.</p>
+<p>Allow your site visitors to format any valid RSS feed to display as they wish, using the generated code on any website they like, while YOU have the anchor text backlink that you want.</p>
 <p><b>To use, add the shortcode: [feedcommander]</b></p>
 
 <?php
@@ -69,7 +79,14 @@ if ($_REQUEST['set_linkback'] == 'yes') {
 	update_option('seo_tools_linkback_url', $_REQUEST['linkbackurl']);
 	update_option('seo_tools_linkback_on', $_REQUEST['linkback']);
 	update_option('seo_tools_linkback_text', $_REQUEST['linkbacktxt']);
+} else {
+	if (get_option('seo_tools_linkback_text') == 'add RSS feeds to any website') {
+		update_option('seo_tools_linkback_text', 'change this anchor text in the SEO Tools admin');
+		$make_link = get_bloginfo('wpurl').'/wp-admin/admin.php?page=seo-automatic-seo-tools/settings.php';
+		update_option('seo_tools_linkback_url', $make_link);
+	}
 }
+
 if (get_option('seo_tools_linkback_on') == 'on' ) {
 	$a = ' checked';
 	$c = '';
@@ -89,7 +106,6 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <p>This tool uses Google's API to tell you which page on your site ranks highest organically, and therefore, is also the most likely to be given a higher Quality Score by the AdWords team.</p>
 <p><b>To use, add the shortcode: [lpd-tool]</b></p>
 
-
 </div></div>
 
 </div></div>
@@ -101,9 +117,15 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <h3><span>About</span></h3>
 <div class="inside">
 <a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="http://www.seoautomatic.com/plugin-home/images/logo-2010.jpg" alt="SEO Automatic" width="262" height="166" /></a>
-<br style="clear: both;" />
+<br />
 <ul>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/white-label/" target="_blank"> White Label Options</a></li>
+	<li style="margin-left: -4px;"><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="5701868">
+<input type="image" src="http://www.plugin-central.org/images/donate.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" onclick="this.form.target='_blank';return true;">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</li>
 </ul>
 
 </div></div>
@@ -112,10 +134,37 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <h3><span>Resources</span></h3>
 <div class="inside">
 <ul>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="SEO Automatic" /> <a href="http://www.searchcommander.com/seo-tools/" target="_blank"> SEO Automatic Tools</a></li>
-	<li><img src="http://www.seoautomatic.com/favicon.ico" alt="" /> <a href="http://www.getwordpressed.com/about/" target="_blank">Site Matched WP Themes</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/unique-tools/" target="_blank"> SEO Automatic Tools</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank"> White Label Options</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/tip-of-the-week/" target="_blank"> Automation Tip of the Week</a></li>
 </ul>
+</div></div>
+
+<div id="resources" class="postbox" >
+<h3><span>Recommended Affiliates</span></h3>
+<div class="inside">
+<ul>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.com/linkvana/" target="_blank"> LinkVana</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/wptwin/" target="_blank"> WordPress Backup &amp; Cloning</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/icontact/" target="_blank"> iContact</a></li>
+	<li><img src="http://www.seoautomatic.com/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/spamarrest/" target="_blank"> Spamarrest</a></li>
+</ul>
+</div></div>
+
+<div id="seoautofeed" class="postbox" >
+<h3><span>Latest news from the SEO Automatic blog ...</span></h3>
+<div class="inside">
+<p><div>
+	<?php 
+			$url=plugins_url()."/seo-automatic-seo-tools/feedcommander/rssread.php?src=http://www.seoautomatic.com/feed&title=n&lines=5&boxpadding=10&b_width=0&b_height=0&h_bar=n&v_bar=n&mq=n&mq_di=DOWN&mq_n=3&mq_dy=200&b_color=none&b_style=none&b_b_color=ffffff&b_b_weight=thin&t_font=&t_s_bold=y&t_s_italic=n&t_s_underline=y&t_s_marquee=n&t_size=16&t_align=center&t_color=&i_max_char=0&i_font=&i_s_bold=y&i_s_italic=n&i_s_underline=n&i_s_marquee=n&i_size=11&i_color=&c_max_char=200&c_font=&c_s_bold=n&c_s_italic=n&c_s_underline=n&c_s_marquee=n&c_size=11&c_align=left&c_color=&html=y"; 
+			$ch = curl_init($url); 
+			curl_setopt($ch, CURLOPT_HEADER, 0); 
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+			$results=curl_exec($ch); 
+			curl_close($ch); 
+			print("$results"); 
+	?></div></p>
 </div></div>
 
 </div></div>

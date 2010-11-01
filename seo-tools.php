@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: SEO Automatic SEO Tools 
+Plugin Name: SEO Tools by SEO Automatic 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
-Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="?page=seo-automatic-options">SEO Automatic</a> > <a href="?page=seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 2.0
-Author: Heather Barger
-Author URI: http://www.plugin-central.org
+Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="admin.php?page=seo-automatic-options">SEO Automatic</a> > <a href="?page=seo-tools/settings.php">SEO Tools</a> for options. 
+Version: 3.0
+Author: Scott Hendison
+Author URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 */
 
 //bulk url checker
@@ -55,7 +55,7 @@ function sc_get_404_page(){
 
 
 function sc_add_404_page(){
-	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><a href="http://www.seoautomatic.com/free-tools/bulk-url-checker/" target="_blank">Bulk Url Checker by SEO Automatic</a>';
+	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/bulk-url-checker/" target="_blank">This Bulk Url Checker was provied by SEO Automatic</a></small>';
 	return sc_get_404_page().$seotools;
 }
 
@@ -75,7 +75,7 @@ return $return;
 
 
 function sc_add_feedcommander(){
-	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><a href="http://www.seoautomatic.com/free-tools/feedcommander/" target="_blank">Feed Commander by SEO Automatic</a>';
+	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/feedcommander/" target="_blank">This Feed Commander was provided by SEO Automatic</a></small>';
 	return sc_get_feedcommander().$seotools;
 }
 
@@ -157,7 +157,7 @@ return $keywords;
 
 
 function sc_add_linkvariance(){
-	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><a href="http://www.seoautomatic.com/free-tools/link-variance/" target="_blank">Link Variance Tool by SEO Automatic</a>';
+	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/link-variance/" target="_blank">This Link Variance Tool was provided by SEO Automatic</a></small>';
 	return sc_get_linkvariance().$seotools;
 }
 
@@ -318,7 +318,7 @@ return $return;
 
 
 function sc_add_keywordmarriage(){
-	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><a href="http://www.seoautomatic.com/free-tools/keyword-multiplier/" target="_blank">Keyword Multiplier by SEO Automatic</a>';
+	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/keyword-multiplier/" target="_blank">This Keyword Multiplier was provided by SEO Automatic</a></small>';
 	return sc_get_keywordmarriage().$seotools;
 }
 
@@ -338,7 +338,7 @@ return $return;
 
 
 function sc_add_lpd(){
-	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><a href="http://www.seoautomatic.com/unique-tools/best-page-determinator/" target="_blank">Landing Page Determinator by SEO Automatic</a>';
+	$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/unique-tools/best-page-determinator/" target="_blank">This Landing Page Determinator was provided by SEO Automatic</a></small>';
 	return sc_get_lpd().$seotools;
 }
 
@@ -383,6 +383,9 @@ function seo_tools_set_linkback() {
 
 add_action('admin_menu', 'seo_tools_set_linkback');
 //register_activation_hook('seo-tools.php', 'seo_tools_set_linkback');
-
+//function seoauto_remove_linkback() {
+//		echo '<style>#wpbody .rss-link-back {display: none;}</style>';
+//}
+//add_action('admin_head', 'seoauto_remove_linkback');
 
 ?>

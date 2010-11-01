@@ -22,21 +22,19 @@ else{
 
 	echo '
 <form method="post" action="">
-<textarea name="urls" cols="40" rows="5">
-'.$urllisttext.'
-</textarea><br>
+<textarea name="urls" cols="40" rows="5">'.$urllisttext.'</textarea><br />
 <input type="submit" value="Submit" />
 </form>';
 
 
 if(isset($urls2)){
 	echo '
-	<div id="urlchecker">
-	<table class="tablesorter" width="100%"> 
+	<div id="urlchecker" style="overflow: auto;">
+	<table class="tablesorter"> 
 <thead> 
 <tr> 
 	<th id="url" align="left">URL</th> 
-	<th id="status" align="left" width="60px">Status</th> 
+	<th id="status" align="left">Status</th> 
 	<th id="redirect" align="left">Redirect</th>
 </tr> 
 </thead> 
@@ -72,7 +70,7 @@ if(isset($urls2)){
 }  
 	}
 	echo '</tbody></table></div>';
-	echo '<div id="next">	<form id="excel" method="post" action="'.$sc_plugin_dir.'download.php"><input type="hidden" name="download" value="'.$urllisttext.'" /><input type="hidden" name="run" value="yes" /><input type="submit" value="Download Excel"></form>';
+	echo '<div id="next"><form id="excel" method="post" action="'.$sc_plugin_dir.'download.php"><input type="hidden" name="download" value="'.$urllisttext.'" /><input type="hidden" name="run" value="yes" /><input type="submit" value="Download Excel"></form>';
 
 	echo '</div>';
 } else {

@@ -36,6 +36,7 @@
     $lines = (isset($_GET["lines"]) ? $_GET["lines"] : 0);
     if ($lines == 0)
         $lines = 100;
+
  
     // indicator to show item description,  0 = no; 1=all; n>1 = characters to display
     // values of -1 indicate to displa item without the title as a link
@@ -127,7 +128,8 @@
 		$blank_target = " target=\"_blank\"";
 	} 
     // begin javascript output string for channel info
-    $str = "document.write('<div style=\"" . $box_style . "\">');\n";
+	$str = '<script type="text/javascript">';
+    $str .= "document.write('<div style=\"" . $box_style . "\">');\n";
     if ($mq=='y') $str .= "document.write('<marquee style=\"" . "\" DIRECTION=\"" . $mq_di . "\" BEHAVIOR=SCROLL SCROLLAMOUNT=\"" . $mq_n . "\" SCROLLDELAY=\"" . $mq_dy . "\">');\n";
     
     if  (!$rss) {
@@ -163,7 +165,7 @@
             if ($item['title']) {
                 // format item title
                 $my_title = addslashes(strip_returns($item['title']));
-                            
+                           
                 if ($i_max_char != 0) {
                     $cnt_i = strlen($my_title);
                     $my_title = substr($my_title, 0, $i_max_char);
@@ -172,6 +174,14 @@
                 } 
                 
 				$my_title = htmlentities($my_title);
+
+				 $my_title = str_replace('?','-',$my_title);
+				 if ($my_title[strlen($my_title)-1] == '-') {
+					 $my_title = substr($my_title,0,-1).'?'; 
+				 } 
+				$my_title = str_replace('-t',"'t",$my_title);
+				$my_title = str_replace('-s',"'s",$my_title);
+				$my_title = str_replace('- - '," - ",$my_title);
 
                 $i_btag_marquee = ""; $i_etag_marquee = "";
                 if ($i_s_marquee == "y") {
@@ -278,8 +288,11 @@
 				} else {
 					$my_blurb .= "</p>";
 				}
-            }
-                
+            } 
+            if ($c_max_char == -1) {
+					$my_blurb = '';   
+			}
+
             if ($c_s_marquee == "y")
                 $my_blurb = "<marquee>" . $my_blurb . "</marquee>";
             
@@ -313,6 +326,11 @@
 		or die(mysql_error());  
 		while($row = mysql_fetch_array($linktxt)) {
 			$linktxt = $row['option_value'];
+			if ($linktxt != 'change this anchor text in the SEO Tools admin' && $linktxt != 'add RSS feeds to any website') {
+			} else {
+				$linktxt = 'change this anchor text in the SEO Tools admin';
+				$linkurl = get_bloginfo('wpurl').'/wp-admin/admin.php?page=seo-automatic-seo-tools/settings.php';
+			}
 		} 
 	if ($linkon == 'on') {
         $str .= "document.write('<div class=\"rss-link-back\" style=\"font: 10px Arial; text-align:right;\">');\n";
@@ -322,7 +340,7 @@
     
     if ($mq == 'y') $str .= "document.write('</marquee>');\n";
     $str .= "document.write('</div>');\n";
-
+	$str .= '</script>';
     if ( $html == "y" ) {
         $str = preg_replace("/document.write\(\'/", "", $str);
         $str = preg_replace("/\'\)\;/", "", $str);

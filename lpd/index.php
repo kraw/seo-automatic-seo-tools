@@ -22,9 +22,9 @@ function sc_lpd(){
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <input type="button" value="Go!" class="go"/>
-                        <input type="button" value="Stop" class="stop"/>
-                        <input type="button" value="Clear results" class="clear"/>
+                        <input type="button" value="Go!" class="go submitbutton" />
+                        <input type="button" value="Stop" class="stop submitbutton" />
+                        <input type="button" value="Clear results" class="clearlpd submitbutton" />
                     </td>
                 </tr>
             </table>
@@ -33,6 +33,9 @@ function sc_lpd(){
                 <div class="loader">
                     <img src="<?php echo plugins_url();?>/seo-automatic-seo-tools/lpd/ajax-loader.gif" alt="loading ...."/> <span>Loading results</span>
                 </div>
+
+                <div style="display: none;"><h1>Results CSV Data</h1>
+                <textarea cols="20" rows="4"></textarea></div>
 
                 <h3>Results</h3>
                 <table>
