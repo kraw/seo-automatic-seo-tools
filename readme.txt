@@ -1,5 +1,5 @@
 === SEO Tools ===
-Contributors: Scott Hendison
+Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier
 Requires at least: 2.8.4
