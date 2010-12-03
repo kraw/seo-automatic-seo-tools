@@ -1,4 +1,5 @@
 <?php
+//make sure I update
 if (function_exists('plugins_url')) {
 	$path=trailingslashit(plugins_url(basename(dirname(__FILE__))));
 	} else {

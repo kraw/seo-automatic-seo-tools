@@ -1,4 +1,5 @@
 <?php
+//make sure I update
     require_once($_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/seo-automatic-seo-tools/feedcommander/config.php');
     // Utility to remove return characters from strings that might
     // pollute JavaScript commands. While we are at it, substitute 
