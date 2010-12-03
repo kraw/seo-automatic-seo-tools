@@ -8,6 +8,8 @@ Author: cyber49
 Author URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 */
 
+//make sure I change
+
 //bulk url checker
 function cleanData(&$str) { 
 	$str = preg_replace("/\t/", "\\t", $str); 
