@@ -3,7 +3,7 @@
 Plugin Name: SEO Tool Add-on - URL Review Lite (activate separately)
 Plugin URI: http://seoautomatic.com/
 Description: This is the SECONDARY plugin required for the SEO Automatic URL review to function properly. Change tool definitions and priorities from SEO Automatic -> <a href="admin.php?page=seo-automatic-plugin">SEO Automatic Plugin</a>. To use, simply insert code <code>[seotool]</code> into any post or page.
-Version: 3.0
+Version: 3.1
 */
 
 /*
@@ -486,11 +486,24 @@ if (get_bloginfo('version') < 2.8) {
 <div id="resources" class="postbox" >
 <h3><span>Recommended Affiliates</span></h3>
 <div class="inside">
+<?php
+include_once(ABSPATH . WPINC . '/feed.php');
+$rss = fetch_feed('http://www.seoautomatic.com/category/rec/feed');
+if (!is_wp_error( $rss ) ) : 
+    $maxitems = $rss->get_item_quantity(5); 
+    $rss_items = $rss->get_items(0, $maxitems); 
+endif;
+?>
+
 <ul>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.com/linkvana/" target="_blank"> LinkVana</a></li>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/wptwin/" target="_blank"> WordPress Backup &amp; Cloning</a></li>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/icontact/" target="_blank"> iContact</a></li>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/spamarrest/" target="_blank"> Spamarrest</a></li>
+    <?php if ($maxitems == 0) echo '<li>No items.</li>';
+    else
+    foreach ( $rss_items as $item ) : ?>
+    <li>
+        <a href='<?php echo $item->get_permalink(); ?>' target='_blank' title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'>
+        <?php echo $item->get_title(); ?></a><br />
+    </li>
+    <?php endforeach; ?>
 </ul>
 </div></div>
 

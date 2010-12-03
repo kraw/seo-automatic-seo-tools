@@ -3,15 +3,15 @@ Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier
 Requires at least: 2.8.4
-Tested up to: 3.0.1
-Stable tag: 3.0
+Tested up to: 3.0.2
+Stable tag: 3.1
 
 These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
 == Description ==
 <a href="http://www.seoautomatic.com/plugins/unique-seo-tools/" target="_blank">Plugin Page</a> | <a href="http://www.seoautomatic.com/forum/seo-tools-plugin-support/" target="_blank">Plugin Support</a>
 
-This plug-in combines several unique SEO tools developed for Search Commander, Inc. and enables their use from inside WordPress. paste the corresponding short code in place on the page or post where you wish to offer the tool. 
+This plug-in combines several unique SEO tools developed for Search Commander, Inc. and enables their use from inside WordPress. Paste the corresponding short code in place on the page or post where you wish to offer the tool. 
 
 Tools included are:
 
