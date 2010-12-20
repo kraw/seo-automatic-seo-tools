@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: SEO Tool Add-on - URL Review Lite (activate separately)
+Plugin Name: SEO Tools URL Review Lite Add-on (activate separately)
 Plugin URI: http://seoautomatic.com/
 Description: This is the SECONDARY plugin required for the SEO Automatic URL review to function properly. Change tool definitions and priorities from SEO Automatic -> <a href="admin.php?page=seo-automatic-plugin">SEO Automatic Plugin</a>. To use, simply insert code <code>[seotool]</code> into any post or page.
 Version: 3.1.1

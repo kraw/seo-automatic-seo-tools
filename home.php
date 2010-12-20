@@ -39,9 +39,6 @@ if (get_bloginfo('version') < 2.8) {
 <p>Here are the modules you have installed:</p>
 
 <?php
-if (function_exists('autoseo_add_pages')){
-	echo "<p><a href=\"?page=seo-automatic-plugin\">SEO Automatic</a></p>";
-}
 if (function_exists('sc_settings')) {
 	echo "<p><a href=\"?page=seo-automatic-seo-tools/settings.php\">Core Tweaks</a></p>";
 }
@@ -58,6 +55,9 @@ if (function_exists('unf_content_filter')) {
 }
 if (function_exists('seo_tools_admin')) {
 	echo "<p><a href=\"?page=seo-automatic-seo-tools/settings.php\">SEO Tools</a></p>";
+}
+if (function_exists('autoseo_add_pages')){
+	echo "<p><a href=\"?page=seo-automatic-plugin\">SEO Tools URL Review add-on</a></p>";
 }
 ?>
 

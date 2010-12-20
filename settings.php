@@ -46,7 +46,7 @@ display the results. </p>
 <p>Your visitors can get a quick look at some on-page organic search ranking factors, with a "Lite" review, showing YOUR definitions and advice.</p>
 <p>This tool covers 5 on-page search ranking factors instantly, then summarizes with a definition, commentary and specific solutions that you are free to edit from the "<a href="admin.php?page=seo-automatic-plugin">settings screen</a>"</p>
 <p>For the full version, allowing you to review 18+ ranking factors, see the <a href="http://www.seoautomatic.com/products-page/pricing/seo-review-plugin/" target="_blank">full URL review tool</a> or take a look at all of the "<a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank">white label options</a>."</p>
-<p><b>To use, first go to your <a href="plugins.php">plugins page</a> and activate the plugin named: SEO Tool Add-on - URL Review Lite.</b></p>
+<p><b><font color="#009900">To use, first go to your <a href="plugins.php">plugins page</a> and activate the plugin named: SEO Tool Add-on - URL Review Lite.</font></b></p>
 <p><b>Then, edit your <a href="admin.php?page=seo-automatic-plugin">settings page</a> with your own ranking factor definitions and explanations.</b></p>
 <p><b>To make the tool appear, use the shortcode<code>[seotool]</code>from the .html tab while editing any post or page.</b></p>
 <p><hr /></p>
@@ -186,7 +186,7 @@ endif;
         <a href='<?php echo $item->get_permalink(); ?>'
         title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'>
         <?php echo $item->get_title(); ?></a><br />
-		<?php echo $item->get_description(); ?>
+		<?php echo substr($item->get_description(),0,110); ?>
     </li>
     <?php endforeach; ?>
 </ul>
