@@ -1,13 +1,14 @@
 <div align="center"><table width="400"><tr><td valign="top">
 <?php
     if (isset($preview)) {
-    	$url=get_bloginfo('url')."/wp-content/plugins/seo-automatic-seo-tools/feedcommander/rssread.php?src=". /*urlencode*/($src) . ($option) . "&html=y"; 
-        $ch = curl_init($url); 
+   	$previewurl=get_bloginfo('url')."/wp-content/plugins/seo-automatic-seo-tools/feedcommander/rssread.php?src=". /*urlencode*/($src) . ($option) . "&html=y"; 
+        $ch = curl_init($previewurl);
         curl_setopt($ch, CURLOPT_HEADER, 0); 
+        curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-        $results=curl_exec($ch); 
+        $output = curl_exec($ch);      
         curl_close($ch); 
-        print("$results"); 
+        echo $output;
 	}
 ?>
 	

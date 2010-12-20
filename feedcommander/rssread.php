@@ -1,6 +1,6 @@
 <?php
-//make sure I update now
     require_once($_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/seo-automatic-seo-tools/feedcommander/config.php');
+
     // Utility to remove return characters from strings that might
     // pollute JavaScript commands. While we are at it, substitute 
     // valid single quotes as well and get rid of any escaped quote
@@ -37,7 +37,7 @@
     $lines = (isset($_GET["lines"]) ? $_GET["lines"] : 0);
     if ($lines == 0)
         $lines = 100;
-
+ 
  
     // indicator to show item description,  0 = no; 1=all; n>1 = characters to display
     // values of -1 indicate to displa item without the title as a link
@@ -122,15 +122,14 @@
     $content_style .= "text-decoration: " . (($c_s_underline == "y") ? "underline" : "none") . ";color: #" . $c_color . ";";
     $content_style .= "text-align: " . $c_align . ";";
    
-    $rss = @fetch_rss( $src );
+    $rss = @feedcommander_fetch_rss( $src );
 	if ($bt == "y") {
 		$blank_target = " ";
 	} else {
 		$blank_target = " target=\"_blank\"";
-	} 
+	}
     // begin javascript output string for channel info
-	$str = '<script type="text/javascript">';
-    $str .= "document.write('<div style=\"" . $box_style . "\">');\n";
+    $str = "document.write('<div style=\"" . $box_style . "\">');\n";
     if ($mq=='y') $str .= "document.write('<marquee style=\"" . "\" DIRECTION=\"" . $mq_di . "\" BEHAVIOR=SCROLL SCROLLAMOUNT=\"" . $mq_n . "\" SCROLLDELAY=\"" . $mq_dy . "\">');\n";
     
     if  (!$rss) {
@@ -142,10 +141,11 @@
                 $t_btag_marquee = "<marquee>";
                 $t_etag_marquee = "</marquee>";
             }
-     
+      
             $str .= "document.write('<h3 class=\"rss-title\" style=\"" . $div_title_style . "\">" . $t_btag_marquee . "<a".$blank_target."  class=\"rss-title\" style=\"" . $title_style . "\" href=\"" . trim($rss->channel['link']) . "\">" . addslashes(strip_returns($rss->channel['title'])) . "</a>" . $t_etag_marquee . "</h3>');\n";            
         }
         // begin item listing
+        $str .= "document.write('<p class=\"rss-items\">');\n";
         
         // Walk the items and process each one
         $all_items = array_slice($rss->items, 0, $lines);
@@ -180,7 +180,7 @@
 				 if ($my_title[strlen($my_title)-1] == '-') {
 					 $my_title = substr($my_title,0,-1).'?'; 
 				 } 
-				$my_title = str_replace('-t',"'t",$my_title);
+                $my_title = str_replace('-t',"'t",$my_title);
 				$my_title = str_replace('-s',"'s",$my_title);
 				$my_title = str_replace('- - '," - ",$my_title);
 
@@ -272,44 +272,39 @@
 			}
 
 			// strip html
-			if ($html != 'a') $my_blurb = strip_tags($my_blurb);
+			if ($html != 'y') $my_blurb = strip_tags($my_blurb);
 			
 			// trim descriptions
 			if ($desc > 1) {		
 				// display specified substring numbers of chars;
 				//   html is stripped to prevent cut off tags
-				$my_blurb = '<p>'.substr($my_blurb, 0, $desc) . '...</p>';
+				$my_blurb = substr($my_blurb, 0, $desc) . '...';
 			}
             
             if ($c_max_char != 0) {
                 $cnt_c = strlen($my_blurb);
-                $my_blurb = '<p>'.substr($my_blurb, 0, $c_max_char);
-                if ($c_max_char < $cnt_c) {
-                    $my_blurb .= "...</p>";
-				} else {
-					$my_blurb .= "</p>";
-				}
-            } 
-            if ($c_max_char == -1) {
-					$my_blurb = '';   
-			}
-
+                $my_blurb = substr($my_blurb, 0, $c_max_char);
+                if ($c_max_char < $cnt_c)
+                    $my_blurb .= "...";
+            }
+                
             if ($c_s_marquee == "y")
                 $my_blurb = "<marquee>" . $my_blurb . "</marquee>";
             
 			
-			$str.= "document.write('<p>" . addslashes(strip_returns($my_blurb, $br)) . "</p>');\n"; 
+			$str.= "document.write('" . $my_blurb . "');\n"; 
 			
 		}             
              
-            $str.= "document.write('$more_link');\n";	
+            $str.= "document.write('$more_link<br /></li>');\n";	
         }
 
 
+        $str .= "document.write('</ul>');\n";        
     }
     // javascript for linkback
     //if ($lb == "2") {
-		require_once('../../../../wp-config.php');
+		require_once($_SERVER['DOCUMENT_ROOT'].'/wp-config.php');
 		mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die(mysql_error('Database is unable to connect.'));
 		mysql_select_db(DB_NAME) or die(mysql_error('Database is unable to connect.'));
 		$table = $table_prefix.'options';
@@ -339,9 +334,9 @@
         $str .= "document.write('</div>');\n";
     }
     
-    if ($mq == 'y') $str .= "document.write('</marquee>');\n";
+    if ($mq) $str .= "document.write('</marquee>');\n";
     $str .= "document.write('</div>');\n";
-	$str .= '</script>';
+
     if ( $html == "y" ) {
         $str = preg_replace("/document.write\(\'/", "", $str);
         $str = preg_replace("/\'\)\;/", "", $str);
