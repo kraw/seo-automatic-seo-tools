@@ -116,13 +116,13 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <div id="about-plugins" class="postbox " >
 <h3><span>About</span></h3>
 <div class="inside">
-<a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/logo-2010.jpg" alt="SEO Automatic" width="262" height="166" /></a>
+<a href="http://www.seoautomatic.com/plugins/" target="_blank"><img src="<?php echo plugins_url(); ?>/seo-automatic-seo-tools/images/logo-2010.jpg" alt="SEO Automatic" width="262" height="166" /></a>
 <br />
 <ul>
 	<li style="margin-left: -4px;"><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="5701868">
-<input type="image" src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/donate.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" onclick="this.form.target='_blank';return true;">
+<input type="image" src="<?php echo plugins_url(); ?>/seo-automatic-seo-tools/images/donate.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" onclick="this.form.target='_blank';return true;">
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </li>
@@ -134,10 +134,10 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <h3><span>Resources</span></h3>
 <div class="inside">
 <ul>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/unique-tools/" target="_blank"> SEO Automatic Tools</a></li>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank"> White Label Options</a></li>
-	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-wp-core-tweaks/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/tip-of-the-week/" target="_blank"> Automation Tip of the Week</a></li>
+	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-seo-tools/images/favicon.ico" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
+	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-seo-tools/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/unique-tools/" target="_blank"> SEO Automatic Tools</a></li>
+	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-seo-tools/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank"> White Label Options</a></li>
+	<li><img src="<?php echo plugins_url(); ?>/seo-automatic-seo-tools/images/favicon.ico" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/tip-of-the-week/" target="_blank"> Automation Tip of the Week</a></li>
 </ul>
 </div></div>
 
