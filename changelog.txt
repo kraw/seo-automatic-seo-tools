@@ -1,0 +1,15 @@
+CHANGE LOG FOR SEO AUTOMATIC SEO TOOLS
+09/28/10:
+Wording edits.
+
+09/23/10:
+Change to landing page determinator for jQuery conflicts.
+Addition of SEO Review Lite
+Minor text/word editing.
+
+06/24/10:
+Added Landing Page Determinator
+
+02/10/2010:
+Added linkback settings.
+Updated main menu page.
