@@ -41,7 +41,9 @@ function sc_lpd(){
                 <table>
                     <tr>
                         <th>Keyword</th>
-                        <th>Url</th>
+                        <th>Best Choice</th>
+						<th>2nd Best</th>
+						<th>3rd Best</th>
                     </tr>
                 </table>
 				<form method="POST" action="<?php echo $sc_plugin_dir;?>export.php">

@@ -3,7 +3,7 @@
 Plugin Name: SEO Tools by SEO Automatic 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="admin.php?page=seo-automatic-options">SEO Automatic</a> > <a href="?page=seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 3.1.2
+Version: 3.1.3
 Author: cyber49
 Author URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 */
@@ -358,7 +358,7 @@ function seo_tools_admin() { // Add the menu
 	}
 	if ($menu_added) {
 	} else {
-		add_menu_page('SEO Automatic by Search Commander, Inc.', 'SEO Automatic', 'activate_plugins', 'seo-automatic-options', 'seo_tools_home_page','http://www.seoautomatic.com/favicon.ico');
+		add_menu_page('SEO Automatic by Search Commander, Inc.', 'SEO Automatic', 'activate_plugins', 'seo-automatic-options', 'seo_tools_home_page',plugins_url() . '/seo-automatic-seo-tools/images/favicon.ico');
 		add_submenu_page('seo-automatic-options', 'SEO Tools Admin', 'Admin', 'activate_plugins', 'seo-automatic-options', 'seo_tools_home_page');
 	}
 	add_submenu_page('seo-automatic-options', 'SEO Tools', 'SEO Tools', 'activate_plugins', dirname(__FILE__) . '/settings.php', 'seo_tools_settings_page');

@@ -1,4 +1,5 @@
 <?php
+define("NO_RESULTS", "No Results");
 $config = parse_ini_file("config.ini");
 $json = array();
 
@@ -27,15 +28,13 @@ else
     $results = unserialize(file_get_contents($cache));
 }
 
-if ($results)
-{
-    $json['page'] = $results[0]->unescapedUrl;
-}
-else
-{
-    $json['page'] = "";
-}
-$json['word'] = $_POST['word'];
+$urls = array();
+$urls[] = $results[0] ? $results[0]->unescapedUrl : NO_RESULTS;
+$urls[] = $results[1] ? $results[1]->unescapedUrl : NO_RESULTS;
+$urls[] = $results[2] ? $results[2]->unescapedUrl : NO_RESULTS;
 
+
+$json['urls'] = $urls;
+$json['word'] = $_POST['word'];
 
 die(json_encode($json));

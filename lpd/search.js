@@ -45,13 +45,20 @@ $(function () {
                 });
 
                 tr.append($("<td>").html(data.word));
-                tr.append($("<td>").html($("<a/>", {
-                    href: data.page
-                }).html(data.page)));
-
+				var _csv = "\"" + data.word + "\"";
+				for(var j=0; j<data.urls.length; j++)
+				{
+					var x = data.urls[j];
+					tr.append($("<td>").html($("<a/>", {
+						href: x
+					}).html(x)));
+					
+					_csv += "," + x;
+				}
+					
                 resultsTable.append(tr);
 
-                csv.append(data.word + ", " + data.page + "\n");
+                csv.append(_csv + "\n");
 
                 timer = setInterval(tick, 1000);
                 timeout = sleep;
