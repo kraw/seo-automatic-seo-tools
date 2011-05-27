@@ -1,4 +1,11 @@
 <?php
+
+$directaccess = substr($_SERVER['REQUEST_URI'], -38); 
+if ($directaccess == '/seo-automatic-seo-tools/index.php') { 
+	echo '<html><head></head><body><p>This page is not meant to be directly accessed.</p><p>To try out the SEO Automatic URL Checker, please visit <a href="http://www.seoautomatic.com/unique-tools/instant-seo-review" rel="nofollow">here</a>.</p></body></html>';
+	exit();
+}
+
 	if (!class_exists('WP_Query')){
 		require_once ('../../../wp-blog-header.php');
 		set_include_path(ABSPATH . PLUGINDIR . '/seo-automatic-seo-tools/');
@@ -71,54 +78,54 @@
 					$settings = get_option('autoseo_options');
 				$problems = array();
 				$this->good = array();
-				//if($settings['locale']['html_size']['enable']){if ($this->html_size < $settings['locale']['html_size']['max']) { $this->good[] = 'html_size'; } else { $problems[] = 'html_size'; }}
-				//if($settings['locale']['gzip']['enable']){if ($this->gzip) { $this->good[] = 'gzip'; } else { $problems[] = 'gzip'; $problems[]='compression_ratio';}}
-				//if($settings['locale']['xcache']['enable']){if ($this->xcache) { $this->good[] = 'xcache'; } else { $problems[] = 'xcache'; }}
-				//if($settings['locale']['keywords']['enable']){if (count($this->meta) > 0) { $this->good[] = 'meta'; } else { $problems[] = 'meta'; }}
+				if($settings['locale']['html_size']['enable']){if ($this->html_size < $settings['locale']['html_size']['max']) { $this->good[] = 'html_size'; } else { $problems[] = 'html_size'; }}
+				if($settings['locale']['gzip']['enable']){if ($this->gzip) { $this->good[] = 'gzip'; } else { $problems[] = 'gzip'; $problems[]='compression_ratio';}}
+				if($settings['locale']['xcache']['enable']){if ($this->xcache) { $this->good[] = 'xcache'; } else { $problems[] = 'xcache'; }}
+				if($settings['locale']['keywords']['enable']){if (count($this->meta) > 0) { $this->good[] = 'meta'; } else { $problems[] = 'meta'; }}
 				if($settings['locale']['h1_status']['enable']){if (count($this->h1) > 0) { $this->good[] = 'h1_status'; } else { $problems[] = 'h1_status'; }}
-				//if($settings['locale']['h2_status']['enable']){if (count($this->h2) > 0) { $this->good[] = 'h2_status'; } else { $problems[] = 'h2_status'; }}
-				//if($settings['locale']['robots_txt']['enable']){if ($this->robots_txt) { $this->good[] = 'robots_txt'; } else { $problems[] = 'robots_txt'; }}
-				//if($settings['locale']['sitemap_xml']['enable']){if ($this->sitemap_xml) { $this->good[] = 'sitemap_xml'; } else { $problems[] = 'sitemap_xml'; }}
-				//if($settings['locale']['canonical_url']['enable']){if (!$this->is_subdomain) if ($this->canonical_url) { $this->good[] = 'canonical_url'; } else { $problems[] = 'canonical_url'; }}
-				//if($settings['locale']['nested_tables']['enable']){if (!$this->nested_tables) { $this->good[] = 'nested_tables'; } else { $problems[] = 'nested_tables'; }}
-				//if($settings['locale']['image_dimensions']['enable']){if ($this->image_dimensions) { $this->good[] = 'image_dimensions'; } else { $problems[] = 'image_dimensions'; }}
-				//if($settings['locale']['expires_headers']['enable']){if ($this->expires_headers) { $this->good[] = 'expires_headers'; } else { $problems[] = 'expires_headers'; }}
-				//if($settings['locale']['inline_styles']['enable']){if (!$this->inline_styles) { $this->good[] = 'inline_styles'; } else { $problems[] = 'inline_styles'; }}
-				//if($settings['locale']['inline_script']['enable']){if (!$this->inline_script) { $this->good[] = 'inline_script'; } else { $problems[] = 'inline_script'; }}
-				//if($settings['locale']['favicon']['enable']){if ($this->favicon) { $this->good[] = 'favicon'; } else { $problems[] = 'favicon'; }}
-				//if($settings['locale']['favicon_linked']['enable']){if ($this->favicon_linked) { $this->good[] = 'favicon_linked'; } else { $problems[] = 'favicon_linked'; }}
+				if($settings['locale']['h2_status']['enable']){if (count($this->h2) > 0) { $this->good[] = 'h2_status'; } else { $problems[] = 'h2_status'; }}
+				if($settings['locale']['robots_txt']['enable']){if ($this->robots_txt) { $this->good[] = 'robots_txt'; } else { $problems[] = 'robots_txt'; }}
+				if($settings['locale']['sitemap_xml']['enable']){if ($this->sitemap_xml) { $this->good[] = 'sitemap_xml'; } else { $problems[] = 'sitemap_xml'; }}
+				if($settings['locale']['canonical_url']['enable']){if (!$this->is_subdomain) if ($this->canonical_url) { $this->good[] = 'canonical_url'; } else { $problems[] = 'canonical_url'; }}
+				if($settings['locale']['nested_tables']['enable']){if (!$this->nested_tables) { $this->good[] = 'nested_tables'; } else { $problems[] = 'nested_tables'; }}
+				if($settings['locale']['image_dimensions']['enable']){if ($this->image_dimensions) { $this->good[] = 'image_dimensions'; } else { $problems[] = 'image_dimensions'; }}
+				if($settings['locale']['expires_headers']['enable']){if ($this->expires_headers) { $this->good[] = 'expires_headers'; } else { $problems[] = 'expires_headers'; }}
+				if($settings['locale']['inline_styles']['enable']){if (!$this->inline_styles) { $this->good[] = 'inline_styles'; } else { $problems[] = 'inline_styles'; }}
+				if($settings['locale']['inline_script']['enable']){if (!$this->inline_script) { $this->good[] = 'inline_script'; } else { $problems[] = 'inline_script'; }}
+				if($settings['locale']['favicon']['enable']){if ($this->favicon) { $this->good[] = 'favicon'; } else { $problems[] = 'favicon'; }}
+				if($settings['locale']['favicon_linked']['enable']){if ($this->favicon_linked) { $this->good[] = 'favicon_linked'; } else { $problems[] = 'favicon_linked'; }}
 				if($settings['locale']['alt_attributes']['enable']){if ($this->alt_attributes) { $this->good[] = 'alt_attributes'; } else { $problems[] = 'alt_attributes'; }}
-				//if($settings['locale']['anchor_text']['enable']){if ($this->anchor_text) { $this->good[] = 'anchor_text'; } else { $problems[] = 'anchor_text'; }}
+				if($settings['locale']['anchor_text']['enable']){if ($this->anchor_text) { $this->good[] = 'anchor_text'; } else { $problems[] = 'anchor_text'; }}
 				
 				if($settings['locale']['title']['enable']){if ($this->title) {$this->good[] = 'title';} else {$problems[]= 'title';}}
 				if($settings['locale']['description']['enable']){if ($this->meta_description) {$this->good[] = 'description';} else { $problems[]= 'description';  }}
-				//if($settings['locale']['robots']['enable']){if ($this->meta_robots) { $this->good[] = 'robots'; } else { $problems[]= 'robots';  }}
+				if($settings['locale']['robots']['enable']){if ($this->meta_robots) { $this->good[] = 'robots'; } else { $problems[]= 'robots';  }}
 				if($settings['locale']['keywords']['enable']){if ($this->meta_keywords) { $this->good[] = 'keywords'; } else { $problems[]= 'keywords';  }}
 				
-//				foreach ($this->anchor_text as $link){
-//					if ($link['local']) {
-//						if($settings['locale']['internal_link']['enable']){
-//							$this->internal_link_count += 1;
-//							$this->internal_links[] = $link;
-//						}
-//					}
-//					else{ 
-//						if($settings['locale']['external_link']['enable']){
-//							$this->external_link_count +=1;
-//							$this->external_links[] = $link;
-//						}
-//						}
-//				}
-//				if($settings['locale']['internal_link']['enable']){
-//					if ($this->internal_link_count <= $settings['locale']['internal_link']['max']) {
-//						$this->good[] = 'internal_link';
-//					} else { $problems[] = 'internal_link';}
-//				}
-//				if($settings['locale']['external_link']['enable']){
-//					if ($this->external_link_count <= $settings['locale']['external_link']['max']) {
-//						$this->good[] = 'external_link';
-//					} else { $problems[] = 'external_link';}
-//				}
+				foreach ($this->anchor_text as $link){
+					if ($link['local']) {
+						if($settings['locale']['internal_link']['enable']){
+							$this->internal_link_count += 1;
+							$this->internal_links[] = $link;
+						}
+					}
+					else{ 
+						if($settings['locale']['external_link']['enable']){
+							$this->external_link_count +=1;
+							$this->external_links[] = $link;
+						}
+						}
+				}
+				if($settings['locale']['internal_link']['enable']){
+					if ($this->internal_link_count <= $settings['locale']['internal_link']['max']) {
+						$this->good[] = 'internal_link';
+					} else { $problems[] = 'internal_link';}
+				}
+				if($settings['locale']['external_link']['enable']){
+					if ($this->external_link_count <= $settings['locale']['external_link']['max']) {
+						$this->good[] = 'external_link';
+					} else { $problems[] = 'external_link';}
+				}
 				// Separate bad and ugly from $problems
 				foreach ($problems as $problem) {
 					if ($settings['locale'][$problem]['important']) {

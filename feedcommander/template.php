@@ -69,6 +69,8 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                 <strong>Number of item(s) to display.</strong> <br />
                 <input type="text" name="lines" size="10" value="<?php echo $lines; ?>" /> item(s)<br />
                 Enter the number of item(s) to be displayed (enter 0 to show all available)</p>
+
+<p><b><input type="checkbox" name="nostyle" id="nostyle" value="y" <?php if ($_GET["nostyle"] == "y") echo "checked";?> /><label for="nostyle">Use my own stylesheet.</label></b></p>
             <!--p>
                 <strong>Specify the RSS Feed.</strong> <br />
                 <input type="radio" name="rss" value="2" id="rss_2" <?php if ($rss == "2") echo "checked"; ?> /><label for="rss_2"> RSS 2.0 </label><input type="radio" name="rss" id="rss_1" value="1" <?php if ($rss == "1") echo "checked"; ?> /><label for="rss_1"> RSS 1.0</label>

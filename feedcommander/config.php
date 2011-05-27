@@ -8,7 +8,7 @@
     // Otherwise, provide a full valid file path to the directory
     // where magpie sites
 
-    define('MAGPIE_DIR',  $_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/seo-automatic-seo-tools/feedcommander/magpie/');
+    define('MAGPIE_DIR',  dirname(__FILE__).'/magpie/');
 
     // access magpie libraries
     require_once(MAGPIE_DIR . 'rss_fetch.inc');
@@ -62,5 +62,5 @@
             "left", "right", "center", "justify"
         );
       
-    require_once($_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/seo-automatic-seo-tools/feedcommander/setup.txt');
+    require_once(dirname(__FILE__).'/setup.txt');
 ?>

@@ -1,5 +1,5 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/seo-automatic-seo-tools/feedcommander/config.php');
+    require_once(dirname(__FILE__).'/config.php');
 
     // Utility to remove return characters from strings that might
     // pollute JavaScript commands. While we are at it, substitute 
@@ -14,7 +14,7 @@
     
     // trap for missing src param for the feed, use a dummy one so it gets displayed.
     if ( empty($src) or strpos($src, "http://") != 0 ) 
-        $src=  $_SERVER['DOCUMENT_ROOT'].'/wp-content/plugins/seo-automatic-seo-tools/feedcommander/nosource.php';
+        $src=  dirname(__FILE__).'/nosource.php';
     
     // default setting for no conversion of linebreaks
     $html = (isset($_GET["html"]) ? $_GET["html"] : "n");
@@ -94,18 +94,17 @@
     
     // Item Properties
     $i_max_char = ( isset($_GET["i_max_char"]) ? $_GET["i_max_char"] : 0);
-    $i_font = ( isset($_GET["i_font"]) ? $_GET["i_font"] : "Arial");
-    $i_s_bold = ( isset($_GET["i_s_bold"]) ? $_GET["i_s_bold"] : "y");
-    $i_s_italic = ( isset($_GET["i_s_italic"]) ? $_GET["i_s_italic"] : "n");
-    $i_s_underline = ( isset($_GET["i_s_underline"]) ? $_GET["i_s_underline"] : "y");
-    $i_s_marquee = ( isset($_GET["i_s_marquee"]) ? $_GET["i_s_marquee"] : "n"); 
-    $i_size = ( isset($_GET["i_size"]) ? $_GET["i_size"] : "12");
-    $i_align = ( isset($_GET["i_align"]) ? $_GET["i_align"] : "center");
-    $i_color = ( isset($_GET["i_color"]) ? $_GET["i_color"] : "4444aa");
+    $i_font = ( isset($_GET["i_font"]) ? $_GET["i_font"] : "");
+    $i_s_bold = ( isset($_GET["i_s_bold"]) ? $_GET["i_s_bold"] : "");
+    $i_s_italic = ( isset($_GET["i_s_italic"]) ? $_GET["i_s_italic"] : "");
+    $i_s_underline = ( isset($_GET["i_s_underline"]) ? $_GET["i_s_underline"] : "");
+    $i_s_marquee = ( isset($_GET["i_s_marquee"]) ? $_GET["i_s_marquee"] : ""); 
+    $i_size = ( isset($_GET["i_size"]) ? $_GET["i_size"] : "");
+    $i_align = ( isset($_GET["i_align"]) ? $_GET["i_align"] : "");
+    $i_color = ( isset($_GET["i_color"]) ? $_GET["i_color"] : "");
     
     $item_style = "font: " . (($i_s_bold == "y" ) ? "bold " : "" ) . (($i_s_italic == "y") ? "italic " : "") . $i_size . "px " . $i_font . ";";
     $item_style .= "text-decoration: " . (($i_s_underline == "y") ? "underline" : "none") . ";color: #" . $i_color . ";";
-
     // Content Properties
     $c_max_char = ( isset($_GET["c_max_char"]) ? $_GET["c_max_char"] : 0);
     $c_font = ( isset($_GET["c_font"]) ? $_GET["c_font"] : "Arial");
@@ -121,6 +120,12 @@
     $content_style = "font: " . (($c_s_bold == "y" ) ? "bold " : "" ) . (($c_s_italic == "y") ? "italic " : "") . $c_size . "px " . $c_font . ";";
     $content_style .= "text-decoration: " . (($c_s_underline == "y") ? "underline" : "none") . ";color: #" . $c_color . ";";
     $content_style .= "text-align: " . $c_align . ";";
+
+	if ($_GET["nostyle"] == "y") {
+		$item_style = "";
+		$div_title_style = "";
+		$content_style = "";
+	}
    
     $rss = @feedcommander_fetch_rss( $src );
 	if ($bt == "y") {
@@ -145,7 +150,7 @@
             $str .= "document.write('<h3 class=\"rss-title\" style=\"" . $div_title_style . "\">" . $t_btag_marquee . "<a".$blank_target."  class=\"rss-title\" style=\"" . $title_style . "\" href=\"" . trim($rss->channel['link']) . "\">" . addslashes(strip_returns($rss->channel['title'])) . "</a>" . $t_etag_marquee . "</h3>');\n";            
         }
         // begin item listing
-        $str .= "document.write('<p class=\"rss-items\">');\n";
+        //$str .= "document.write('<p class=\"rss-items\">');\n";
         
         // Walk the items and process each one
         $all_items = array_slice($rss->items, 0, $lines);
@@ -272,7 +277,7 @@
 			}
 
 			// strip html
-			if ($html != 'y') $my_blurb = strip_tags($my_blurb);
+			if ($html != 'a') $my_blurb = strip_tags($my_blurb);
 			
 			// trim descriptions
 			if ($desc > 1) {		
@@ -286,6 +291,7 @@
                 $my_blurb = substr($my_blurb, 0, $c_max_char);
                 if ($c_max_char < $cnt_c)
                     $my_blurb .= "...";
+				$my_blurb = '<p class="rss-content">'.$my_blurb."</p>";
             }
                 
             if ($c_s_marquee == "y")
@@ -296,11 +302,11 @@
 			
 		}             
              
-            $str.= "document.write('$more_link<br /></li>');\n";	
+            $str.= "document.write('$more_link');\n";	
         }
 
 
-        $str .= "document.write('</ul>');\n";        
+        $str .= "document.write('');\n";        
     }
     // javascript for linkback
     //if ($lb == "2") {
@@ -334,10 +340,10 @@
         $str .= "document.write('</div>');\n";
     }
     
-    if ($mq) $str .= "document.write('</marquee>');\n";
+    if ($t_s_marquee == "y") $str .= "document.write('</marquee>');\n";
     $str .= "document.write('</div>');\n";
 
-    if ( $html == "y" ) {
+    if ( $_GET['html'] != "n" ) {
         $str = preg_replace("/document.write\(\'/", "", $str);
         $str = preg_replace("/\'\)\;/", "", $str);
         $str = stripslashes($str);    
@@ -348,13 +354,23 @@
     	echo '<body bgcolor="#FFFFFF"><div id="content">';
     	echo '<h1>RSS Feed for ' . $rss->channel['title'] . '</h1><p>Note: Content for this RSS feed is provided as a text alternative to inline RSS feeds that may not display on all browsers.</p>';
 			*/
-		echo "$str"; //</div></body></html>";        
+		echo "$str"; //</div></body></html>";  
     } else {
         if (!empty($rss)) {
             header("Content-type: application/x-javascript");
         }
-        
-        echo $str;    
+
+$str = str_replace(chr(10), " ", $str); //remove carriage returns
+$str = str_replace(chr(13), " ", $str); //remove carriage returns 
+$str = str_replace('<br /> document.write', "document.write('<br />'); document.write", $str); //remove carriage returns 
+$str = str_replace('<br> document.write', "document.write('<br />'); document.write", $str); //remove carriage returns 
+$str = str_replace("'t","\'t",$str);
+$str = str_replace("'s","\'s",$str);
+$str = str_replace("'l","\'l",$str);
+$str = str_replace("'r","\'r",$str);
+$str = str_replace("'n","\'n",$str);
+
+echo $str;    
     }
 
 ?>

@@ -50,7 +50,8 @@
 		$url2 = str_replace("http://", "", isset($_GET['url']));
 
 	if ($url2 == '1') { $url2 = ''; }
-	
+	$seoautorun = plugins_url().'/seo-automatic-seo-tools/index.php';
+
 	$smarty->assign( 'app', $settings['app']); // Site Branding
 	$smarty->assign( 'locale', $settings['locale']);
 	$smarty->assign( 'this_theme', plugins_url() . '/seo-automatic-seo-tools/themes/' . $settings['app']['theme']);
@@ -65,6 +66,7 @@
 	$smarty->assign( 'url_path', $urlpath);
 	$smarty->assign( 'analyze_loader', 'analyze');
 	$smarty->assign( 'url2', $url2);
+	$smarty->assign( 'seoautorun', $seoautorun);
 	$smarty->assign( 'top_message', str_replace('[number-credits]', get_usermeta($user_ID,'paypalcredits'), $settings['misc']['top-message']));
 	// Disable functions
 	$smarty->assign('title_enable', $settings['locale']['title']['enable']);

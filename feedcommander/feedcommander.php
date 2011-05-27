@@ -111,7 +111,13 @@ function sc_feedcommander_free(){
     $option .= "&c_align=" . $c_align . "&c_color=";
     if ($rc_color == "s") $option .= $c_color;
     else $option .= $c_color_o;
+	$option .= '&nostyle='.$_GET["nostyle"];
 
+	if ($_GET["nostyle"] == "y") {
+		$item_style = "";
+		$div_title_style = "";
+		$content_style = "";
+	}
 
     if ($is_gen) {
             // URLs for a preview or a generated feed link

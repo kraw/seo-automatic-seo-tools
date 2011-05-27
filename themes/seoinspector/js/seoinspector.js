@@ -2,6 +2,7 @@ jQuery(document).ready(function(){
 hideLoading();
 	var url = jQuery("input.seo-url");
 	var ref = jQuery("input[name=ref]");
+	var seoautorun = jQuery("input[name=seoautorun]").val();
 	var url_form = jQuery("form[id=analyze]");
 	var seoautoresults = jQuery("#seoautoresults");
 	var throbber = jQuery('#throbber');
@@ -9,8 +10,7 @@ hideLoading();
 
 	url_form.submit(function(e){
 		showLoading();
-
-		jQuery.get(seourl, {"url": url.val(), "output": "html", "ref": ref.val()}, function(results){
+		jQuery.get(seoautorun, {"url": url.val(), "output": "html", "ref": ref.val()}, function(results){
 		  jQuery("#seoautoresults").append(results);
 		  hideLoading();
 		  jQuery("#seoautoresults").show();

@@ -9,6 +9,7 @@ display: none;
 #seoautoresults h4 {
 	padding-top: 1em;
 	font-weight: bold;
+	font-size: 18px;
 	}
 	
 #seoautoresults table {
@@ -20,16 +21,19 @@ display: none;
 	vertical-align: top;
 }
 
-#seoautoresults table tr.even {
-	background-color: #eeeeee;
+#seoautoresults table .even td {
+	background-color: #adadad;
+padding: 25px 8px;
 }
 
-#seoautoresults table tr.odd {
+#seoautoresults table tr.odd td {
 	background-color: #ffffff;
+padding: 25px 8px;
 }
 
 #seoautoresults table td.subject {
 	font-weight: bold;
+	font-size: 18px;
 	width: 35%;
 }
 	
@@ -44,7 +48,6 @@ display: none;
     padding-left: 0;
     list-style: none;
 	font-weight:normal;
-	font-size:1.2em;
 }
 	
 .message li {	
@@ -110,8 +113,8 @@ div.htmltooltip{
 	text-align: left;
 }
 
-.tooltip, .subject p{ font-size:9px; font-weight:normal; margin-top:6px; }
-p.tooltip{font-size:1.2em;font-style:italic;}
+.tooltip, .subject p{ font-weight:normal; margin-top:6px; }
+p.tooltip{font-style:italic;}
 
 
 

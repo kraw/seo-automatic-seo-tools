@@ -2,9 +2,10 @@
 <div class="content_centered">
 	<p>{$top_message}
 	<br><form id="{$analyze_loader}" method="get" action="">
-			<p><label for="url">Enter domain name only - http://</label>
+			<p><label for="url">Copy / Paste url from browser</label>
 			<input class="seo-url" id="url" name="url" size="30" type="text" value="{$url2}" />	
 			<input type="hidden" id="ref" name="ref" value="{$this_page}" />
+			<input type="hidden" id="seoautorun" name="seoautorun" value="{$seoautorun}" />
 			<input type="submit" value="{$button_text}" /></p>	
 		</form>
 		<br />
