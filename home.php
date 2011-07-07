@@ -96,7 +96,7 @@ endif;
     foreach ( $rss_items as $item ) : ?>
     <li>
         <a href='<?php echo $item->get_permalink(); ?>'
-        title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>'>
+        title='<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>' target='_blank'>
         <?php echo $item->get_title(); ?></a><br />
 		<?php echo $item->get_description(); ?>
     </li>
