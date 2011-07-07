@@ -457,7 +457,7 @@ if (get_bloginfo('version') < 2.8) {
 <div class="clear"></div>
 </div><!-- dashboard-widgets-wrap -->
 
-</div><!-- wrap -->
+</div></div><!-- wrap -->
 <?php
 }
 

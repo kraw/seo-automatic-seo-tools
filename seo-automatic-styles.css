@@ -22,7 +22,7 @@ display: none;
 }
 
 #seoautoresults table .even td {
-	background-color: #adadad;
+	background-color: #d4d4d4;
 padding: 25px 8px;
 }
 
@@ -33,7 +33,7 @@ padding: 25px 8px;
 
 #seoautoresults table td.subject {
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
 	width: 35%;
 }
 	
@@ -135,6 +135,9 @@ img.searchicon {
 	text-align:center;
 }
 
+#overview td { background: none!important; }
+
 #throbber {
 	text-align: center;
 	}
+#seoautoresults p { font-size: 16px; }

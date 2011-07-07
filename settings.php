@@ -117,4 +117,4 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <div class="clear"></div>
 </div><!-- dashboard-widgets-wrap -->
 
-</div><!-- wrap -->
+</div></div><!-- wrap -->
