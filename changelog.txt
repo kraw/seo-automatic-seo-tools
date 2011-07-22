@@ -1,5 +1,6 @@
 CHANGE LOG FOR SEO AUTOMATIC SEO TOOLS
 7/22/11:
+Edit to changelog to add missed svn notes
 Added sitemap_index.xml check to URL Review tool
 Advice text edits for initial install
 
