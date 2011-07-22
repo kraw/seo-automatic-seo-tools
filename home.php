@@ -33,7 +33,7 @@ if (get_bloginfo('version') < 2.8) {
 <div id='normal-sortables' class='meta-box-sortables'>
 
 <div id="main-admin-box" class="postbox">
-<h3><span><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.ico" alt="SEO Automatic" /> SEO Automatic <?php echo $pro; ?>Admin</span></h3>
+<h3><span><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.png" alt="SEO Automatic" /> SEO Automatic <?php echo $pro; ?>Admin</span></h3>
 <div class="inside">
 
 <p>SEO Automatic is more than one plugin, it's a proven system for getting the most out of WordPress, that was developed for Search Commander, Inc.</p>

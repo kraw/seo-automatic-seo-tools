@@ -3,7 +3,7 @@
 Plugin Name: SEO Tools URL Checker Add-on (activate separately)
 Plugin URI: http://www.seoautomatic.com/
 Description: This is the SECONDARY plugin required for the SEO Tools URL Checker to function properly. Change the tool definitions you’re your own priorities from SEO Automatic -> <a href="admin.php?page=seo-automatic-plugin">SEO Tools URL Checker admin</a>. To use, simply insert code <code>[seotool]</code> into any post or page.
-Version: 3.1.4
+Version: 3.1.5
 */
 
 /*
@@ -186,7 +186,7 @@ function autoseo_add_pages() { // Add the menu
 	}
 	if (isset($menu_added)) {
 	} else {
-    add_menu_page('SEO Automatic by Search Commander, Inc.', 'SEO Automatic', 'activate_plugins', 'seo-automatic-options', 'autoseo_home_page','http://www.seoautomatic.com/favicon.ico');
+    add_menu_page('SEO Automatic by Search Commander, Inc.', 'SEO Automatic', 'activate_plugins', 'seo-automatic-options', 'autoseo_home_page',plugins_url() . '/seo-automatic-seo-tools/images/favicon.png');
 	add_submenu_page('seo-automatic-options', 'Admin', 'Admin', 'activate_plugins', 'seo-automatic-options', 'autoseo_home_page');
 	}
 
@@ -267,7 +267,7 @@ if (get_bloginfo('version') < 2.8) {
 <div id='normal-sortables' class='meta-box-sortables'>
 
 <div id="main-admin-box" class="postbox">
-<h3><span><img src="<?php echo plugins_url();?>/seo-automatic-seo-tools/images/favicon.ico" alt="SEO Automatic" /> SEO Tool Add-on - URL Review (activate separately)</span></h3>
+<h3><span><img src="<?php echo plugins_url();?>/seo-automatic-seo-tools/images/favicon.png" alt="SEO Automatic" /> SEO Tool Add-on - URL Review (activate separately)</span></h3>
 <div class="inside">
 <?php
 	if (isset($_POST['seoupload'])){

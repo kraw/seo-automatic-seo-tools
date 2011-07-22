@@ -418,6 +418,15 @@ class SEOInspector {
 		$urls[6] = $location2 . '/sitemap.xml';
 		$urls[7] = $location2 . '/sitemap.gz';
 		$urls[8] = $location2 . '/sitemap.xml.gz';
+		$urls[9] = $location . '/sitemap_index.xml';
+		$urls[10] = $location . '/sitemap_index.gz';
+		$urls[11] = $location . '/sitemap_index.xml.gz';
+		$urls[12] = $location1 . '/sitemap_index.xml';
+		$urls[13] = $location1 . '/sitemap_index.gz';
+		$urls[14] = $location1 . '/sitemap_index.xml.gz';
+		$urls[15] = $location2 . '/sitemap_index.xml';
+		$urls[16] = $location2 . '/sitemap_index.gz';
+		$urls[17] = $location2 . '/sitemap_index.xml.gz';
 		
 		foreach ($urls as $candidate) {
 			$sitemap_xml = new EasyWebFetch;
