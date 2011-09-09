@@ -337,8 +337,7 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                         <tr>
                             <td width="66" align="left">Max&nbsp;Char&nbsp;</td>
                             <td width="215" align="left">
-                                <input type="text" name="c_max_char" size="7" value="<?php echo($c_max_char); ?>" />&nbsp;<strong>0</strong>&nbsp;means
-                                show&nbsp;all&nbsp;characters
+                                <input type="text" name="c_max_char" size="7" value="<?php echo($c_max_char); ?>" />&nbsp;<strong>0</strong> means show all characters, <strong>none</strong> means do not show any
                             </td>
                         </tr>
                         <tr>

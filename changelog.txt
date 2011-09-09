@@ -1,4 +1,7 @@
 CHANGE LOG FOR SEO AUTOMATIC SEO TOOLS
+9/9/11:
+Major fix for url review tool to prevent report failures.
+
 7/22/11:
 Added sitemap_index.xml check to URL Review tool
 Advice text edits for initial install

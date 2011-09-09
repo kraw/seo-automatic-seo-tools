@@ -10,6 +10,7 @@ hideLoading();
 
 	url_form.submit(function(e){
 		showLoading();
+		jQuery("#seoautoresults").empty();
 		jQuery.get(seoautorun, {"url": url.val(), "output": "html", "ref": ref.val()}, function(results){
 		  jQuery("#seoautoresults").append(results);
 		  hideLoading();

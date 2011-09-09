@@ -4,6 +4,35 @@ require_once('phpQuery/phpQuery/phpQuery.php');
 //require_once('extensions.php');
 require_once('gziptools.php');
 
+//error handler function
+$senderrs_heather = NULL;
+function seoautoError($errno, $errstr, $errfile, $errline)  {
+	global $senderrs_heather;
+	if (strpos($errstr, 'Undefined index') === false && strpos($errstr, 'GZipTools') === false) {
+		$senderrs_heather .= "<p><b>Error:</b> [$errno] $errstr<br />$errline - [$errfile]</p>";	
+	}
+}
+//set error handler
+set_error_handler("seoautoError");
+
+function send_heather_errs() {
+	global $url; global $senderrs_heather;
+	if ($senderrs_heather != NULL) {
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'To: Heather <heather@dzynit.net>, Scott <scott@gmail.com>' . "\r\n";
+		$headers .= 'From: Heather <heather@dzynit.net>' . "\r\n";
+		ob_start();
+		echo 'SEO Auto Tool errors - <br />';
+		echo 'URL used: '.$url.'<br />';
+		echo 'Hosting site: '.$_SERVER['SERVER_NAME'].'<br />';
+		echo 'Tool version: '.$_SERVER["PHP_SELF"].'<br />';
+		echo $senderrs_heather;
+		$msg = ob_get_clean();
+		mail('heather@dzynit.net', 'SEO Auto tool errors', $msg, $headers);	
+	}
+}
+
 /**
  * PageObject
  * @package SEOInspector
@@ -276,6 +305,7 @@ class SEOInspector {
 		// Overcomplicates var_dump, so we're removing these for dev
 		$this->html = null;
 		$this->headers = null;
+		//send_heather_errs();
 	}
 	
 	/**
@@ -319,7 +349,7 @@ class SEOInspector {
 	
 	public function xcache($headers = null) {
 		if (!$headers) $headers = $this->headers;
-		if ($headers['x_cache']) {
+		if (isset($headers['x_cache'])) {
 			return(true);
 		} else {
 			return(false);
@@ -561,10 +591,26 @@ class SEOInspector {
 	 * @param string $css The CSS code to search through
 	 * @return array Array of found urls (strings) or null.
 	 */
+
 	private function find_urls_in_css($css) {
-		preg_match_all('/url\((.*)\)/', $css, $matches);
+		$g = 0;	$newmatches = array(); $nullholder = array();
+		$nullholder = array("" => "empty");
+		preg_match_all('/url\((.*)\)/', $css, $matches);	
+		foreach ($matches[1] as $match) { 
+			$match = str_replace("'","",$match);
+			$match = str_replace('"',"",$match);
+			$match = str_replace(' ',"",$match);
+			$newmatches[1][$g] = $match;
+			$g++;
+		}
+
 		if ($matches) {
-			return($matches[1]);
+			//print_r(var_dump($newmatches[1]).'<br /><br />');
+			if (!isset($newmatches[1])) { 
+				return($nullholder);
+			} else {
+				return($newmatches[1]);
+			}
 		} else {
 			return(false);
 		}
@@ -577,7 +623,8 @@ class SEOInspector {
 	 *
 	 * @return array Array of found PageObjects or null.
 	 */		
-	private function page_objects() {
+	 
+	 private function page_objects() {
 		$css_files = array();
 		$image_files = array();
 		$script_files = array();
@@ -624,8 +671,8 @@ class SEOInspector {
 				}
 			}
 		}
-		
-		return( array_merge($css_files, $image_files, $script_files) );
+	
+	return( array_merge($css_files, $image_files, $script_files) );
 	}
 	
 	private function inline_script() {
@@ -682,7 +729,6 @@ class SEOInspector {
 		}
 		return($links);
 	}
-	
 }
 
 ?>

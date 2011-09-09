@@ -292,7 +292,10 @@
                 if ($c_max_char < $cnt_c)
                     $my_blurb .= "...";
 				$my_blurb = '<p class="rss-content">'.$my_blurb."</p>";
-            }
+            } 
+			if ($c_max_char == 'none') {
+				$my_blurb = '';
+			}
                 
             if ($c_s_marquee == "y")
                 $my_blurb = "<marquee>" . $my_blurb . "</marquee>";
@@ -315,25 +318,26 @@
 		mysql_select_db(DB_NAME) or die(mysql_error('Database is unable to connect.'));
 		$table = $table_prefix.'options';
 		$linkon = mysql_query("SELECT * FROM $table WHERE option_name = 'seo_tools_linkback_on'") 
-		or die(mysql_error());  
-		while($row = mysql_fetch_array($linkon)) {
-			$linkon = $row['option_value'];
-		} 
+		or die(mysql_error()); 
+//		while($row = mysql_fetch_array($linkon)) {
+//			$linkon = $row['option_value'];
+//		} 
 		$linkurl = mysql_query("SELECT * FROM $table WHERE option_name = 'seo_tools_linkback_url'") 
 		or die(mysql_error());  
-		while($row = mysql_fetch_array($linkurl)) {
-			$linkurl = $row['option_value'];
-		} 
+//		while($row = mysql_fetch_array($linkurl)) {
+//			$linkurl = $row['option_value'];
+//		} 
 		$linktxt = mysql_query("SELECT * FROM $table WHERE option_name = 'seo_tools_linkback_text'") 
 		or die(mysql_error());  
-		while($row = mysql_fetch_array($linktxt)) {
-			$linktxt = $row['option_value'];
+//		while($row = mysql_fetch_array($linktxt)) {
+//			$linktxt = $row['option_value'];
+//			echo '<br />continued... '.$linktxt.'<br />';
 			if ($linktxt != 'change this anchor text in the SEO Tools admin' && $linktxt != 'add RSS feeds to any website') {
 			} else {
 				$linktxt = 'change this anchor text in the SEO Tools admin';
-				$linkurl = get_bloginfo('wpurl').'/wp-admin/admin.php?page=seo-automatic-seo-tools/settings.php';
+				$linkurl = get_bloginfo('wpurl').'/wp-admin/admin.php?page=seo-automatic-seo-tools-pro/settings.php';
 			}
-		} 
+//		} 
 	if ($linkon == 'on') {
         $str .= "document.write('<div class=\"rss-link-back\" style=\"font: 10px Arial; text-align:right;\">');\n";
             $str .= "document.write('<a".$blank_target."  href=\"" . $linkurl . "\">" . $linktxt . "</a>&nbsp;');\n";
