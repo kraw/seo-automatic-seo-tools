@@ -3,7 +3,7 @@
 Plugin Name: SEO Tools URL Checker Add-on (activate separately)
 Plugin URI: http://www.seoautomatic.com/
 Description: This is the SECONDARY plugin required for the SEO Tools URL Checker to function properly. Change the tool definitions you’re your own priorities from SEO Automatic -> <a href="admin.php?page=seo-automatic-plugin">SEO Tools URL Checker admin</a>. To use, simply insert code <code>[seotool]</code> into any post or page.
-Version: 3.1.6
+Version: 3.1.7
 */
 
 /*

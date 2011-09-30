@@ -1,6 +1,6 @@
 <?php
 require_once('easywebfetch.php');
-require_once('phpQuery/phpQuery/phpQuery.php');
+require('phpQuery/phpQuery/phpQuery.php');
 //require_once('extensions.php');
 require_once('gziptools.php');
 
@@ -8,8 +8,9 @@ require_once('gziptools.php');
 $senderrs_heather = NULL;
 function seoautoError($errno, $errstr, $errfile, $errline)  {
 	global $senderrs_heather;
-	if (strpos($errstr, 'Undefined index') === false && strpos($errstr, 'GZipTools') === false) {
+	if (strpos($errstr, 'Undefined index') === false && strpos($errstr, 'GZipTools') === false && strpos($errstr, 'DOMDocument') === false) {
 		$senderrs_heather .= "<p><b>Error:</b> [$errno] $errstr<br />$errline - [$errfile]</p>";	
+		//print_r("<p><b>Error:</b> [$errno] $errstr<br />$errline - [$errfile]</p>");
 	}
 }
 //set error handler
@@ -234,7 +235,6 @@ class SEOInspector {
 	 */
 	function __construct($url, $user_agent = null) {
 		if ($user_agent) $this->user_agent = $user_agent;
-		
 		// Fetch the remote page
 		$website = new EasyWebFetch;
 		$website->setUserAgent($this->user_agent);
@@ -282,7 +282,7 @@ class SEOInspector {
 				break;
 			}
 		}
-		
+
 		// Check for inline scripts
 		self::inline_script();
 		
@@ -593,27 +593,27 @@ class SEOInspector {
 	 */
 
 	private function find_urls_in_css($css) {
-		$g = 0;	$newmatches = array(); $nullholder = array();
-		$nullholder = array("" => "empty");
-		preg_match_all('/url\((.*)\)/', $css, $matches);	
-		foreach ($matches[1] as $match) { 
-			$match = str_replace("'","",$match);
-			$match = str_replace('"',"",$match);
-			$match = str_replace(' ',"",$match);
-			$newmatches[1][$g] = $match;
-			$g++;
-		}
-
-		if ($matches) {
-			//print_r(var_dump($newmatches[1]).'<br /><br />');
-			if (!isset($newmatches[1])) { 
-				return($nullholder);
-			} else {
-				return($newmatches[1]);
-			}
-		} else {
-			return(false);
-		}
+//		$g = 0;	$newmatches = array(); $nullholder = array();
+//		$nullholder = array("" => "empty");
+//		preg_match_all('/url\((.*)\)/', $css, $matches);	
+//		foreach ($matches[1] as $match) { 
+//			$match = str_replace("'","",$match);
+//			$match = str_replace('"',"",$match);
+//			$match = str_replace(' ',"",$match);
+//			$newmatches[1][$g] = $match;
+//			$g++;
+//		}
+//
+//		if ($matches) {
+//			print_r(var_dump($newmatches[1]).'<br /><br />');
+//			if (!isset($newmatches[1])) { 
+//				return($nullholder);
+//			} else {
+//				return($newmatches[1]);
+//			}
+//		} else {
+//			return(false);
+//		}
 	}
 
 	/**
@@ -630,7 +630,7 @@ class SEOInspector {
 		$script_files = array();
 
 		phpQuery::newDocument($this->html);
-		// Find inline styles		
+		// Find inline styles	
 		foreach ( pq('style') as $stylesheet ) {
 			$this->inline_styles = true;
 			// Find CSS images
