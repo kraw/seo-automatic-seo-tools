@@ -313,7 +313,7 @@
     }
     // javascript for linkback
     //if ($lb == "2") {
-		require_once($_SERVER['DOCUMENT_ROOT'].'/wp-config.php');
+		require_once('../../../../wp-config.php');
 		mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die(mysql_error('Database is unable to connect.'));
 		mysql_select_db(DB_NAME) or die(mysql_error('Database is unable to connect.'));
 		$table = $table_prefix.'options';

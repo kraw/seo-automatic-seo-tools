@@ -3,8 +3,8 @@ Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 2.8.4
-Tested up to: 3.2.1
-Stable tag: 3.1.7
+Tested up to: 3.3.1
+Stable tag: 3.1.8
 
 These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
@@ -101,8 +101,57 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 2. SEO Tools Admin
 3. URL Checker Admin
 
+== Changelog ==
+3/13/12:
+Removed get_download.php file due to security vulnerability.
+Added backlink removal option.
+
+12/01/11:
+Changed rssread include path to wp-config to prevent sub-domain errors.
+
+11/30/11:
+Combined Url Checker tool add-on into SEO Tools.
+Added validation script.
+Edited readme.
+
+9/9/11:
+Major fix for url review tool to prevent report failures.
+
+7/22/11:
+Added sitemap_index.xml check to URL Review tool
+Advice text edits for initial install
+
+09/28/10:
+Wording edits.
+
+09/23/10:
+Change to landing page determinator for jQuery conflicts.
+Addition of SEO Review Lite
+Minor text/word editing.
+
+06/24/10:
+Added Landing Page Determinator
+
+02/10/2010:
+Added linkback settings.
+Updated main menu page.
+
 == Other Notes ==
 The tools in this plug-in are available for your own use, and for the use of your site visitors without alteration of the code. Please note that any editing of the tools or the plug-in may prevent future upgrades from working properly, so do so at your own risk.
+
+=Worth knowing:=
+
+When you want to make a decent looking "printable" report, you’ll need to know that it’s located here – 
+WPROOTINSTALL.com/ /wp-content/plugins/seo-automatic-seo-tools-pro/themes/seoinspector/templates/partials  -  The file is called print-results.tpl
+
+To change the initial message displaying above the output of facts -  
+WPROOTISTALL.com/wp-content/plugins/seo-automatic/themes/seoinspector/templates/partials/results.tpl
+
+To change the CSS for the tool results themselves:  
+WPROOTINSTALL.com/wp-content/plugins/seo-automatic/seo-automatic-styles.css
+
+To edit the admin screen that the user sees in their WP - 
+WPROOTINSTALL.com/wp-content/plugins/seo-automatic/seo-automatic.php
 
 [SEO Automatic Plugins](http://www.seoautomatic.com/plugins/ "Other plugins from SEO Automatic")
 [SEO Tools](http://www.seoautomatic.com/plugins/unique-seo-tools/ "SEO Tools Homepage") 

@@ -35,4 +35,3 @@
 		<div class="noscreen" id="seoautoresults" style="display: none;"></div>	<br /><br />
 		{/if}
 		</div>
-		<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/" target="_blank">This URL Review Lite was provided by SEO Automatic</a></small>

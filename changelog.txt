@@ -1,4 +1,17 @@
 CHANGE LOG FOR SEO AUTOMATIC SEO TOOLS
+
+3/13/12:
+Removed get_download.php file due to security vulnerability.
+Added backlink removal option.
+
+12/01/11:
+Changed rssread include path to wp-config to prevent sub-domain errors.
+
+11/30/11:
+Combined Url Checker tool add-on into SEO Tools.
+Added validation script.
+Edited readme.
+
 9/9/11:
 Major fix for url review tool to prevent report failures.
 

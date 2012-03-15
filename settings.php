@@ -43,13 +43,27 @@ would like the tool to display.&nbsp; </p>
 <p>Please note that Use of these tools does require your theme to have a minimum body width of 500 pixels to 
 display the results. </p>
 <p><a href="admin.php?page=seo-automatic-seo-tools/add-tool-pages.php">You can automatically add tool pages from here.</a></p>
+<?php
+if(!get_option('seo_tools_linkback_seotools')) {
+	update_option('seo_tools_linkback_seotools', 'on');
+}
+
+if ($_REQUEST['set_all_linkbacks'] == 'yes') {
+	update_option('seo_tools_linkback_seotools', $_REQUEST['linkback_seotools']);
+} 
+
+if (get_option('seo_tools_linkback_seotools') == 'on' ) {
+	$lon = ' checked';
+} 
+?>
+<form method="post" action=""><input type="hidden" name="set_all_linkbacks" value="yes" /><p><b>I agree to not be a selfish jerk and will leave a link at the bottom of the results crediting the SEO Automatic toolset. <input type="checkbox" value="on" name="linkback_seotools"<?php echo $lon;?>></b> <input type="submit" value="Save"></p>
+</form>
 <p><hr /></p>
 <p><b>URL Review Lite</b> <a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
 <p>Your visitors can get a quick look at some on-page organic search ranking factors, with a "Lite" review, showing YOUR definitions and advice.</p>
 <p>This tool covers 5 on-page search ranking factors instantly, then summarizes with a definition, commentary and specific solutions that you are free to edit from the "<a href="admin.php?page=seo-automatic-plugin">settings screen</a>"</p>
 <p>For the full version, allowing you to review 18+ ranking factors, see the <a href="http://www.seoautomatic.com/products-page/pricing/seo-review-plugin/" target="_blank">full URL review tool</a> or take a look at all of the "<a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank">white label options</a>."</p>
-<p><b><font color="#009900">To use, first go to your <a href="plugins.php">plugins page</a> and activate the plugin named: SEO Tool Add-on - URL Review Lite.</font></b></p>
-<p><b>Then, edit your <a href="admin.php?page=seo-automatic-plugin">settings page</a> with your own ranking factor definitions and explanations.</b></p>
+<p><b>To use, edit your <a href="admin.php?page=seo-automatic-plugin">settings page</a> with your own ranking factor definitions and explanations.</b></p>
 <p><b>To make the tool appear, use the shortcode<code>[seotool]</code>from the .html tab while editing any post or page.</b></p>
 <p><hr /></p>
 <p><b>Keyword List Multiplier</b> <a href="http://www.seoautomatic.com/unique-tools/keyword-multiplier/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>

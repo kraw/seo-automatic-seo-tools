@@ -1,3 +1,20 @@
+<script language="javascript"> 
+function cssoptions(id) { // This gets executed when the user clicks on the checkbox
+var obj = document.getElementById(id);
+if (obj.style.display=="none") { // if it is checked, make it visible, if not, hide it
+	obj.style.display = "inline";
+} else {
+	obj.style.display = "none";
+}
+}
+function allbs(id){
+var row = document.getElementById(id);
+if (row.style.display == '') row.style.display = 'none';
+else row.style.display = '';
+}
+//-->
+</script>
+
 <div align="center"><table width="400"><tr><td valign="top">
 <?php
     if (isset($preview)) {
@@ -70,12 +87,13 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                 <input type="text" name="lines" size="10" value="<?php echo $lines; ?>" /> item(s)<br />
                 Enter the number of item(s) to be displayed (enter 0 to show all available)</p>
 
-<p><b><input type="checkbox" name="nostyle" id="nostyle" value="y" <?php if ($_GET["nostyle"] == "y") echo "checked";?> /><label for="nostyle">Use my own stylesheet.</label></b></p>
+<p><b><input type="checkbox" name="nostyle" id="nostyle" value="y" <?php if ($_GET["nostyle"] == "y") echo "checked";?> onclick="javascript:cssoptions('hidecssone');allbs('b1');allbs('b2');allbs('b3');allbs('b4');allbs('b5');allbs('b6');allbs('b7');allbs('b8');allbs('b9');allbs('b10');allbs('b11');allbs('b12');allbs('b13');allbs('b14');allbs('b15');allbs('b16');allbs('b17');allbs('b18');allbs('b19');allbs('b20');allbs('b21');allbs('b22');allbs('b23');allbs('b24');allbs('b25');allbs('b26');" /><label for="nostyle">Use my own stylesheet.</label></b></p>
             <!--p>
                 <strong>Specify the RSS Feed.</strong> <br />
                 <input type="radio" name="rss" value="2" id="rss_2" <?php if ($rss == "2") echo "checked"; ?> /><label for="rss_2"> RSS 2.0 </label><input type="radio" name="rss" id="rss_1" value="1" <?php if ($rss == "1") echo "checked"; ?> /><label for="rss_1"> RSS 1.0</label>
             </p-->
-                        
+ 
+<div id="hidecssone">
                     <fieldset>
                     <legend><strong>Display Box&nbsp;Properties</strong></legend>
                   
@@ -199,18 +217,19 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                     
                 
             </p>
-                           
+ </div>
+ 
                     <fieldset>
                     <legend><strong>Blog Title&nbsp;Properties</strong></legend>
                     
-                    <table width="428" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" height="250">
+                    <table width="428" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
                         <tr><td colspan="2" height="60">
                         <p>
                 <strong>Display Blog Title ?</strong> (yes/no) Display information about the publisher of the feed (yes=show the title; no=do not display anything) <br />
                 <input type="radio" name="title" id="title_y" value="y" <?php if ($title == "y") echo "checked"; ?> /><label for="title_y"> yes </label><input type="radio" name="title" id="title_n" value="n" <?php if ($title == "n") echo "checked"; ?> /><label for="title_n"> no</label>
             			</p>
             			</td></tr>
-                        <tr>
+						<tr id="b1">
                             <td width="64" align="left" height="22">Font&nbsp;</td>
                             <td width="400" align="left" height="22">
                                 <select name="t_font">
@@ -220,7 +239,7 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 </select>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="b2">
                             <td rowspan="2" width="64" align="left" height="44">Color&nbsp;</td>
                             <td width="400" align="left" height="22">
                                 <input type="radio" name="rt_color" value="s" <?php if ($rt_color == "s") echo "checked"; ?> />
@@ -231,30 +250,30 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 </select>
                             </td>
                         </tr>                        
-                        <tr>
+                        <tr id="b3">
                             <td width="400" align="left" height="22">
                                 <input type="radio" name="rt_color" value="o" id="rt_color_o" <?php if ($rt_color == "o") echo "checked"; ?> />
                                 <label for="rt_color_o">Other&nbsp;</label><input type="text" name="t_color_o" size="7" value="<?php echo($t_color_o); ?>" />&nbsp;Exp.&nbsp;63aa7f
                             </td>
                         </tr>                        
-                        <tr>
+                        <tr id="b4">
                             <td rowspan="4" width="64" align="left" height="80">Style&nbsp;</td>
                             <td width="400" align="left" height="20"><input type="checkbox" name="t_s_bold" id="t_s_bold" value="y" <?php if ($t_s_bold == "y") echo "checked";?> /><label for="t_s_bold"><strong>Bold</strong></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b5">
                             <td width="400" align="left" height="20"><input type="checkbox" name="t_s_italic" id="t_s_italic" value="y" <?php if ($t_s_italic == "y") echo "checked";?> /><label for="t_s_italic"><i>Italic</i></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b6">
                             <td width="400" align="left" height="20"><input type="checkbox" name="t_s_underline" id="t_s_underline" value="y" <?php if ($t_s_underline == "y") echo "checked";?> /><label for="t_s_underline"><u>Underline</u></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b7">
                             <td width="400" align="left" height="20"><input type="checkbox" name="t_s_marquee" id="t_s_marquee" value="y" <?php if ($t_s_marquee == "y") echo "checked";?> /><label for="t_s_marquee">Marquee</label></td>
                         </tr>                        
-                        <tr>
+                        <tr id="b8">
                             <td width="64" align="left" height="22">Size&nbsp;</td>
                             <td width="400" align="left" height="22"><input type="text" name="t_size" size="4" value="<?php echo($t_size); ?>" />&nbsp;pt</td>
                         </tr>
-                        <tr>
+                        <tr id="b9">
                             <td width="64" align="left" height="22">Alignment&nbsp;</td>
                             <td width="400" align="left" height="22">
                                 <select name="t_align">
@@ -280,7 +299,7 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 show&nbsp;all&nbsp;character
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="b10">
                             <td width="66" align="left">Font&nbsp;</td>
                             <td width="243" align="left">
                                 <select name="i_font">
@@ -290,7 +309,7 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 </select>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="b11">
                             <td rowspan="2" width="66" align="left">Color&nbsp;</td>
                             <td width="243" align="left">
                                 <input type="radio" name="ri_color" value="s" <?php if ($ri_color == "s") echo "checked"; ?> />
@@ -301,27 +320,27 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 </select>
                             </td>
                         </tr>                        
-                        <tr>
+                        <tr id="b12">
                             <td width="243" align="left">
                                 <input type="radio" name="ri_color" value="o" id="ri_color_o" <?php if ($ri_color == "o") echo "checked"; ?> />
                                 <label for="ri_color_o">Other&nbsp;<br />
                                 </label><input type="text" name="i_color_o" size="7" value="<?php echo($i_color_o); ?>" />&nbsp;Exp.&nbsp;63aa7f
                             </td>
                         </tr>                        
-                        <tr>
+                        <tr id="b13">
                             <td rowspan="4" width="66" align="left">Style&nbsp;</td>
                             <td width="243" align="left"><input type="checkbox" name="i_s_bold" id="i_s_bold" value="y" <?php if ($i_s_bold == "y") echo "checked";?> /><label for="i_s_bold"><strong>Bold</strong></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b14">
                             <td width="243" align="left"><input type="checkbox" name="i_s_italic" id="i_s_italic" value="y" <?php if ($i_s_italic == "y") echo "checked";?> /><label for="i_s_italic"><i>Italic</i></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b15">
                             <td width="243" align="left"><input type="checkbox" name="i_s_underline" id="i_s_underline" value="y" <?php if ($i_s_underline == "y") echo "checked";?> /><label for="i_s_underline"><u>Underline</u></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b16">
                             <td width="243" align="left"><input type="checkbox" name="i_s_marquee" id="i_s_marquee" value="y" <?php if ($i_s_marquee == "y") echo "checked";?> /><label for="i_s_marquee">Marquee</label></td>
                         </tr>                                                
-                        <tr>
+                        <tr id="b17">
                             <td width="66" align="left">Size&nbsp;</td>
                             <td width="243" align="left"><input type="text" name="i_size" size="4" value="<?php echo($i_size); ?>" />&nbsp;pt</td>
                         </tr>
@@ -340,7 +359,7 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 <input type="text" name="c_max_char" size="7" value="<?php echo($c_max_char); ?>" />&nbsp;<strong>0</strong> means show all characters, <strong>none</strong> means do not show any
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="b18">
                             <td width="66" align="left">Font&nbsp;</td>
                             <td width="215" align="left">
                                 <select name="c_font">
@@ -350,7 +369,7 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 </select>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="b19">
                             <td rowspan="2" width="66" align="left">Color&nbsp;</td>
                             <td width="215" align="left">
                                 <input type="radio" name="rc_color" value="s" <?php if ($rc_color == "s") echo "checked"; ?> />
@@ -361,30 +380,30 @@ Then copy and paste the code below into the pages in the area the feed is to dis
                                 </select>
                             </td>
                         </tr>                        
-                        <tr>
+                        <tr id="b20">
                             <td width="215" align="left">
                                 <input type="radio" name="rc_color" value="o" id="rc_color_o" <?php if ($rc_color == "o") echo "checked"; ?> />
                                 <label for="rc_color_o">Other&nbsp;</label><input type="text" name="c_color_o" size="7" value="<?php echo($c_color_o); ?>" />&nbsp;Exp.&nbsp;63aa7f
                             </td>
                         </tr>                        
-                        <tr>
+                        <tr id="b21">
                             <td rowspan="4" width="66" align="left">Style&nbsp;</td>
                             <td width="215" align="left"><input type="checkbox" name="c_s_bold" id="c_s_bold" value="y" <?php if ($c_s_bold == "y") echo "checked";?> /><label for="c_s_bold"><strong>Bold</strong></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b22">
                             <td width="215" align="left"><input type="checkbox" name="c_s_italic" id="c_s_italic" value="y" <?php if ($c_s_italic == "y") echo "checked";?> /><label for="c_s_italic"><i>Italic</i></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b23">
                             <td width="215" align="left"><input type="checkbox" name="c_s_underline" id="c_s_underline" value="y" <?php if ($c_s_underline == "y") echo "checked";?> /><label for="c_s_underline"><u>Underline</u></label></td>
                         </tr>
-                        <tr>
+                        <tr id="b24">
                             <td width="215" align="left"><input type="checkbox" name="c_s_marquee" id="c_s_marquee" value="y" <?php if ($c_s_marquee == "y") echo "checked";?> /><label for="c_s_marquee">Marquee</label></td>
                         </tr>                                                
-                        <tr>
+                        <tr id="b25">
                             <td width="66" align="left">Size&nbsp;</td>
                             <td width="215" align="left"><input type="text" name="c_size" size="4" value="<?php echo($c_size); ?>" />&nbsp;pt</td>
                         </tr>
-                        <tr>
+                        <tr id="b26">
                             <td width="66" align="left">Alignment&nbsp;</td>
                             <td width="215" align="left">
                                 <select name="c_align">
