@@ -91,6 +91,10 @@ Any tool can appear on any page you like. After activation of the plug-in, simpl
 
 Not in the fre version of the plugin, no, but there will soon be a branded white label option available.
 
+= Error occuring on auto upgrade. =
+
+When upgrading from 3.1.7 or lower to 3.1.8 or higher, if you receive an error starting with "Warning(fopen)….." this does not mean the upgrade failed or there is a problem. A change has been made in the plugin so the add-on seo review tool does not have to be activated separately. On some sites, a warning is shown only during the update process. No failure or "breaking" is happening when this error shows, the plugin has updated correctly to run more efficiently. 
+
 = Where do I go for support, or what if I have a problem? =
 
 Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">support forum</a>.
