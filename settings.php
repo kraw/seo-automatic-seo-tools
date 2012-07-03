@@ -45,7 +45,7 @@ display the results. </p>
 <p><a href="admin.php?page=seo-automatic-seo-tools/add-tool-pages.php">You can automatically add tool pages from here.</a></p>
 <?php
 if(!get_option('seo_tools_linkback_seotools')) {
-	update_option('seo_tools_linkback_seotools', 'on');
+	update_option('seo_tools_linkback_seotools', 'off');
 }
 
 if ($_REQUEST['set_all_linkbacks'] == 'yes') {
