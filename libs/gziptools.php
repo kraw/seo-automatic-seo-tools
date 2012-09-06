@@ -20,7 +20,6 @@ class GZipTools {
 			unlink("/tmp/$filename");
 			return( $gzip_filesize );
 		} else {
-			throw new Exception("Failed to write to /tmp - gzipped size cannot be calculated");
 			return(false);
 		}
 	}

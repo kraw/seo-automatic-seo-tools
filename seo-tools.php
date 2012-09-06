@@ -3,7 +3,7 @@
 Plugin Name: SEO Tools by SEO Automatic 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="admin.php?page=seo-automatic-options">SEO Automatic</a> > <a href="admin.php?page=seo-automatic-seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 3.1.9
+Version: 3.1.10
 Author: cyber49
 Author URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 */
@@ -700,14 +700,18 @@ if (get_bloginfo('version') < 2.8) {
 			<input type="hidden" name="app[theme]" value="seoinspector" />
 	<h3>Instructions:</h3>
 	
-<p>Define how you'd like to refer to the good and bad results in the boxes below, as Correct or Acceptable etc.</p>
-<p>Individual item definitions go in the far left box, the positive result in the center, and the negative comments on the right.</p>
-	<p>Define an item as higher priority by checking the box to the right of the negative comment, which should shade that box red.</p>
-	<p>To display the tool, simply place <code>[seotool]</code> within the body of any page or post from the admin / edit screen, USING THE .HTML TAB.</p>
-	<p>Results appear by default on the same page where you've placed the <code>[seotool]</code>.<p/> 
-
-<p>Please note that a very few domains, well under 2%, will fail without explanation and say "Enter a valid URL".</p>
-<p>Usually, this is the result of some sort of redirect on the customers url, and you need to copy / paste out of the address bar, but occasionally, some failures simply cannot be explained - sort of like MS Windows ;) <p/>
+<p>You need to edit and personalize your "advice" below, and you can also uncheck each ranking factor if you'd like the report to be shorter.</p>
+<p>Individual factor definitions go in the far left box, "positive feedback" result in the center, and negative items are on the the right.&nbsp;</p>
+<p>Note that the boxes DO accept .html code.</p>
+<p>You may define an area as a "higher priority" item by checking the box to the right of the negative comment section, which will shade those boxes red for your quick identification.</p>
+<p>Also, for a few of the factors, such as page size or outbound links, use the small box to the right of each one for editing those variables to a size or quantity that YOU deem to be too large.</p>
+<p>To display the tool for the end user, simply place [seotool] within the body of any page or post from the admin / edit screen, USING THE .HTML TAB.</p>
+<p>The tool appears on any page where you've placed the [seotool] shortcode, and that's where the results will display.</p>
+<p>Please note that sometimes, some URLs (should be under 2%) will simply fail without explanation. We're sorry, but that's the way it is.&nbsp;</p>
+<p>Sometimes this is the result of some sort of redirect on the url, which is resolved after a copy / paste out of the address bar.&nbsp;</p>
+<p>Other times, different web hosts have their security cranked up, and will block our scanning too for YOUR protection.&nbsp;</p>
+<p>Finally, Some failures simply cannot be explained in certain situations - sort of like MS Windows. When that happens, you can usually (and inexplicably) run the report from a second installation on another domain / host of your own.  Go figure.</p>
+<p>If you do need help, please feel free to contact Scott Hendison via Twitter @shendison, create a support post at SEO Automatic, or phone 877-241-4453.</p>
 
 <br />
 
