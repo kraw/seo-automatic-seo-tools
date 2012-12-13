@@ -48,7 +48,7 @@ if ($_REQUEST['url_review_pro'] == "ON") {
 	'post_type' => 'page',
 	'post_author' => 1,
 	'post_title' => 'URL Checker',
-	'post_content' => '[seotool]');
+	'post_content' => '[urlchecker]');
 	if(wp_insert_post($info)) { echo '<p style="color: #347C17"><b>URL Checker page created.</b></p>'; } else { echo '<p style="color: #800517"><b>URL Checker page could not be created. You will have to add it through Pages > Add New.</b></p>'; }
 }
 if ($_REQUEST['keyword_list_multiplier'] == "ON") {
@@ -66,7 +66,7 @@ if ($_REQUEST['bulk_url_checker'] == "ON") {
 	'post_type' => 'page',
 	'post_author' => 1,
 	'post_title' => 'Bulk URL Checker',
-	'post_content' => '[urlchecker]');
+	'post_content' => '[bulkurlchecker]');
 	if(wp_insert_post($info)) { echo '<p style="color: #347C17"><b>Bulk URL Checker page created.</b></p>'; } else { echo '<p style="color: #800517"><b>Bulk URL Checker page could not be created. You will have to add it through Pages > Add New.</b></p>'; }
 }
 if ($_REQUEST['link_variance'] == "ON") {

@@ -1,5 +1,5 @@
 <h2>Summary for {$url}</h2>
-<p><a href="{$print_url}" target="_blank" title="Print this report.">Printer Friendly Version</a></p>
+
 <table id="overview">
 	<tbody>
 		<tr class="even" style="font-size:14px;font-weight:bold;">
@@ -142,6 +142,5 @@
 </div></td>
 </table>
 {/if}
-
 
 {$bottom_message}

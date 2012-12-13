@@ -85,7 +85,6 @@ if ($directaccess == '/seo-automatic-seo-tools/index.php') {
 				if($settings['locale']['h1_status']['enable']){if (count($this->h1) > 0) { $this->good[] = 'h1_status'; } else { $problems[] = 'h1_status'; }}
 				if($settings['locale']['h2_status']['enable']){if (count($this->h2) > 0) { $this->good[] = 'h2_status'; } else { $problems[] = 'h2_status'; }}
 				if($settings['locale']['robots_txt']['enable']){if ($this->robots_txt) { $this->good[] = 'robots_txt'; } else { $problems[] = 'robots_txt'; }}
-				if($settings['locale']['sitemap_xml']['enable']){if ($this->sitemap_xml) { $this->good[] = 'sitemap_xml'; } else { $problems[] = 'sitemap_xml'; }}
 				if($settings['locale']['canonical_url']['enable']){if (!$this->is_subdomain) if ($this->canonical_url) { $this->good[] = 'canonical_url'; } else { $problems[] = 'canonical_url'; }}
 				if($settings['locale']['nested_tables']['enable']){if (!$this->nested_tables) { $this->good[] = 'nested_tables'; } else { $problems[] = 'nested_tables'; }}
 				if($settings['locale']['image_dimensions']['enable']){if ($this->image_dimensions) { $this->good[] = 'image_dimensions'; } else { $problems[] = 'image_dimensions'; }}

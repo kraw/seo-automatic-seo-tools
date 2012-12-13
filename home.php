@@ -61,9 +61,9 @@ if (function_exists('seo_tools_admin')) {
 if (function_exists('seo_tools_admin_pro')) {
 	echo "<p><a href=\"?page=seo-automatic-seo-tools/settings.php\">SEO Tools Pro</a></p>";
 }
-if (function_exists('autoseo_add_pages')){
-	echo "<p><a href=\"?page=seo-automatic-plugin\">SEO Tools URL Review add-on</a></p>";
-}
+//if (function_exists('autoseo_add_pages')){
+//	echo "<p><a href=\"?page=seo-automatic-plugin\">SEO Tools URL Review add-on</a></p>";
+//}
 if (function_exists('autoseo_add_pages_pro')){
 	echo "<p><a href=\"?page=seo-automatic-plugin\">SEO Tools Pro - URL Checker add-on</a></p>";
 }

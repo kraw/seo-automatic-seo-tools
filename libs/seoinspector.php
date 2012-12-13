@@ -137,7 +137,7 @@ class SEOInspector {
    * @var array All <h2> tags collected from the page as an array of DOMElement objects
    */	
 	public $h2;
-	
+
   /**
    * @var bool True if the page contains nested <table> elements
    */
@@ -152,12 +152,7 @@ class SEOInspector {
    * @var bool True if a robots.txt file is found
    */
 	public $robots_txt;
-	
-  /**
-   * @var mixed The URL of the sitemap_xml if one is found. (or false)
-   */
-	public $sitemap_xml;
-	
+
 	/**
 	 * @var bool True if the same page exists with the www subdomain as without.
 	 */
@@ -260,10 +255,7 @@ class SEOInspector {
 		
 		// Check for a robots.txt file
 		$this->robots_txt = self::robots_txt();
-		
-		// Check for a sitemap_xml XML file
-		$this->sitemap_xml = self::sitemap_xml();
-		
+				
 		// Check for URL canonicalization
 		// Don't bother if the domain being checked is a subdomain other than www
 		if ( !$this->is_subdomain ) $this->canonical_url = self::canonical_url();
@@ -291,7 +283,7 @@ class SEOInspector {
 		
 		// Get a list of anchor text
 		$this->anchor_text = self::anchor_text();
-		
+
 		$this->compression_ratio = (int) GZipTools::compression_ratio($this->html);
 		if (!$this->gzip) $this->predictive_gzip = GZipTools::compression_filesize($this->html);
 		
@@ -457,7 +449,7 @@ class SEOInspector {
 		$urls[15] = $location2 . '/sitemap_index.xml';
 		$urls[16] = $location2 . '/sitemap_index.gz';
 		$urls[17] = $location2 . '/sitemap_index.xml.gz';
-		
+
 		foreach ($urls as $candidate) {
 			$sitemap_xml = new EasyWebFetch;
 			$sitemap_xml->get( $candidate );

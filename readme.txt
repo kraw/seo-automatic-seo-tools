@@ -2,9 +2,9 @@
 Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
-Requires at least: 2.8.4
-Tested up to: 3.4.1
-Stable tag: 3.1.10
+Requires at least: 3.1
+Tested up to: 3.5
+Stable tag: 3.5
 
 These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
@@ -17,7 +17,7 @@ Tools included are:
 
 = 1. URL Checker =
 Allow your users to instantly run URL reviews for five common search ranking factors. Title Tag, Description Tag, Keyword Tag, H1 Tag and ALT Tag.  Show whether they exist or not, and provide your own input and feedback, edited in the WordPress admin.
-= To use, add the shortcode: [seotool] =
+= To use, add the shortcode: [urlchecker] =
 
 = &nbsp; =
 = &nbsp; =
@@ -35,7 +35,7 @@ There is an additional option (not to be used with Adwords) that will keep any s
 
 = 3. Bulk URL checker =
 Allow your site visitors to check the server response of just one or a large batch of URL's to see which ones might be redirected or which ones might come up 404 not found, and then make that list available for download. The longer the list of URL's, the longer the tool will take to run.
-= To use, add the shortcode: [urlchecker] =
+= To use, add the shortcode: [bulkurlchecker] =
 
 = &nbsp; =
 = &nbsp; =
@@ -57,14 +57,6 @@ Allow your site visitors to format any valid RSS feed to display as they wish. T
 = &nbsp; =
 = &nbsp; =
 
-
-= 6. Landing Page Determinator =
-Allow your site visitors to search for which page on their site ranks highest organically.
-= To use, add the shortcode: [lpd-tool] =
-
-
-
-
 == Installation ==
 
 1. Unzip the download
@@ -72,28 +64,32 @@ Allow your site visitors to search for which page on their site ranks highest or
 3. Activate the plugin through your 'Plugins' menu
 4. View the short codes listed in the SEO Automatic > SEO Tools menu to add the tools to pages or posts.
 
-Installtion for the URL Checker:
-1. Activate 'SEO Tool Add-on - URL Review Lite' from your 'Plugins' menu
-2. CHMOD the /wp-content/plugins/seo-automatic-seo-tools/writable folder to 766.
-3. Edit your settings on the SEO Automatic > URL checker admin page
+Installation for the URL Checker:
+
+1. Edit your settings on the SEO Automatic > URL Checker admin page
+2. If the URL checker fails: CHMOD the /wp-content/plugins/seo-automatic-seo-tools/writable folder to 766.
 
 == Frequently Asked Questions ==
 
 = What version of Wordpress is required? =
 
-The minimum requirement is 2.8.4 and use with any prior versions are not supported.
+The minimum requirement is 3.1 and use with any prior versions are not supported.
+
+= What is this all about, anyway? =
+
+Write your own advice and tips in your WordPress admin, then provide your visitors with an instant "on-page" SEO analysis of the top five on page ranking factors. Also included are four other niche tools, explained in detail with videos.   
+
+= This is amazing! I wish I could get a white label tool like this for more than just five ranking factors.
+
+You can! Editing and offering nearly 20 ranking factors can be done with the Pro version at <a href="http://www.seoautomatic.com/pricing-plans/" target="_blank">SEO Automatic</a>.
 
 = How do I get the SEO tools to display on my site? =
 
-Any tool can appear on any page you like. After activation of the plug-in, simply look up the shortcode on the SEO Tools admin screen. Then paste the corresponding shortcode into any page or post, using the HTML tab from the edit screen, and the tool will display. 
+Any tool can appear on any page you like. After activation of the plug-in, simply look up the shortcode on the SEO Tools admin screen. Then paste the corresponding shortcode into any page or post, and the tool will display. 
 
-= Can I remove any links or references to SEO Automatic from the WordPress Admin? =
+= Note:  =
 
-Not in the fre version of the plugin, no, but there will soon be a branded white label option available.
-
-= Error occuring on auto upgrade. =
-
-When upgrading from 3.1.7 or lower to 3.1.8 or higher, if you receive an error starting with "Warning(fopen)….." this does not mean the upgrade failed or there is a problem. A change has been made in the plugin so the add-on seo review tool does not have to be activated separately. On some sites, a warning is shown only during the update process. No failure or "breaking" is happening when this error shows, the plugin has updated correctly to run more efficiently. 
+In late 2012, we changed the Bulk URL Checker shortcode to [bulkurlchecker], and the original [urlchecker] now shows the URL Checker. The original shortcode for the URL Checker [seotool] will continue to work, but it's recommended that you also edit to use [urlchecker] instead.
 
 = Where do I go for support, or what if I have a problem? =
 
@@ -106,61 +102,91 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
-9/6/12:
-New default advice settings for url checker.
-Admin wording changes for url checker.
-New fix for servers without gzip capability.
 
-3/13/12:
-Removed get_download.php file due to security vulnerability.
-Added backlink removal option.
+= 3.5 =
 
-12/01/11:
-Changed rssread include path to wp-config to prevent sub-domain errors.
+* Edited changelog to version number layout instead of date-based.
+* Separated url checker code for easier editing.
+* Edited wording on settings page.
+* Shortcode changes: [urlchecker] for Bulk URL Checker, changed to [bulkurlchecker], URL Review Tool changed to URL Checker using shortcode [urlchecker]. Current users with shortcode [seotool] will continue to work, but recommend editing that shortcode to the new [urlchecker] for future functionality.
+* Updated readme with new shortcodes and an FAQ on the Bulk URL Checker.
+* Removed LPD Tool.
+* Major version jump to correspond with the latest Wordpress version for easier version control on our end and to reference large changes in the plugin.
 
-11/30/11:
-Combined Url Checker tool add-on into SEO Tools.
-Added validation script.
-Edited readme.
+= 3.1.10 =
 
-9/9/11:
-Major fix for url review tool to prevent report failures.
+* New default advice settings for url checker.
+* Admin wording changes for url checker.
+* New fix for servers without gzip capability.
 
-7/22/11:
-Added sitemap_index.xml check to URL Review tool
-Advice text edits for initial install
+= 3.1.9 =
 
-09/28/10:
-Wording edits.
+* Default set to off for backlink.
 
-09/23/10:
-Change to landing page determinator for jQuery conflicts.
-Addition of SEO Review Lite
-Minor text/word editing.
+= 3.1.8 =
 
-06/24/10:
-Added Landing Page Determinator
+* Removed get_download.php file due to security vulnerability.
+* Added backlink removal option.
 
-02/10/2010:
-Added linkback settings.
-Updated main menu page.
+= 3.1.7 =
+
+* Major fix for url review tool to prevent report failures.
+
+= 3.1.6 =
+
+* Additional url checker report fixes
+
+= 3.1.5 =
+
+* Changed rssread include path to wp-config to prevent sub-domain errors.
+
+= 3.1.4 =
+
+* Combined Url Checker tool add-on into SEO Tools.
+* Added validation script.
+* Edited readme.
+
+= 3.1.3 =
+
+* Major fix for url review tool to prevent report failures.
+
+= 3.1.2 =
+
+* Added sitemap_index.xml check to URL Review tool
+* Advice text edits for initial install
+
+= 3.1.1 =
+
+* Wording edits.
+
+= 3.1.1 =
+
+* Change to landing page determinator for jQuery conflicts.
+* Addition of SEO Review Lite
+* Minor text/word editing.
+
+= 3.1 =
+
+* Added Landing Page Determinator
+
+= 2.0 =
+
+* Added linkback settings.
+* Updated main menu page.
 
 == Other Notes ==
 The tools in this plug-in are available for your own use, and for the use of your site visitors without alteration of the code. Please note that any editing of the tools or the plug-in may prevent future upgrades from working properly, so do so at your own risk.
 
 =Worth knowing:=
 
-When you want to make a decent looking "printable" report, you’ll need to know that it’s located here – 
-WPROOTINSTALL.com/ /wp-content/plugins/seo-automatic-seo-tools-pro/themes/seoinspector/templates/partials  -  The file is called print-results.tpl
-
 To change the initial message displaying above the output of facts -  
-WPROOTISTALL.com/wp-content/plugins/seo-automatic/themes/seoinspector/templates/partials/results.tpl
+/wp-content/plugins/seo-automatic/themes/seoinspector/templates/partials/results.tpl
 
 To change the CSS for the tool results themselves:  
-WPROOTINSTALL.com/wp-content/plugins/seo-automatic/seo-automatic-styles.css
+/wp-content/plugins/seo-automatic/seo-automatic-styles.css
 
 To edit the admin screen that the user sees in their WP - 
-WPROOTINSTALL.com/wp-content/plugins/seo-automatic/seo-automatic.php
+/wp-content/plugins/seo-automatic/seo-automatic.php
 
 [SEO Automatic Plugins](http://www.seoautomatic.com/plugins/ "Other plugins from SEO Automatic")
 [SEO Tools](http://www.seoautomatic.com/plugins/unique-seo-tools/ "SEO Tools Homepage") 

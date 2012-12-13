@@ -140,6 +140,5 @@
 </div></td>
 </table>
 {/if}
-
 	{$bottom_message}
 </div>

@@ -78,7 +78,6 @@
 	$smarty->assign('expires_headers_enable', $settings['locale']['expires_headers']['enable']);
 	$smarty->assign('robots_enable', $settings['locale']['robots']['enable']);
 	$smarty->assign('robots_txt_enable', $settings['locale']['robots_txt']['enable']);
-	$smarty->assign('sitemap_xml_enable', $settings['locale']['sitemap_xml']['enable']);
 	$smarty->assign('canonical_url_enable', $settings['locale']['canonical_url']['enable']);
 	$smarty->assign('nested_tables_enable', $settings['locale']['nested_tables']['enable']);
 	$smarty->assign('inline_styles_enable', $settings['locale']['inline_styles']['enable']);
