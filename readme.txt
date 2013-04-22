@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 3.1
 Tested up to: 3.5
-Stable tag: 3.5
+Stable tag: 3.5.1
 
 These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
@@ -102,6 +102,10 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
+
+= 3.5.1 =
+
+* Changed function name throughout plugin for compatibilty with WP to Twitter plugin.
 
 = 3.5 =
 

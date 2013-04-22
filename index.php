@@ -155,7 +155,7 @@ if ($directaccess == '/seo-automatic-seo-tools/index.php') {
 		if (empty($_REQUEST['url']))
 			die('That doesn\'t look like a valid url.');
 		
-		if ( is_valid_url($url) ) {
+		if ( seoauto_is_valid_url($url) ) {
 			$settings = get_option('autoseo_options');
 			if(function_exists('aw_paypal_user_has_credits') && $settings['paypal']['require']){ 
 				if(!aw_paypal_user_has_credits()){

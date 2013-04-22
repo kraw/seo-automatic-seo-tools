@@ -43,7 +43,7 @@ class PageObject {
 	public $file;
 	
 	function __construct($url, $validate = false, $headers_only = false) {
-		if ( !is_valid_url($url) && $validate == true) {
+		if ( !seoauto_is_valid_url($url) && $validate == true) {
 			throw new Exception('Invalid URL: ' . $url);
 		} else {
 			if($headers_only != true) {

@@ -25,10 +25,10 @@
 <h3><span>Resources</span></h3>
 <div class="inside">
 <ul>
-	<li><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.png" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
 	<li><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.png" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/unique-tools/" target="_blank"> SEO Automatic Tools</a></li>
 	<li><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.png" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/pricing-plans/white-label/" target="_blank"> White Label Options</a></li>
 	<li><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.png" height="16" width="16" alt="SEO Automatic" /> <a href="http://www.seoautomatic.com/tip-of-the-week/" target="_blank"> Automation Tip of the Week</a></li>
+	<li><img src="<?php echo plugins_url().$thisplugin; ?>/images/favicon.png" height="16" width="16" alt="" /> <a href="http://www.seoautomatic.ourtoolbar.com/" target="_blank">Search Commander, Inc. Toolbar</a></li>
 </ul>
 </div></div>
 
