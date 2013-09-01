@@ -67,6 +67,9 @@ if (function_exists('seo_tools_admin_pro')) {
 if (function_exists('autoseo_add_pages_pro')){
 	echo "<p><a href=\"?page=seo-automatic-plugin\">SEO Tools Pro - URL Checker add-on</a></p>";
 }
+if (function_exists('ourprofiles_init')){
+	echo "<p><a href=\"?page=ourprofiles_config\">Our Profiles</a></p>";
+}
 ?>
 
 <p>Clicking on the installed module links above will take you to the respective settings page. To return here, go to the Admin menu option under SEO Automatic.</p>
