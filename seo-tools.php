@@ -3,7 +3,7 @@
 Plugin Name: SEO Tools by SEO Automatic 
 Plugin URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 Description: Unique SEO tools for your visitors or employees to perform repetetive tasks efficiently, or to otherwise save time.  Created by Search Commander, Inc. for free distribution. <br />See <a href="admin.php?page=seo-automatic-options">SEO Automatic</a> > <a href="admin.php?page=seo-automatic-seo-tools/settings.php">SEO Tools</a> for options. 
-Version: 3.5.2.1
+Version: 3.5.2.2
 Author: cyber49
 Author URI: http://www.seoautomatic.com/plugins/unique-seo-tools/
 */
@@ -60,7 +60,7 @@ function sc_add_404_page(){
 	if(get_option('seo_tools_linkback_seotools') == 'on') {
 		$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/bulk-url-checker/" target="_blank">This Bulk Url Checker was provied by SEO Automatic</a></small>';
 	} else {
-		$seottools = 'This Bulk Url Checker was provied by SEO Automatic';
+		$seotools = '';
 	}
 	return sc_get_404_page().$seotools;
 }
@@ -84,7 +84,7 @@ function sc_add_feedcommander(){
 	if(get_option('seo_tools_linkback_seotools') == 'on') {
 		$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/feedcommander/" target="_blank">This Feed Commander was provided by SEO Automatic</a></small>';
 	} else {
-		$seotools = 'This Feed Commander was provided by SEO Automatic';
+		$seotools = '';
 	}
 	return sc_get_feedcommander().$seotools;
 }
@@ -170,7 +170,7 @@ function sc_add_linkvariance(){
 	if(get_option('seo_tools_linkback_seotools') == 'on') {
 		$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/link-variance/" target="_blank">This Link Variance Tool was provided by SEO Automatic</a></small>';
 	} else {
-		$seotools = 'This Link Variance Tool was provided by SEO Automatic';
+		$seotools = '';
 	}
 	return sc_get_linkvariance().$seotools;
 }
@@ -335,7 +335,7 @@ function sc_add_keywordmarriage(){
 	if(get_option('seo_tools_linkback_seotools') == 'on') {
 		$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/free-tools/keyword-multiplier/" target="_blank">This Keyword Multiplier was provided by SEO Automatic</a></small>';
 	} else {
-		$seotools = 'This Keyword Multiplier was provided by SEO Automatic';
+		$seotools = '';
 	}
 	return sc_get_keywordmarriage().$seotools;
 }
@@ -359,7 +359,7 @@ add_shortcode('keyword-marriage', 'sc_add_keywordmarriage');
 //	if(get_option('seo_tools_linkback_seotools') == 'on') {
 //		$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/unique-tools/best-page-determinator/" target="_blank">This Landing Page Determinator was provided by SEO Automatic</a></small>';
 //	} else {
-//		$seotools = 'This Landing Page Determinator was provided by SEO Automatic';
+//		$seotools = '';
 //	}
 //	return sc_get_lpd().$seotools;
 //}
@@ -528,7 +528,7 @@ function autoseo_shortcode() {
 	if(get_option('seo_tools_linkback_seotools') == 'on') {
 		$seotools = '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><small><a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/" target="_blank">This URL Review Lite was provided by SEO Automatic</a></small>';
 	} else {
-		$seotools = 'This URL Review Lite was provided by SEO Automatic';
+		$seotools = '';
 	}
 	if(isset($options['paypal']['require']))
 		return seoautomatic_paypal_run($options).$seotools;

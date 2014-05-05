@@ -48,16 +48,22 @@ if(!get_option('seo_tools_linkback_seotools')) {
 	update_option('seo_tools_linkback_seotools', 'off');
 }
 
-if ($_REQUEST['set_all_linkbacks'] == 'yes') {
+if ($_REQUEST['linkback_seotools'] == 'on') {
+	update_option('seo_tools_linkback_seotools', $_REQUEST['linkback_seotools']);
+} 
+
+if ($_REQUEST['linkback_seotools'] == 'off') {
 	update_option('seo_tools_linkback_seotools', $_REQUEST['linkback_seotools']);
 } 
 
 if (get_option('seo_tools_linkback_seotools') == 'on' ) {
 	$lon = ' checked';
-} 
+} else {
+	$lon2 = ' checked';
+}
 ?>
 
-<form method="post" action=""><input type="hidden" name="set_all_linkbacks" value="yes" /><p><b>In compliance with the rules set by WordPress, any backlink to us is turned off, but you can show you care by checking this box... <br /><input type="checkbox" value="on" name="linkback_seotools"<?php echo $lon;?>></b> <input type="submit" value="Save"><br /><b>No? Okay, then how about a measly Facebook like?</b></p>
+<form method="post" action=""><input type="hidden" name="set_all_linkbacks" value="yes" /><p><b>In compliance with the rules set by WordPress, any backlink to us is turned off, but you can show you care by selecting On below... <br /><input type="radio" value="on" name="linkback_seotools"<?php echo $lon;?>> On <input type="radio" value="off" name="linkback_seotools"<?php echo $lon2;?>> Off</b> <input type="submit" value="Save"><br /><b>No? Okay, then how about a measly Facebook like?</b></p>
 </form>
 <p><hr /></p>
 <p><b>URL Checker</b> <a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
