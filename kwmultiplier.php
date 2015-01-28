@@ -115,17 +115,32 @@ function sc_keywordmarriage(){
 <script type="text/javascript">
 function uncheck(){
 	var x=document.forms.keywordmarriage
-	x['phrase'].checked=false
-	x['phrase'].disabled= !x['phrase'].disabled
-	var y=document.forms.keywordmarriage
-	x['exact'].checked=false
-	x['exact'].disabled= !x['exact'].disabled
-	var z=document.forms.keywordmarriage
-	x['modbroad'].checked=false
-	x['modbroad'].disabled= !x['modbroad'].disabled
-	var w=document.forms.keywordmarriage
-	x['negative'].checked=false
-	x['negative'].disabled= !x['negative'].disabled
+    var linkschecked = x['links'].checked;
+    var hasBeenDisabled = x['phrase'].disabled || x['exact'].disabled || x['modbroad'].disabled;
+    if (linkschecked) {
+        if (!hasBeenDisabled) {
+            x['phrase'].checked=x['exact'].checked=x['modbroad'].checked=x['negative'].checked=false;
+            x['phrase'].disabled=x['exact'].disabled=x['modbroad'].disabled=x['negative'].disabled=true;
+        }
+        else {
+            x['negative'].checked=false;
+            x['negative'].disabled=true;
+        }
+    }
+    else {
+        x['phrase'].disabled=x['exact'].disabled=x['modbroad'].disabled=x['negative'].disabled=false;
+    }
+}
+function uncheckthree(){
+	var x=document.forms.keywordmarriage
+    var negChecked = x['negative'].checked;
+    if (negChecked){
+        x['phrase'].checked=x['exact'].checked=x['modbroad'].checked=false;
+        x['phrase'].disabled=x['exact'].disabled=x['modbroad'].disabled=true;        
+    }
+    else {
+        x['phrase'].disabled=x['exact'].disabled=x['modbroad'].disabled=false;
+    }
 }
 </script>
 	<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" name="keywordmarriage">
@@ -172,7 +187,7 @@ function uncheck(){
 		  <tr>
 			<td colspan="4" align="left" valign="top" height="221" width="457"><br />
 <b>If you're using this for Google Ad Words, you likely want to leave these boxes checked.</b><br />
-			<input type="checkbox" name="phrase" value="ON" checked> Add Phrase Match &nbsp;<input type="checkbox" name="exact" value="ON" checked> Add Exact Match &nbsp;<input type="checkbox" name="modbroad" value="ON" checked> Add Broad Match Modifier &nbsp;<input type="checkbox" name="negative" value="ON" checked> Add Negative Match <br /><br />
+			<input type="checkbox" name="phrase" value="ON" /> Add Phrase Match &nbsp;<input type="checkbox" name="exact" value="ON" /> Add Exact Match &nbsp;<input type="checkbox" name="modbroad" value="ON" onclick="uncheckthree()" /> Add Broad Match Modifier &nbsp;<input type="checkbox" name="negative" value="ON" /> Add Negative Match <br /><br />
 			<input type="checkbox" name="links" value="ON" onclick="uncheck()"> &nbsp;Checking this box CHANGES this tool, so it will generate EXACTLY what you input. Do do not use with the Adwords match types. 
 <br /><br />
 This option KEEPS any spaces or other characters you may add, like pipes, spaces etc. and will NOT add its own spaces for use in Adwords. 

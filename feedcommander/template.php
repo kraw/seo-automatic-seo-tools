@@ -21,7 +21,7 @@ else row.style.display = '';
    	$previewurl=get_bloginfo('url')."/wp-content/plugins/seo-automatic-seo-tools/feedcommander/rssread.php?src=". /*urlencode*/($src) . ($option) . "&html=y"; 
         $ch = curl_init($previewurl);
         curl_setopt($ch, CURLOPT_HEADER, 0); 
-        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POST, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         $output = curl_exec($ch);      
         curl_close($ch); 

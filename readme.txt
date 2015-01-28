@@ -3,8 +3,8 @@ Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 3.1
-Tested up to: 3.9.1
-Stable tag: 3.5.2.3
+Tested up to: 4.1
+Stable tag: 3.5.2.4
 
 These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
@@ -102,6 +102,12 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
+
+= 3.5.2.4 =
+
+* Edit to cURL code in feedcommander
+* Unchecked match boxes in keyword multiplier by default.
+* Added force disable on matches when negative is selected.
 
 = 3.5.2.3 =
 
