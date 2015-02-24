@@ -90,6 +90,18 @@ if ($_REQUEST['rss_feed_commander'] == "ON") {
  if ($_REQUEST['url_review_lite'] == "ON" || $_REQUEST['keyword_list_multiplier'] == "ON" || $_REQUEST['bulk_url_checker'] == "ON" || $_REQUEST['link_variance'] == "ON" || $_REQUEST['rss_feed_commander'] == "ON") {
 	echo '<br /><hr /><br />';
  }
+if ($_REQUEST['schema_tool'] == "ON") {
+	$info = array(
+	'post_status' => 'publish', 
+	'post_type' => 'page',
+	'post_author' => 1,
+	'post_title' => 'Structured Data Tool for Local Businesses',
+	'post_content' => '[schematool]');
+	if(wp_insert_post($info)) { echo '<p style="color: #347C17"><b>Structured Data Tool for Local Businesses page created.</b></p>'; } else { echo '<p style="color: #800517"><b>Structured Data Tool for Local Businesses page could not be created. You will have to add it through Pages > Add New.</b></p>'; }
+}
+ if ($_REQUEST['url_review_lite'] == "ON" || $_REQUEST['keyword_list_multiplier'] == "ON" || $_REQUEST['bulk_url_checker'] == "ON" || $_REQUEST['link_variance'] == "ON" || $_REQUEST['rss_feed_commander'] == "ON" || $_REQUEST['schema_tool'] == "ON") {
+	echo '<br /><hr /><br />';
+ } 
 ?>
 <p><b>You can use the shortcodes anywhere, but if you want to instantly create pages that already include the shortcode you can do that here.</b></p>
 <p><b>Select which pages you would like to create:</b></p>
@@ -99,6 +111,7 @@ if ($_REQUEST['rss_feed_commander'] == "ON") {
 <p><input type="checkbox" name="bulk_url_checker" value="ON"  /> Bulk URL Checker</p>
 <p><input type="checkbox" name="link_variance" value="ON"  /> Link Variance</p>
 <p><input type="checkbox" name="rss_feed_commander" value="ON"  /> RSS Feed Commander</p>
+<p><input type="checkbox" name="schema_tool" value="ON"  /> Structured Data Tool for Local Businesses</p>
 <input type="submit" value="Create Pages" />
 </form>
 </div></div>

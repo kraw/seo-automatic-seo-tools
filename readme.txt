@@ -3,15 +3,15 @@ Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 3.1
-Tested up to: 4.1
-Stable tag: 3.5.2.4
+Tested up to: 4.1.1
+Stable tag: 3.6
 
-These are five of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
+These are six of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
 == Description ==
 <a href="http://www.seoautomatic.com/plugins/unique-seo-tools/" target="_blank">Plugin Page</a> | <a href="http://www.seoautomatic.com/forum/seo-tools-plugin-support/" target="_blank">Plugin Support</a>
 
-This plug-in combines several unique SEO tools developed for Search Commander, Inc. and enables their use from inside WordPress. Paste the corresponding short code in place on the page or post where you wish to offer the tool. 
+This plug-in combines several unique SEO tools developed for Search Commander, Inc. and enables their use from inside WordPress. Paste the corresponding short code in place on the page or post where you wish to offer the tool.
 
 Tools included are:
 
@@ -53,6 +53,14 @@ Allow your site visitors to put a list of URLs on one side, then a list of varie
 = 5. RSS Feed Commander =
 Allow your site visitors to format any valid RSS feed to display as they wish. They may then use the generated code on any website they like. 
 = To use, add the shortcode: [feedcommander] =
+
+= &nbsp; =
+= &nbsp; =
+
+
+= 6. Structured Data Tool for Local Businesses =
+Easily generate structured data in a way Google understands, and add it to a website without affecting how it looks. This tool uses the JSON-LD type of structured data, which Google officially endorsed as a markup format in January, of 2015.
+= To use, add the shortcode: [schematool] =
 
 = &nbsp; =
 = &nbsp; =
@@ -102,6 +110,10 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
+
+= 3.6 =
+
+* To coincide with Google's new structured data tester, we've added a new tool that uses JSON-LD to easily pass the test.
 
 = 3.5.2.4 =
 
