@@ -4,9 +4,9 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 3.1
 Tested up to: 4.1.1
-Stable tag: 3.6
+Stable tag: 3.7
 
-These are six of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
+These are seven of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
 == Description ==
 <a href="http://www.seoautomatic.com/plugins/unique-seo-tools/" target="_blank">Plugin Page</a> | <a href="http://www.seoautomatic.com/forum/seo-tools-plugin-support/" target="_blank">Plugin Support</a>
@@ -65,6 +65,15 @@ Easily generate structured data in a way Google understands, and add it to a web
 = &nbsp; =
 = &nbsp; =
 
+
+= 7. File Merger =
+Time spent copy and pasting can be tedious, and this tool lets your users merge multiple .csv files or .txt files into one downloadable file.   They'll just select multiple files to upload, then choose the output filetype, and press the button.
+= To use, add the shortcode: [csvmerger] =
+
+= &nbsp; =
+= &nbsp; =
+
+
 == Installation ==
 
 1. Unzip the download
@@ -95,6 +104,10 @@ You can! Editing and offering nearly 20 ranking factors can be done with the Pro
 
 Any tool can appear on any page you like. After activation of the plug-in, simply look up the shortcode on the SEO Tools admin screen. Then paste the corresponding shortcode into any page or post, and the tool will display. 
 
+= File Merger adding extra code to result file. =
+
+This is typically caused by incorrect folder permission on uploads/csv-merger. The file merger creates that folder with 755 permissions, but on some servers you may need to manually set that. If the problem persists, you can try setting to 777. 
+
 = Note:  =
 
 In late 2012, we changed the Bulk URL Checker shortcode to [bulkurlchecker], and the original [urlchecker] now shows the URL Checker. The original shortcode for the URL Checker [seotool] will continue to work, but it's recommended that you also edit to use [urlchecker] instead.
@@ -110,6 +123,10 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
+
+= 3.7 =
+
+* Addition of CSV File Merger.
 
 = 3.6 =
 

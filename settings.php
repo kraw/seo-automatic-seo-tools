@@ -37,7 +37,7 @@ if (get_bloginfo('version') < 2.8) {
 <div id="main-admin-box" class="postbox">
 <h3><span><img src="<?php echo plugins_url();?>/seo-automatic-seo-tools/images/favicon.ico" alt="SEO Automatic" /> SEO Tools</span></h3>
 <div class="inside">
-<p>This plugin has six tools you can run for your clients, and the main URL Checker has its own admin page <a href="admin.php?page=seo-automatic-plugin">here</a>.</p>
+<p>This plugin has seven tools you can run for your clients, and the main URL Checker has its own admin page <a href="admin.php?page=seo-automatic-plugin">here</a>.</p>
 <p>The URL checker provided with this plugin lets you edit five on page SEO factors, and a pro version that covers neary 20 is available from <a href="http://www.seoautomatic.com/pricing-plans/" target="_blank">SEO Automatic</a>.</p>
 <p><strong>Short Codes:</strong><br />Just add the short code which corresponds to the tools below into the .html tab of any post or page where you would like the tool to display.</p>
 <p>Please note that Use of these tools does require your theme to have a minimum body width of 500 pixels to display the results.</p>
@@ -128,6 +128,11 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <p><b>Structured Data Tool for Local Businesses</b> <a href="http://www.seoautomatic.com/unique-tools/structured-data-builder/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
 <p>Easily generate structured data in a way Google understands, and add it to a website without affecting how it looks. This tool uses the JSON-LD type of structured data, which Google officially endorsed as a markup format in January, of 2015.</p>
 <p><b>To use, add the shortcode: [schematool]</b></p>
+
+<p><hr /></p>
+<p><b>File Merger</b> <a href="http://www.seoautomatic.com/unique-tools/file-merger/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
+<p>Time spent copy and pasting can be tedious, and this tool lets your users merge multiple .csv files or .txt files into one downloadable file.   They'll just select multiple files to upload, then choose the output filetype, and press the button.</p>
+<p><b>To use, add the shortcode: [csvmerger]</b></p>
 
 </div></div>
 
