@@ -126,7 +126,7 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 
 = 3.7 =
 
-* Addition of CSV File Merger.
+* Addition of CSV File Merger tool.
 
 = 3.6 =
 
