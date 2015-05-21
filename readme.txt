@@ -3,10 +3,10 @@ Contributors: cyber49
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FC2PBBP6BY8QC
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 3.1
-Tested up to: 4.1.1
-Stable tag: 3.7
+Tested up to: 4.2.2
+Stable tag: 3.7.1
 
-These are seven of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
+These are eight of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
 == Description ==
 <a href="http://www.seoautomatic.com/plugins/unique-seo-tools/" target="_blank">Plugin Page</a> | <a href="http://www.seoautomatic.com/forum/seo-tools-plugin-support/" target="_blank">Plugin Support</a>
@@ -74,6 +74,13 @@ Time spent copy and pasting can be tedious, and this tool lets your users merge 
 = &nbsp; =
 
 
+= 8. Analytics Spam Filter Tool =
+This tool lets you apply Google Analytics spambot referral filters directly to any linked Google Analytics account.
+= To use, add the shortcode: [spamtool] =
+
+= &nbsp; =
+= &nbsp; =
+
 == Installation ==
 
 1. Unzip the download
@@ -123,6 +130,10 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
+
+= =
+
+* Addition of beta version of Google Analytics Spam Filter Tool.
 
 = 3.7 =
 

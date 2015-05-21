@@ -102,6 +102,24 @@ if ($_REQUEST['schema_tool'] == "ON") {
  if ($_REQUEST['url_review_lite'] == "ON" || $_REQUEST['keyword_list_multiplier'] == "ON" || $_REQUEST['bulk_url_checker'] == "ON" || $_REQUEST['link_variance'] == "ON" || $_REQUEST['rss_feed_commander'] == "ON" || $_REQUEST['schema_tool'] == "ON") {
 	echo '<br /><hr /><br />';
  } 
+if ($_REQUEST['csv_tool'] == "ON") {
+	$info = array(
+	'post_status' => 'publish', 
+	'post_type' => 'page',
+	'post_author' => 1,
+	'post_title' => 'CSV File Merger',
+	'post_content' => '[csvmerger]');
+	if(wp_insert_post($info)) { echo '<p style="color: #347C17"><b>CSV Merger page created.</b></p>'; } else { echo '<p style="color: #800517"><b>CSV Merger page could not be created. You will have to add it through Pages > Add New.</b></p>'; }
+}
+if ($_REQUEST['spam_tool'] == "ON") {
+	$info = array(
+	'post_status' => 'publish', 
+	'post_type' => 'page',
+	'post_author' => 1,
+	'post_title' => 'Analytics Spam Filter Tool',
+	'post_content' => '[spamtool]');
+	if(wp_insert_post($info)) { echo '<p style="color: #347C17"><b>Analytics Spam Filter Tool page created.</b></p>'; } else { echo '<p style="color: #800517"><b>Analytics Spam Filter Tool page could not be created. You will have to add it through Pages > Add New.</b></p>'; }
+}
 ?>
 <p><b>You can use the shortcodes anywhere, but if you want to instantly create pages that already include the shortcode you can do that here.</b></p>
 <p><b>Select which pages you would like to create:</b></p>
@@ -112,6 +130,8 @@ if ($_REQUEST['schema_tool'] == "ON") {
 <p><input type="checkbox" name="link_variance" value="ON"  /> Link Variance</p>
 <p><input type="checkbox" name="rss_feed_commander" value="ON"  /> RSS Feed Commander</p>
 <p><input type="checkbox" name="schema_tool" value="ON"  /> Structured Data Tool for Local Businesses</p>
+<p><input type="checkbox" name="csv_tool" value="ON"  /> CSV File Merger</p>
+<p><input type="checkbox" name="spam_tool" value="ON"  /> Analytics Spam Filter Tool</p>
 <input type="submit" value="Create Pages" />
 </form>
 </div></div>

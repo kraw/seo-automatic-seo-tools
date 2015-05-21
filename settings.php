@@ -37,7 +37,7 @@ if (get_bloginfo('version') < 2.8) {
 <div id="main-admin-box" class="postbox">
 <h3><span><img src="<?php echo plugins_url();?>/seo-automatic-seo-tools/images/favicon.ico" alt="SEO Automatic" /> SEO Tools</span></h3>
 <div class="inside">
-<p>This plugin has seven tools you can run for your clients, and the main URL Checker has its own admin page <a href="admin.php?page=seo-automatic-plugin">here</a>.</p>
+<p>This plugin has eight tools you can run for your clients, and the main URL Checker has its own admin page <a href="admin.php?page=seo-automatic-plugin">here</a>.</p>
 <p>The URL checker provided with this plugin lets you edit five on page SEO factors, and a pro version that covers neary 20 is available from <a href="http://www.seoautomatic.com/pricing-plans/" target="_blank">SEO Automatic</a>.</p>
 <p><strong>Short Codes:</strong><br />Just add the short code which corresponds to the tools below into the .html tab of any post or page where you would like the tool to display.</p>
 <p>Please note that Use of these tools does require your theme to have a minimum body width of 500 pixels to display the results.</p>
@@ -133,6 +133,44 @@ if (get_option('seo_tools_linkback_on') == 'on' ) {
 <p><b>File Merger</b> <a href="http://www.seoautomatic.com/unique-tools/file-merger/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
 <p>Time spent copy and pasting can be tedious, and this tool lets your users merge multiple .csv files or .txt files into one downloadable file.   They'll just select multiple files to upload, then choose the output filetype, and press the button.</p>
 <p><b>To use, add the shortcode: [csvmerger]</b></p>
+
+<p><hr /></p>
+<p><b>Analytics Spam Filter Tool</b> <a href="http://www.seoautomatic.com/unique-tools/google-analytics-spam-referral-filter-import-tool/" rel="nofollow" target="_blank" style="text-decoration: none;">(Sample)</a></p>
+<p>This tool lets you apply Google Analytics spambot referral filters directly to any linked Google Analytics account.</p>
+<p>To get this tool working, you'll need to log into your Google Developers console <a href="https://code.google.com/apis/console/" target="_blank">https://code.google.com/apis/console/</a>
+<br />
+* From the top left menu, select "Create a Project". Give it a name, and hit "Create"
+<br />
+* From the left API's menu item, select and enable the Google Analytics API for this project.
+<br />
+* From the Credentials menu item, first "Create a new Client ID" and choose "web application" 
+<br />
+&nbsp;&nbsp;&nbsp;- Set the JavaScript Origins to your own domain running the plugin
+<br />
+&nbsp;&nbsp;&nbsp;- Leave the "Redirect URIs" fields completely empty
+<br />
+* Still on the Credentials screen, under Public API Access create a new key" and choos "Server" as the type.
+<br />
+* Copy and paste the details here and save.</p>
+<p><b>To use, add the shortcode: [spamtool]</b></p>
+<p>(Note that Google limits you to just 50 uses per day until you set up and assign a billing profile in the Developers console, and then the allotment will increase to 500 uses.)</p>
+
+<?php
+if ($_REQUEST['set_spamsettings'] == 'yes') {
+	update_option('seo_tools_spamwording', $_REQUEST['spamwording']);
+	update_option('seo_tools_spamclientid', $_REQUEST['spamclientid']);
+	update_option('seo_tools_spampublickey', $_REQUEST['spampublickey']);	
+} 
+
+if (get_option('seo_tools_spamwording') == 'on' ) {
+	$s = ' checked';
+}
+?>
+<div style="border: 1px solid #E0DFE3; padding: 15px;"><form method="post" action=""><input type="hidden" name="set_spamsettings" value="yes" /><p><input type="checkbox" value="on" name="spamwording"<?php echo $s;?>> Remove default wording.</p>
+	<p>Client ID: <input type="text" name="spamclientid" size="43" value="<?php echo get_option('seo_tools_spamclientid');?>"></p>
+	<p>Public API Access API Key: <input type="text" name="spampublickey" size="30" value="<?php echo get_option('seo_tools_spampublickey');?>"> <input type="submit" value="Set" name="spamsettings"></p>
+</form>
+</div>
 
 </div></div>
 
