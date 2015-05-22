@@ -131,7 +131,7 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 
 == Changelog ==
 
-= =
+= 3.7.1 =
 
 * Addition of beta version of Google Analytics Spam Filter Tool.
 
