@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: google, seo, seo automatic, rss, feedcommander, url checker, link variance, keyword marriage, keyword multiplier, seo tools
 Requires at least: 3.1
 Tested up to: 4.2.2
-Stable tag: 3.7.1
+Stable tag: 3.7.2
 
 These are eight of the tools for member use at SEO Automatic, and they're now available for use on your own site too.
 
@@ -130,6 +130,10 @@ Please visit the <a href="http://www.seoautomatic.com/forum/" target="_blank">su
 3. URL Checker Admin
 
 == Changelog ==
+
+= 3.7.2 =
+
+* Addition of business hours and description to structured data tool.
 
 = 3.7.1 =
 

@@ -10,8 +10,9 @@ function schema_form() {
 ?>
 <style>
 #schematool { width: auto; }
-#schematool input, #schematool select { float: right; }
+#schematool input, #schematool select, #schematool textarea, #schematool .daysgroup, #schematool .time { float: right; }
 #schemacode { width: 500px; height: 200px; }
+#schematool .days, #schematool .openhour, #schematool .openmin, #schematool .closehour, #schematool .closemin { float: none!important; }
 </style>
 <?php
 
@@ -48,6 +49,117 @@ if ( isset( $_POST['submit'] ) ) {
 		    .'},';
 		}
 
+		//description
+		if ($_REQUEST['descript']) { $descript = '"description" : "'.$_REQUEST['descript'].'",'; }
+		
+		//business hours
+		if ($_REQUEST['daymo']) { $daymo = $_REQUEST['daymo'].','; }
+		if ($_REQUEST['daytu']) { $daytu = $_REQUEST['daytu'].','; }
+		if ($_REQUEST['daywe']) { $daywe = $_REQUEST['daywe'].','; }
+		if ($_REQUEST['dayth']) { $dayth = $_REQUEST['dayth'].','; }
+		if ($_REQUEST['dayfr']) { $dayfr = $_REQUEST['dayfr'].','; }
+		if ($_REQUEST['daysa']) { $daysa = $_REQUEST['daysa'].','; }
+		if ($_REQUEST['daysu']) { $daysu = $_REQUEST['daysu'].','; }
+		$openinghours = '"openingHours": "'.$daymo.$daytu.$daywe.$dayth.$dayfr.$daysa.$daysu.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour']) { $openhour = $_REQUEST['openhour'].':'; }
+		if ($_REQUEST['openmin']) { $openmin = $_REQUEST['openmin'].'-'; }
+		if ($_REQUEST['closehour']) { $closehour = $_REQUEST['closehour'].':'; }
+		if ($_REQUEST['closemin']) { $closemin = $_REQUEST['closemin']; }
+		$openinghours .= $openhour.$openmin.$closehour.$closemin;
+
+		if ($_REQUEST['daymo2']) { $daymo2 = $_REQUEST['daymo2'].','; }
+		if ($_REQUEST['daytu2']) { $daytu2 = $_REQUEST['daytu2'].','; }
+		if ($_REQUEST['daywe2']) { $daywe2 = $_REQUEST['daywe2'].','; }
+		if ($_REQUEST['dayth2']) { $dayth2 = $_REQUEST['dayth2'].','; }
+		if ($_REQUEST['dayfr2']) { $dayfr2 = $_REQUEST['dayfr2'].','; }
+		if ($_REQUEST['daysa2']) { $daysa2 = $_REQUEST['daysa2'].','; }
+		if ($_REQUEST['daysu2']) { $daysu2 = $_REQUEST['daysu2'].','; }
+		$openinghours .= ' '.$daymo2.$daytu2.$daywe2.$dayth2.$dayfr2.$daysa2.$daysu2.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour2']) { $openhour2 = $_REQUEST['openhour2'].':'; }
+		if ($_REQUEST['openmin2']) { $openmin2 = $_REQUEST['openmin2'].'-'; }
+		if ($_REQUEST['closehour2']) { $closehour2 = $_REQUEST['closehour2'].':'; }
+		if ($_REQUEST['closemin2']) { $closemin2 = $_REQUEST['closemin2']; }
+		$openinghours .= $openhour2.$openmin2.$closehour2.$closemin2;
+
+		if ($_REQUEST['daymo3']) { $daymo3 = $_REQUEST['daymo3'].','; }
+		if ($_REQUEST['daytu3']) { $daytu3 = $_REQUEST['daytu3'].','; }
+		if ($_REQUEST['daywe3']) { $daywe3 = $_REQUEST['daywe3'].','; }
+		if ($_REQUEST['dayth3']) { $dayth3 = $_REQUEST['dayth3'].','; }
+		if ($_REQUEST['dayfr3']) { $dayfr3 = $_REQUEST['dayfr3'].','; }
+		if ($_REQUEST['daysa3']) { $daysa3 = $_REQUEST['daysa3'].','; }
+		if ($_REQUEST['daysu3']) { $daysu3 = $_REQUEST['daysu3'].','; }
+		$openinghours .= ' '.$daymo3.$daytu3.$daywe3.$dayth3.$dayfr3.$daysa3.$daysu3.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour3']) { $openhour3 = $_REQUEST['openhour3'].':'; }
+		if ($_REQUEST['openmin3']) { $openmin3 = $_REQUEST['openmin3'].'-'; }
+		if ($_REQUEST['closehour3']) { $closehour3 = $_REQUEST['closehour3'].':'; }
+		if ($_REQUEST['closemin3']) { $closemin3 = $_REQUEST['closemin3']; }
+		$openinghours .= $openhour3.$openmin3.$closehour3.$closemin3;
+
+		if ($_REQUEST['daymo4']) { $daymo4 = $_REQUEST['daymo4'].','; }
+		if ($_REQUEST['daytu4']) { $daytu4 = $_REQUEST['daytu4'].','; }
+		if ($_REQUEST['daywe4']) { $daywe4 = $_REQUEST['daywe4'].','; }
+		if ($_REQUEST['dayth4']) { $dayth4 = $_REQUEST['dayth4'].','; }
+		if ($_REQUEST['dayfr4']) { $dayfr4 = $_REQUEST['dayfr4'].','; }
+		if ($_REQUEST['daysa4']) { $daysa4 = $_REQUEST['daysa4'].','; }
+		if ($_REQUEST['daysu4']) { $daysu4 = $_REQUEST['daysu4'].','; }
+		$openinghours .= ' '.$daymo4.$daytu4.$daywe4.$dayth4.$dayfr4.$daysa4.$daysu4.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour4']) { $openhour4 = $_REQUEST['openhour4'].':'; }
+		if ($_REQUEST['openmin4']) { $openmin4 = $_REQUEST['openmin4'].'-'; }
+		if ($_REQUEST['closehour4']) { $closehour4 = $_REQUEST['closehour4'].':'; }
+		if ($_REQUEST['closemin4']) { $closemin4 = $_REQUEST['closemin4']; }
+		$openinghours .= $openhour4.$openmin4.$closehour4.$closemin4;
+
+		if ($_REQUEST['daymo5']) { $daymo5 = $_REQUEST['daymo5'].','; }
+		if ($_REQUEST['daytu5']) { $daytu5 = $_REQUEST['daytu5'].','; }
+		if ($_REQUEST['daywe5']) { $daywe5 = $_REQUEST['daywe5'].','; }
+		if ($_REQUEST['dayth5']) { $dayth5 = $_REQUEST['dayth5'].','; }
+		if ($_REQUEST['dayfr5']) { $dayfr5 = $_REQUEST['dayfr5'].','; }
+		if ($_REQUEST['daysa5']) { $daysa5 = $_REQUEST['daysa5'].','; }
+		if ($_REQUEST['daysu5']) { $daysu5 = $_REQUEST['daysu5'].','; }
+		$openinghours .= ' '.$daymo5.$daytu5.$daywe5.$dayth5.$dayfr5.$daysa5.$daysu5.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour5']) { $openhour5 = $_REQUEST['openhour5'].':'; }
+		if ($_REQUEST['openmin5']) { $openmin5 = $_REQUEST['openmin5'].'-'; }
+		if ($_REQUEST['closehour5']) { $closehour5 = $_REQUEST['closehour5'].':'; }
+		if ($_REQUEST['closemin5']) { $closemin5 = $_REQUEST['closemin5']; }
+		$openinghours .= $openhour5.$openmin5.$closehour5.$closemin5;	
+		
+		if ($_REQUEST['daymo6']) { $daymo6 = $_REQUEST['daymo6'].','; }
+		if ($_REQUEST['daytu6']) { $daytu6 = $_REQUEST['daytu6'].','; }
+		if ($_REQUEST['daywe6']) { $daywe6 = $_REQUEST['daywe6'].','; }
+		if ($_REQUEST['dayth6']) { $dayth6 = $_REQUEST['dayth6'].','; }
+		if ($_REQUEST['dayfr6']) { $dayfr6 = $_REQUEST['dayfr6'].','; }
+		if ($_REQUEST['daysa6']) { $daysa6 = $_REQUEST['daysa6'].','; }
+		if ($_REQUEST['daysu6']) { $daysu6 = $_REQUEST['daysu6'].','; }
+		$openinghours .= ' '.$daymo6.$daytu6.$daywe6.$dayth6.$dayfr6.$daysa6.$daysu6.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour6']) { $openhour6 = $_REQUEST['openhour6'].':'; }
+		if ($_REQUEST['openmin6']) { $openmin6 = $_REQUEST['openmin6'].'-'; }
+		if ($_REQUEST['closehour6']) { $closehour6 = $_REQUEST['closehour6'].':'; }
+		if ($_REQUEST['closemin6']) { $closemin6 = $_REQUEST['closemin6']; }
+		$openinghours .= $openhour6.$openmin6.$closehour6.$closemin6;
+
+		if ($_REQUEST['daymo7']) { $daymo7 = $_REQUEST['daymo7'].','; }
+		if ($_REQUEST['daytu7']) { $daytu7 = $_REQUEST['daytu7'].','; }
+		if ($_REQUEST['daywe7']) { $daywe7 = $_REQUEST['daywe7'].','; }
+		if ($_REQUEST['dayth7']) { $dayth7 = $_REQUEST['dayth7'].','; }
+		if ($_REQUEST['dayfr7']) { $dayfr7 = $_REQUEST['dayfr7'].','; }
+		if ($_REQUEST['daysa7']) { $daysa7 = $_REQUEST['daysa7'].','; }
+		if ($_REQUEST['daysu7']) { $daysu7 = $_REQUEST['daysu7'].','; }
+		$openinghours .= ' '.$daymo7.$daytu7.$daywe7.$dayth7.$dayfr7.$daysa7.$daysu7.'*';
+		$openinghours = str_replace(",*", " ", $openinghours);
+		if ($_REQUEST['openhour7']) { $openhour7 = $_REQUEST['openhour7'].':'; }
+		if ($_REQUEST['openmin7']) { $openmin7 = $_REQUEST['openmin7'].'-'; }
+		if ($_REQUEST['closehour7']) { $closehour7 = $_REQUEST['closehour7'].':'; }
+		if ($_REQUEST['closemin7']) { $closemin7 = $_REQUEST['closemin7']; }
+		$openinghours .= $openhour7.$openmin7.$closehour7.$closemin7;
+					
+		$openinghours = str_replace("*", "", $openinghours);					$openinghours = rtrim($openinghours, ' ').'",';
+			
 		//socials
 		if ($_REQUEST['fb']) { $fb = '"'.$_REQUEST['fb'].'",'; }
 		if ($_REQUEST['twitter']) { $twit = '"'.$_REQUEST['twitter'].'",'; }
@@ -79,8 +191,10 @@ if ( isset( $_POST['submit'] ) ) {
 		  $busname. 
 		  $phone.
 		  $address.
+		  $descript.
 		  $url.
 		  $logourl.
+		  $openinghours.
 		  	$schemasocials.'} </script>
 		';
 		$thecode = str_replace(",]", "]", $thecode);
@@ -90,7 +204,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 	}
 }
-
+//echo '<pre>'; print_r($_REQUEST); echo '</pre>';
 $schemafulldisplay = $requrl.$reqlogourl.$codebox.'
 
 <form id="schematool" method="POST" action="">
@@ -489,6 +603,164 @@ $schemafulldisplay = $requrl.$reqlogourl.$codebox.'
 <span><label class="lbl">ZipCode </label></span><input id="zip" name="zip" class="inputfld text" value="'.$_REQUEST['zip'].'" /><br /><br />
 <span><label class="lbl">URL <font color="#ff0000">* Required</font> </label></span><input id="url" name="url" class="inputfld text" value="'.$_REQUEST['url'].'" /><br /><br />
 <span><label class="lbl">Logo URL <font color="#ff0000">* Required</font> </label></span><input id="logourl" name="logourl" class="inputfld text" value="'.$_REQUEST['logourl'].'" /><br /><br />
+<span><label class="lbl">Description </label></span><textarea id="descript" name="descript" class="inputfld text">'.$_REQUEST['descript'].'</textarea><br /><br />
+<br /><br />
+
+<b>Business Hours</b><br />
+If hours vary on any days, set the days with the same hours in each section.<br />Leave any unneeded sections blank.<br />
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo" type="checkbox" value="Mo" class="days" />Mo <input name="daytu" type="checkbox" value="Tu" class="days" />Tu <input name="daywe" type="checkbox" value="We" class="days" />We <input name="dayth" type="checkbox" value="Th" class="days" />Th <input name="dayfr" type="checkbox" value="Fr" class="days" />Fr <input name="daysa" type="checkbox" value="Sa" class="days" />Sa <input name="daysu" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
+
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo2" type="checkbox" value="Mo" class="days" />Mo <input name="daytu2" type="checkbox" value="Tu" class="days" />Tu <input name="daywe2" type="checkbox" value="We" class="days" />We <input name="dayth2" type="checkbox" value="Th" class="days" />Th <input name="dayfr2" type="checkbox" value="Fr" class="days" />Fr <input name="daysa2" type="checkbox" value="Sa" class="days" />Sa <input name="daysu2" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour2" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin2" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour2" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin2" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
+
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo3" type="checkbox" value="Mo" class="days" />Mo <input name="daytu3" type="checkbox" value="Tu" class="days" />Tu <input name="daywe3" type="checkbox" value="We" class="days" />We <input name="dayth3" type="checkbox" value="Th" class="days" />Th <input name="dayfr3" type="checkbox" value="Fr" class="days" />Fr <input name="daysa3" type="checkbox" value="Sa" class="days" />Sa <input name="daysu3" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour3" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin3" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour3" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin3" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
+
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo4" type="checkbox" value="Mo" class="days" />Mo <input name="daytu4" type="checkbox" value="Tu" class="days" />Tu <input name="daywe4" type="checkbox" value="We" class="days" />We <input name="dayth4" type="checkbox" value="Th" class="days" />Th <input name="dayfr4" type="checkbox" value="Fr" class="days" />Fr <input name="daysa4" type="checkbox" value="Sa" class="days" />Sa <input name="daysu4" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour4" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin4" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour4" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin4" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
+
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo5" type="checkbox" value="Mo" class="days" />Mo <input name="daytu5" type="checkbox" value="Tu" class="days" />Tu <input name="daywe5" type="checkbox" value="We" class="days" />We <input name="dayth5" type="checkbox" value="Th" class="days" />Th <input name="dayfr5" type="checkbox" value="Fr" class="days" />Fr <input name="daysa5" type="checkbox" value="Sa" class="days" />Sa <input name="daysu5" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour5" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin5" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour5" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin5" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
+
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo6" type="checkbox" value="Mo" class="days" />Mo <input name="daytu6" type="checkbox" value="Tu" class="days" />Tu <input name="daywe6" type="checkbox" value="We" class="days" />We <input name="dayth6" type="checkbox" value="Th" class="days" />Th <input name="dayfr6" type="checkbox" value="Fr" class="days" />Fr <input name="daysa6" type="checkbox" value="Sa" class="days" />Sa <input name="daysu6" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour6" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin6" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour6" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin6" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
+
+<span><label class="lbl">Days</label></span>
+<div class="daysgroup"><input name="daymo7" type="checkbox" value="Mo" class="days" />Mo <input name="daytu7" type="checkbox" value="Tu" class="days" />Tu <input name="daywe7" type="checkbox" value="We" class="days" />We <input name="dayth7" type="checkbox" value="Th" class="days" />Th <input name="dayfr7" type="checkbox" value="Fr" class="days" />Fr <input name="daysa7" type="checkbox" value="Sa" class="days" />Sa <input name="daysu7" type="checkbox" value="Su" class="days" />Su</div>
+<br />
+<span><label class="lbl">Opening Time</label></span>
+<div class="time"><select name="openhour7" class="openhour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="openmin7" class="openmin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br />
+<span><label class="lbl">Closing Time</label></span>
+<div class="time"><select name="closehour7" class="closehour">
+<option value=""></option><option value="01" >01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option><option value="07" >07</option><option value="08" >08</option><option value="09" >09</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option>
+</select>
+ : 
+<select name="closemin7" class="closemin">
+<option value=""></option><option value="00" >00</option><option value="15" >15</option><option value="30" >30</option><option value="45" >45</option>
+</select>
+</div><br /><br />
 
 <b>Social Links</b><br />
 
